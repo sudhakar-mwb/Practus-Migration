@@ -1,0 +1,242 @@
+{
+  "startedAt": "2026-09-23T11-07-04-495Z",
+  "dryRun": true,
+  "results": [
+    {
+      "sourceName": "In US with State Information",
+      "requestedAs": "In US with State Information",
+      "sourceId": "532",
+      "destinationName": "Touchmath | In US with State Information",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "FOC Webinar Registrants 5.19.26",
+      "requestedAs": "FOC Webinar Registrants 5.19.26",
+      "sourceId": "751",
+      "destinationName": "Touchmath | FOC Webinar Registrants 5.19.26",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live",
+      "requestedAs": "Webinar | TouchMath 3-5 | 95PG Database I",
+      "sourceId": "682",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead",
+      "requestedAs": "Webinar | TouchMath 3-5 | 95PG Database II",
+      "sourceId": "683",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 5.7.26 - Handraisers",
+      "requestedAs": "Webinar | TouchMath 3-5 | 5.7.26 - Handraisi",
+      "sourceId": "672",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Handraisers",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser",
+      "requestedAs": "Webinar | TouchMath 3-5 | 95PG Database III",
+      "sourceId": "684",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead",
+      "requestedAs": "Webinar | TouchMath 3-5 | 95PG Database IV",
+      "sourceId": "685",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 95PG Database Registrants",
+      "requestedAs": "Webinar | TouchMath 3-5 | 95PG Database R",
+      "sourceId": "681",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 95PG Database Registrants",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads",
+      "requestedAs": "Webinar | TouchMath 3-5 | 95PG Database E",
+      "sourceId": "678",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees",
+      "requestedAs": "Webinar | TouchMath 3-5 | 5.7.26 - Live Atte",
+      "sourceId": "666",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Submissions | Grades 3-5 Sample",
+      "requestedAs": "Submissions | Grades 3-5 Sample",
+      "sourceId": "654",
+      "destinationName": "Touchmath | Submissions | Grades 3-5 Sample",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "CON_OR_2026.04_ORRTII_CY26 - Attendee",
+      "requestedAs": "CON_OR_2026.04_ORRTII_CY26_Attendee",
+      "sourceId": "648",
+      "destinationName": "Touchmath | CON_OR_2026.04_ORRTII_CY26 - Attendee",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "# Downloads | Dyscalculia Toolkit",
+      "requestedAs": "# Downloads | Dyscalculia Toolkit",
+      "sourceId": "646",
+      "destinationName": "Touchmath | # Downloads | Dyscalculia Toolkit",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "(Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "requestedAs": "(Sales Version) Webinar | TouchMath 3-5 | 5",
+      "sourceId": "624",
+      "destinationName": "Touchmath | (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "requestedAs": "Webinar | TouchMath 3-5 | 5.7.26 - Registran",
+      "sourceId": "623",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Submissions | Dyscalculia Toolkit",
+      "requestedAs": "Submissions | Dyscalculia Toolkit",
+      "sourceId": "566",
+      "destinationName": "Touchmath | Submissions | Dyscalculia Toolkit",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "EdWeek Registrants 3.3.26 - Bridging the Math Gap",
+      "requestedAs": "EdWeek Registrants 3.3.26 - Bridging the Ma",
+      "sourceId": "559",
+      "destinationName": "Touchmath | EdWeek Registrants 3.3.26 - Bridging the Math Gap",
+      "destinationId": "5589",
+      "action": "already_synced",
+      "status": "partial",
+      "validated": null,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "TouchMath Customer List 2.24.26",
+      "requestedAs": "TouchMath Customer List 2.24.26",
+      "sourceId": "557",
+      "destinationName": "Touchmath | TouchMath Customer List 2.24.26",
+      "destinationId": "5591",
+      "action": "already_synced",
+      "status": "partial",
+      "validated": null,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "Active List (Contacts who have opened emails or submitted forms)",
+      "requestedAs": "Active List (Contacts who have opened emails or submitted forms)",
+      "sourceId": "531",
+      "destinationName": "Touchmath | Active List (Contacts who have opened emails or submitted forms)",
+      "destinationId": null,
+      "action": "created",
+      "status": "dry_run",
+      "validated": null,
+      "partialReasons": [],
+      "error": null
+    }
+  ]
+}
