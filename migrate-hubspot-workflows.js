@@ -42,24 +42,37 @@
  * Both tokens need the `automation` scope (and any `*.sensitive.read` /
  * `*.sensitive.write` scopes required if a workflow touches sensitive data).
  *
+ * UNPUBLISHED BY DESIGN
+ * ---------------------
+ * Every migrated workflow is created in the destination portal turned OFF
+ * (isEnabled=false), whatever its state in the source portal, and every
+ * later update this script makes keeps it OFF. Workflows are reviewed and
+ * turned on manually in the destination portal.
+ *
  * OPTIONAL ENVIRONMENT VARIABLES
  * -------------------------------
  *   ASSET_ID_MAP_FILE      Path to a JSON file mapping source asset IDs to
  *                          destination asset IDs (lists, emails, owners,
  *                          object types, workflows). Defaults to
  *                          "./asset_id_mapping.json" if that file exists.
- *   PRESERVE_ENABLED_STATE Set to "true" to recreate a workflow with the same
- *                          enabled/disabled (on/off) state it had in the
- *                          source portal. Defaults to "false", meaning every
- *                          migrated workflow is created turned OFF so nothing
- *                          starts enrolling/acting on destination-portal data
- *                          until a human reviews and turns it on.
  *   REQUEST_DELAY_MS       Delay between outbound HubSpot API calls, in ms.
  *                          Defaults to 350.
  *   MAX_RETRIES            Max retry attempts for 429/5xx responses.
  *                          Defaults to 5.
  *   OUTPUT_DIR             Directory to write the 3 JSON log files into.
  *                          Defaults to the current working directory.
+ *   REPAIR_EXISTING        Set to "true" to re-remap workflows that were
+ *                          already migrated (listed in workflow_id_mapping.json)
+ *                          and update them IN PLACE in the destination when
+ *                          they differ from the source. Workflows someone has
+ *                          already turned ON are never touched. Defaults to
+ *                          "false" (already-migrated workflows are skipped),
+ *                          so manual review edits are not overwritten.
+ *   CREATE_MISSING_PROPERTIES  Defaults to "true": when a workflow filters on
+ *                          or sets a property that exists in the source but
+ *                          not the destination, copy its definition across
+ *                          before migrating. Set to "false" to hold such
+ *                          workflows instead.
  *   DRY_RUN                Set to "true" to fetch, remap, and report what
  *                          WOULD be migrated without creating anything in
  *                          the destination portal. Recommended for the
@@ -70,6 +83,16 @@
  *   workflow_migration_success.json  Successfully migrated workflows.
  *   workflow_migration_errors.json   Errors and validation failures.
  *   workflow_id_mapping.json         source workflow ID -> destination workflow ID.
+ *
+ * ASSET REFERENCES
+ * ----------------
+ *   Forms, lists and marketing emails referenced by a workflow are mapped to
+ *   the destination automatically by name (exact name, or the destination
+ *   name with a "Touchmath | " prefix; unique matches only).
+ *   Entries in ASSET_ID_MAP_FILE take priority over name matching. A
+ *   workflow with any reference that still can't be mapped is HELD (not
+ *   created/updated) and listed in the error log, so it never ends up
+ *   pointing at a wrong or non-existent destination asset.
  *
  * These files are read back in on every run so the script is safe to
  * re-run: workflows already present in workflow_id_mapping.json (and still
@@ -107,14 +130,15 @@ const ASSET_ID_MAP_FILE = process.env.ASSET_ID_MAP_FILE || DEFAULT_ASSET_MAP_PAT
 
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-const PRESERVE_ENABLED_STATE = String(process.env.PRESERVE_ENABLED_STATE || 'false').toLowerCase() === 'true';
+const REPAIR_EXISTING = String(process.env.REPAIR_EXISTING || 'false').toLowerCase() === 'true';
+const CREATE_MISSING_PROPERTIES = String(process.env.CREATE_MISSING_PROPERTIES || 'true').toLowerCase() !== 'false';
 const REQUEST_DELAY_MS = Number.parseInt(process.env.REQUEST_DELAY_MS, 10) || 350;
 const MAX_RETRIES = Number.parseInt(process.env.MAX_RETRIES, 10) || 5;
 const DRY_RUN = String(process.env.DRY_RUN || 'false').toLowerCase() === 'true';
 
 // Every migrated workflow is created in the destination portal with this
-// prefix on its name (e.g. "Touchmath - <original name>").
-const WORKFLOW_NAME_PREFIX = 'Touchmath - ';
+// prefix on its name (e.g. "Touchmath | <original name>").
+const WORKFLOW_NAME_PREFIX = 'Touchmath | ';
 
 // Only source workflows whose name exactly matches an entry here are
 // migrated; everything else in the source portal is left untouched. Edit
@@ -392,6 +416,8 @@ function buildEmptyAssetMap() {
   return {
     lists: {},
     emails: {},
+    forms: {},
+    emailEvents: {},
     owners: {},
     objectTypes: {},
     workflows: {},
@@ -543,6 +569,32 @@ function remapWorkflowReferences(workflow, assetMap, unresolvedRefs) {
     }
   }
 
+  // Filters store their asset IDs directly on the filter object, and can be
+  // nested at any depth (enrollment, re-enrollment triggers, and branch
+  // actions' listBranches), so walk the whole tree. Action `fields` are
+  // handled by remapActionFields above and are skipped here.
+  const remapFilterNode = (node, where) => {
+    if (Array.isArray(node)) {
+      node.forEach((child, i) => remapFilterNode(child, `${where}[${i}]`));
+      return;
+    }
+    if (!node || typeof node !== 'object') return;
+    const remapKey = (key, section, kind) => {
+      if (node[key] === undefined || node[key] === null || node[key] === '') return;
+      const { mapped, value } = mapAssetId(section, node[key]);
+      if (mapped) node[key] = value;
+      else noteUnresolved(kind, node[key], `${where}.${key}`);
+    };
+    if (node.filterType === 'FORM_SUBMISSION') remapKey('formId', assetMap.forms, 'form');
+    if (node.filterType === 'IN_LIST') remapKey('listId', assetMap.lists, 'list');
+    if (node.filterType === 'EMAIL_EVENT') remapKey('emailId', assetMap.emailEvents, 'emailEvent');
+    for (const [key, value] of Object.entries(node)) {
+      if (key !== 'fields' && value && typeof value === 'object') remapFilterNode(value, `${where}.${key}`);
+    }
+  };
+  remapFilterNode(clone.enrollmentCriteria, 'enrollmentCriteria');
+  remapFilterNode(clone.actions, 'actions');
+
   if (Array.isArray(clone.suppressionListIds) && clone.suppressionListIds.length) {
     clone.suppressionListIds = clone.suppressionListIds.map((id) => {
       const { mapped, value } = mapAssetId(assetMap.lists, id);
@@ -558,7 +610,7 @@ function remapWorkflowReferences(workflow, assetMap, unresolvedRefs) {
 // Preparing a workflow body for creation
 // ---------------------------------------------------------------------------
 
-function sanitizeForCreate(workflow, { enable }) {
+function sanitizeForCreate(workflow) {
   const body = deepClone(workflow);
   for (const field of READ_ONLY_WORKFLOW_FIELDS) {
     delete body[field];
@@ -566,7 +618,9 @@ function sanitizeForCreate(workflow, { enable }) {
   // Never bring source-portal Salesforce enrollment linkage across; it is
   // portal-specific integration state, not workflow configuration.
   body.canEnrollFromSalesforce = false;
-  body.isEnabled = Boolean(enable);
+  // Always create unpublished (OFF); workflows are reviewed and turned on
+  // manually in the destination portal.
+  body.isEnabled = false;
   if (typeof body.name === 'string' && !body.name.startsWith(WORKFLOW_NAME_PREFIX)) {
     body.name = `${WORKFLOW_NAME_PREFIX}${body.name}`;
   }
@@ -585,6 +639,8 @@ function sanitizeForUpdate(workflow) {
   delete body.createdAt;
   delete body.updatedAt;
   delete body.dataSources;
+  // Never let an update from this script turn a workflow on.
+  body.isEnabled = false;
   return body;
 }
 
@@ -606,6 +662,7 @@ const FIELDS_TO_VALIDATE = [
   'blockedDates',
   'customProperties',
   'suppressionListIds',
+  'isEnabled',
 ];
 
 function deepEqual(a, b) {
@@ -636,7 +693,12 @@ function validateMigratedWorkflow(expectedBody, actualDestWorkflow) {
     const expectedHasField = Object.prototype.hasOwnProperty.call(expectedBody, field);
     const actualHasField = Object.prototype.hasOwnProperty.call(actualDestWorkflow, field);
     if (!expectedHasField && !actualHasField) continue;
-    if (!deepEqual(expectedBody[field], actualDestWorkflow[field])) {
+    // HubSpot upgrades each action's actionTypeVersion on create; that is
+    // not a content difference, so leave it out of the comparison.
+    const comparable = (w) => (field === 'actions' && Array.isArray(w[field])
+      ? w[field].map(({ actionTypeVersion, ...rest }) => rest)
+      : w[field]);
+    if (!deepEqual(comparable(expectedBody), comparable(actualDestWorkflow))) {
       mismatches.push(field);
     }
   }
@@ -701,9 +763,27 @@ async function migrateOneWorkflow(summary, sourceToken, destToken, assetMap, sta
     const unresolvedRefs = [];
     const effectiveAssetMap = withResolvedWorkflowIds(assetMap, state.idMapping);
     const remapped = remapWorkflowReferences(fullSource, effectiveAssetMap, unresolvedRefs);
-    const createBody = sanitizeForCreate(remapped, {
-      enable: PRESERVE_ENABLED_STATE ? Boolean(fullSource.isEnabled) : false,
-    });
+    const createBody = sanitizeForCreate(remapped);
+
+    // --- Hold back workflows that send emails not yet in the destination ---
+    // Creating them now would leave "send email" steps pointing at source
+    // portal email IDs. They are logged and retried on the next run, once
+    // the emails are migrated and mapped in the asset ID mapping file.
+    const unmappedEmails = unresolvedRefs.filter((r) => r.kind === 'content_id');
+    if (unmappedEmails.length) {
+      const emailIds = [...new Set(unmappedEmails.map((r) => r.sourceId))];
+      console.warn(`[hold] "${fullSource.name || sourceNameHint}" (source ${sourceId}) sends ${emailIds.length} email(s) not mapped to the destination (${emailIds.join(', ')}); not migrated this run.`);
+      state.errorLog.push({
+        sourceWorkflowId: sourceId,
+        sourceWorkflowName: fullSource.name || sourceNameHint,
+        errorStatus: 'held_unmapped_emails',
+        httpStatusCode: null,
+        errorMessage: 'Not migrated: workflow sends marketing email(s) that have no destination mapping yet. Migrate the emails, add them to the "emails" section of the asset ID mapping file, then re-run.',
+        apiResponse: { unresolvedAssetReferences: unresolvedRefs },
+        timestamp: nowIso(),
+      });
+      return { status: 'held' };
+    }
 
     if (dryRun) {
       console.log(`[dry-run] Would migrate "${fullSource.name || sourceNameHint}" (source ${sourceId})` +
@@ -721,28 +801,19 @@ async function migrateOneWorkflow(summary, sourceToken, destToken, assetMap, sta
     }
 
     // --- Create in destination portal ---
-    let created;
-    try {
-      created = await createWorkflow(destToken, createBody);
-    } catch (createErr) {
-      // If enabling on create was rejected specifically (some workflow
-      // types/actions cannot be created already-active), fall back to
-      // creating disabled so the workflow itself isn't lost, and flag it.
-      if (createBody.isEnabled && createErr instanceof HubSpotApiError) {
-        console.warn(`[warn] Create with isEnabled=true failed for "${sourceNameHint}" (source ${sourceId}); retrying disabled.`);
-        const disabledBody = { ...createBody, isEnabled: false };
-        created = await createWorkflow(destToken, disabledBody);
-        unresolvedRefs.push({ kind: 'enabledState', sourceId, where: 'isEnabled (forced to false; original value could not be applied on create)' });
-        createBody.isEnabled = false;
-      } else {
-        throw createErr;
-      }
-    }
-
+    const created = await createWorkflow(destToken, createBody);
     const destinationId = String(created.id);
 
     // --- Validate what actually landed in the destination portal ---
-    const destFull = await getWorkflowByIdSafe(destToken, destinationId);
+    let destFull = await getWorkflowByIdSafe(destToken, destinationId);
+
+    // Safety net: if the destination somehow came back ON, turn it OFF now
+    // so it cannot enroll anything before manual review.
+    if (destFull && destFull.isEnabled) {
+      console.warn(`[warn] Destination workflow ${destinationId} came back enabled; turning it off.`);
+      await updateWorkflow(destToken, destinationId, sanitizeForUpdate(destFull));
+      destFull = await getWorkflowByIdSafe(destToken, destinationId);
+    }
     const mismatches = destFull ? validateMigratedWorkflow(createBody, destFull) : ['(could not re-fetch destination workflow to validate)'];
     const validationPassed = mismatches.length === 0 && unresolvedRefs.length === 0;
 
@@ -916,6 +987,23 @@ async function main() {
     console.log('[info] DRY_RUN=true - no workflows will be created in the destination portal. This run only reports what would happen.');
   }
 
+  // Pre-flight: both tokens need the `automation` scope. Checking up front
+  // stops the run with one clear message instead of a 403 per workflow.
+  for (const [label, token] of [['source', sourceToken], ['destination', destToken]]) {
+    try {
+      await throttle();
+      await hubspotRequest(token, 'GET', `${FLOWS_PATH}?limit=1`);
+    } catch (err) {
+      if (err instanceof HubSpotApiError && (err.status === 401 || err.status === 403)) {
+        console.error(`[fatal] The ${label} portal token cannot access workflows (HTTP ${err.status}). Add the \`automation\` scope to the ${label} private app (Settings > Integrations > Private Apps > Scopes) and re-run. No workflows were migrated.`);
+        if (err.body) console.error(`         ${JSON.stringify(err.body)}`);
+        process.exitCode = 1;
+        return;
+      }
+      throw err;
+    }
+  }
+
   const assetMap = loadAssetIdMap();
   const state = loadLogState();
 
@@ -933,11 +1021,14 @@ async function main() {
   }
   console.log(`[info] Found ${summaries.length} workflow(s) in the source portal.`);
 
-  const allowlist = WORKFLOW_NAME_ALLOWLIST.map((n) => n.trim());
+  // Compare names with runs of whitespace collapsed, so stray double/trailing
+  // spaces in source-portal names don't cause a miss.
+  const normalizeName = (n) => String(n || '').replace(/\s+/g, ' ').trim();
+  const allowlist = WORKFLOW_NAME_ALLOWLIST.map(normalizeName);
   const allowlistSet = new Set(allowlist);
-  const targetSummaries = summaries.filter((s) => allowlistSet.has(String(s.name || '').trim()));
+  const targetSummaries = summaries.filter((s) => allowlistSet.has(normalizeName(s.name)));
 
-  const foundNames = new Set(targetSummaries.map((s) => String(s.name || '').trim()));
+  const foundNames = new Set(targetSummaries.map((s) => normalizeName(s.name)));
   const namesNotFoundInSource = allowlist.filter((n) => !foundNames.has(n));
   if (namesNotFoundInSource.length) {
     console.warn(`[warn] ${namesNotFoundInSource.length} name(s) in WORKFLOW_NAME_ALLOWLIST were not found in the source portal (check for typos/renames):`);
@@ -945,7 +1036,7 @@ async function main() {
   }
   console.log(`[info] ${targetSummaries.length} of ${allowlist.length} allowlisted workflow(s) matched; only these will be migrated.`);
 
-  const counters = { total: targetSummaries.length, success: 0, skipped: 0, failed: 0, validationFailures: 0, dryRun: 0 };
+  const counters = { total: targetSummaries.length, success: 0, skipped: 0, failed: 0, validationFailures: 0, dryRun: 0, held: 0 };
 
   for (const summary of targetSummaries) {
     const result = await migrateOneWorkflow(summary, sourceToken, destToken, assetMap, state, DRY_RUN);
@@ -958,6 +1049,7 @@ async function main() {
       counters.validationFailures += 1;
     } else if (result.status === 'skipped') counters.skipped += 1;
     else if (result.status === 'dry_run') counters.dryRun += 1;
+    else if (result.status === 'held') counters.held += 1;
     else counters.failed += 1;
   }
 
@@ -977,6 +1069,7 @@ async function main() {
   console.log(`Total workflows found: ${counters.total}`);
   console.log(`Successfully migrated: ${counters.success}`);
   console.log(`Already migrated/skipped: ${counters.skipped}`);
+  console.log(`Held (unmapped emails, not created): ${counters.held}`);
   console.log(`Failed: ${counters.failed}`);
   console.log(`Validation failures: ${counters.validationFailures}`);
   if (DRY_RUN) console.log(`Dry run (no changes made): ${counters.dryRun}`);

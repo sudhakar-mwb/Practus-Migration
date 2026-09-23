@@ -126,7 +126,7 @@ const ALLOW_PUBLISH = String(process.env.ALLOW_PUBLISH ?? 'false').toLowerCase()
 const CONFIG = {
   sourceToken: process.env.SOURCE_HUBSPOT_TOKEN,
   destinationToken: process.env.DESTINATION_HUBSPOT_TOKEN,
-  prefix: 'TouchMath - ',
+  prefix: 'TouchMath | ',
   dryRun: DRY_RUN,
   allowPublish: ALLOW_PUBLISH,
   migrateDependencies: String(process.env.MIGRATE_DEPENDENCIES ?? 'true').toLowerCase() !== 'false',
@@ -660,7 +660,7 @@ async function fetchAllDestinationLists(destToken) {
 // poll the task status endpoint until COMPLETE).
 // ---------------------------------------------------------------------------
 
-/** Derives a "Touchmath - <original filename>" display name from the source URL. */
+/** Derives a "Touchmath | <original filename>" display name from the source URL. */
 function buildDependencyFileName(sourceUrl) {
   try {
     const base = decodeURIComponent(new URL(sourceUrl).pathname.split('/').pop() || 'file');
@@ -787,7 +787,7 @@ async function resolveListReference(sourceListId, ctx) {
   }
   const listName = sourceList.name;
   const processingType = sourceList.processingType;
-  // Auto-created dependencies get the same "Touchmath - " prefix as the
+  // Auto-created dependencies get the same "Touchmath | " prefix as the
   // primary migrated records, so they're identifiable in the destination
   // portal and so a rerun's name-match lookup stays consistent with what
   // was actually created (not the unprefixed source name).

@@ -187,7 +187,7 @@ const DRY_RUN = process.argv.includes('--dry-run');
 const CONFIG = {
   sourceToken: process.env.SOURCE_HUBSPOT_TOKEN,
   destToken: process.env.DEST_HUBSPOT_TOKEN || process.env.DESTINATION_HUBSPOT_TOKEN,
-  namePrefix: 'Touchmath - ',
+  namePrefix: 'Touchmath | ',
   dedupePropertyName: 'source_campaign_id',
   hubspotApiBase: process.env.HUBSPOT_API_BASE || 'https://api.hubapi.com',
   maxRetries: Number.parseInt(process.env.MAX_RETRIES, 10) || 5,
