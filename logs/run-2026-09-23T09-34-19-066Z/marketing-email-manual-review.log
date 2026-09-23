@@ -1,0 +1,1078 @@
+2026-09-23T09:34:47.948Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Opens of 3: Indiana Tier 2 FY26" (id 875) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 669). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM4: Indiana Tier-2 FY26
+SOURCE EMAIL ID: 221905573744
+DESTINATION EMAIL: Touchmath | EM4: Indiana Tier-2 FY26
+DESTINATION EMAIL ID: 222579132290
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:34:53.346Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "nonopens of EM1 + opens who did not click: Tier-2 Math Survey" (id 874) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 668). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: Tier-2 Math Survey
+SOURCE EMAIL ID: 221882351519
+DESTINATION EMAIL: Touchmath | EM2: Tier-2 Math Survey
+DESTINATION EMAIL ID: 222579248503
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:34:58.750Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 498). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: Back to School 2026-2027
+SOURCE EMAIL ID: 221725071696
+DESTINATION EMAIL: Touchmath | EM2: Back to School 2026-2027
+DESTINATION EMAIL ID: 222579132304
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:04.560Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Opens of EM 1 + 2: Indiana Tier 2 FY26" (id 873) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 667). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: Indiana Tier-2 FY26
+SOURCE EMAIL ID: 221617188101
+DESTINATION EMAIL: Touchmath | EM3: Indiana Tier-2 FY26
+DESTINATION EMAIL ID: 222579248506
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:10.071Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 666). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Tier-2 Math Survey
+SOURCE EMAIL ID: 221130963738
+DESTINATION EMAIL: Touchmath | EM1: Tier-2 Math Survey
+DESTINATION EMAIL ID: 222579132307
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:15.999Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Opens of EM1: Indiana Tier 2 FY26" (id 870) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 665). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: Indiana Tier-2 FY26
+SOURCE EMAIL ID: 221126949701
+DESTINATION EMAIL: Touchmath | EM2: Indiana Tier-2 FY26
+DESTINATION EMAIL ID: 222579132310
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:21.843Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Email | Indiana" (id 869) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 664). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Indiana Tier-2 FY26
+SOURCE EMAIL ID: 220765652141
+DESTINATION EMAIL: Touchmath | EM1: Indiana Tier-2 FY26
+DESTINATION EMAIL ID: 222579132313
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:26.813Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | field mismatch: webversion | custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: Automated | Indiana | FY26
+SOURCE EMAIL ID: 220493676103
+DESTINATION EMAIL: Touchmath | Automated | Indiana | FY26
+DESTINATION EMAIL ID: 222579132316
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:31.279Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: EM6: Georgia FY26 (TM Database)
+SOURCE EMAIL ID: 219414911539
+DESTINATION EMAIL: Touchmath | EM6: Georgia FY26 (TM Database)
+DESTINATION EMAIL ID: 222584929166
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:35.976Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: EM5: Georgia FY26 (TM Database)
+SOURCE EMAIL ID: 219408522877
+DESTINATION EMAIL: Touchmath | EM5: Georgia FY26 (TM Database)
+DESTINATION EMAIL ID: 222579248513
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:41.343Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "TM K-5 Active List minus form fills 08.13.26" (id 815) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 635). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM5: K-5 FY26 (TM Active List)
+SOURCE EMAIL ID: 219365425165
+DESTINATION EMAIL: Touchmath | EM5: K-5 FY26 (TM Active List)
+DESTINATION EMAIL ID: 222579132331
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:46.230Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: EM4: Georgia FY26 (TM Database)
+SOURCE EMAIL ID: 219402401574
+DESTINATION EMAIL: Touchmath | EM4: Georgia FY26 (TM Database)
+DESTINATION EMAIL ID: 222579132334
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:50.972Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: EM3: Georgia FY26 (TM Database)
+SOURCE EMAIL ID: 219414938523
+DESTINATION EMAIL: Touchmath | EM3: Georgia FY26 (TM Database)
+DESTINATION EMAIL ID: 222584929179
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:35:55.824Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: EM2: Georgia FY26 (TM Database)
+SOURCE EMAIL ID: 219408522835
+DESTINATION EMAIL: Touchmath | EM2: Georgia FY26 (TM Database)
+DESTINATION EMAIL ID: 222579132337
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:00.509Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: EM1: Georgia FY26 (TM Database)
+SOURCE EMAIL ID: 219414911508
+DESTINATION EMAIL: Touchmath | EM1: Georgia FY26 (TM Database)
+DESTINATION EMAIL ID: 222584929182
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:06.435Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 498). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Back to School 2026-2027
+SOURCE EMAIL ID: 218786186847
+DESTINATION EMAIL: Touchmath | EM1: Back to School 2026-2027
+DESTINATION EMAIL ID: 222579132340
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:12.010Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 414). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM4: K-5 FY26 (TM Active List)
+SOURCE EMAIL ID: 218869877169
+DESTINATION EMAIL: Touchmath | EM4: K-5 FY26 (TM Active List)
+DESTINATION EMAIL ID: 222579132343
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:18.200Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 414). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: K-5 FY26 (TM Customer List)
+SOURCE EMAIL ID: 218634662505
+DESTINATION EMAIL: Touchmath | EM3: K-5 FY26 (TM Customer List)
+DESTINATION EMAIL ID: 222584929185
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:24.102Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 414). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: K-5 FY26 (TM Active List)
+SOURCE EMAIL ID: 218623581773
+DESTINATION EMAIL: Touchmath | EM3: K-5 FY26 (TM Active List)
+DESTINATION EMAIL ID: 222579248544
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:28.864Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | field mismatch: webversion | custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: Automated | TM Georgia Tier 2 | FY26
+SOURCE EMAIL ID: 218134817845
+DESTINATION EMAIL: Touchmath | Automated | TM Georgia Tier 2 | FY26
+DESTINATION EMAIL ID: 222579132421
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:34.861Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 414). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: K-5 FY26 (TM Active List)
+SOURCE EMAIL ID: 218190612006
+DESTINATION EMAIL: Touchmath | EM2: K-5 FY26 (TM Active List)
+DESTINATION EMAIL ID: 222579248551
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:40.475Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 414). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: K-5 FY26 (TM Customer List)
+SOURCE EMAIL ID: 218200040986
+DESTINATION EMAIL: Touchmath | EM2: K-5 FY26 (TM Customer List)
+DESTINATION EMAIL ID: 222579132424
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:46.191Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 414). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: K-5 FY26 (TM Active List)
+SOURCE EMAIL ID: 217657242033
+DESTINATION EMAIL: Touchmath | EM1: K-5 FY26 (TM Active List)
+DESTINATION EMAIL ID: 222579248554
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:51.918Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 498). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: K-5 FY26 (TM Customers)
+SOURCE EMAIL ID: 217729998122
+DESTINATION EMAIL: Touchmath | EM1: K-5 FY26 (TM Customers)
+DESTINATION EMAIL ID: 222579248557
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:36:58.341Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 45 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 072726
+SOURCE EMAIL ID: 217898709027
+DESTINATION EMAIL: Touchmath | Monday Must Know - 072726
+DESTINATION EMAIL ID: 222579132427
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:03.114Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | field mismatch: webversion | custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: Automated | TouchMath Program Sampler
+SOURCE EMAIL ID: 211673878109
+DESTINATION EMAIL: Touchmath | Automated | TouchMath Program Sampler
+DESTINATION EMAIL ID: 222579248560
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:08.914Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "TM Funding Guide Opens of EM1" (id 797) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 620). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: TM Funding Guide FY26
+SOURCE EMAIL ID: 217760152350
+DESTINATION EMAIL: Touchmath | EM2: TM Funding Guide FY26
+DESTINATION EMAIL ID: 222579248564
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:15.292Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 45 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 072026
+SOURCE EMAIL ID: 217374680452
+DESTINATION EMAIL: Touchmath | Monday Must Know - 072026
+DESTINATION EMAIL ID: 222584929188
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:21.054Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "School/District Decision-Makers and Active List member" (id 796) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 619). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TM Funding Guide FY26
+SOURCE EMAIL ID: 216742855515
+DESTINATION EMAIL: Touchmath | EM1: TM Funding Guide FY26
+DESTINATION EMAIL ID: 222584929191
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:28.775Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1155639, "module_id":1976948). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: Dyscalculia (Phase 2)
+SOURCE EMAIL ID: 216747939428
+DESTINATION EMAIL: Touchmath | EM2: Dyscalculia (Phase 2)
+DESTINATION EMAIL ID: 222579132433
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:35.730Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 30 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 071326
+SOURCE EMAIL ID: 216900368780
+DESTINATION EMAIL: Touchmath | Monday Must Know - 071326
+DESTINATION EMAIL ID: 222579248567
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:42.968Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Dyscalculia (Phase 2)
+SOURCE EMAIL ID: 216090238131
+DESTINATION EMAIL: Touchmath | EM1: Dyscalculia (Phase 2)
+DESTINATION EMAIL ID: 222582479654
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:49.718Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 30 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 070626
+SOURCE EMAIL ID: 216372793464
+DESTINATION EMAIL: Touchmath | Monday Must Know - 070626
+DESTINATION EMAIL ID: 222579248640
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:37:56.171Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 36 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 062926
+SOURCE EMAIL ID: 215828858500
+DESTINATION EMAIL: Touchmath | Monday Must Know - 062926
+DESTINATION EMAIL ID: 222582479657
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:02.983Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 48 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 062226
+SOURCE EMAIL ID: 215357973155
+DESTINATION EMAIL: Touchmath | Monday Must Know - 062226
+DESTINATION EMAIL ID: 222579132436
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:09.540Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 45 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 061526
+SOURCE EMAIL ID: 214890470785
+DESTINATION EMAIL: Touchmath | Monday Must Know - 061526
+DESTINATION EMAIL ID: 222579132439
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:16.172Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 50 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 060826
+SOURCE EMAIL ID: 214351086470
+DESTINATION EMAIL: Touchmath | Monday Must Know - 060826
+DESTINATION EMAIL ID: 222579248644
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:22.954Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 44 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 060126
+SOURCE EMAIL ID: 213411051865
+DESTINATION EMAIL: Touchmath | Monday Must Know - 060126
+DESTINATION EMAIL ID: 222584929194
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:32.689Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Registrants" (id 623) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees" (id 666) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Handraisers" (id 672) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 5 legacy contactLists reference(s) (source ids: 414, 498, 519, 514, 482). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TouchMath Grades 3-5 OD Webinar (Active Database)
+SOURCE EMAIL ID: 212911072142
+DESTINATION EMAIL: Touchmath | EM1: TouchMath Grades 3-5 OD Webinar (Active Database)
+DESTINATION EMAIL ID: 222584929197
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:39.818Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Registrants" (id 623) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Handraisers" (id 672) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees" (id 666) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 482, 519, 514). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TouchMath Grades 3-5 OD Webinar (Non Live Attendees)
+SOURCE EMAIL ID: 212911021204
+DESTINATION EMAIL: Touchmath | EM1: TouchMath Grades 3-5 OD Webinar (Non Live Attendees)
+DESTINATION EMAIL ID: 222579248647
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:46.484Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees" (id 666) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Handraisers" (id 672) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 519, 514). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TouchMath Grades 3-5 OD Webinar (Live Attendees)
+SOURCE EMAIL ID: 212906503297
+DESTINATION EMAIL: Touchmath | EM1: TouchMath Grades 3-5 OD Webinar (Live Attendees)
+DESTINATION EMAIL ID: 222582479661
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:38:52.871Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 42 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 051826
+SOURCE EMAIL ID: 212952799129
+DESTINATION EMAIL: Touchmath | Monday Must Know - 051826
+DESTINATION EMAIL ID: 222579248650
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:00.191Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: to | custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: CASE Webinar
+SOURCE EMAIL ID: 212401409335
+DESTINATION EMAIL: Touchmath | EM3: CASE Webinar
+DESTINATION EMAIL ID: 222579132442
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:06.012Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 498). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM6: TouchMath Grades 3-5 Sample Page (Customer List)
+SOURCE EMAIL ID: 210461739698
+DESTINATION EMAIL: Touchmath | EM6: TouchMath Grades 3-5 Sample Page (Customer List)
+DESTINATION EMAIL ID: 222579248653
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:13.094Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 414, 498). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM6: TouchMath Grades 3-5 Sample Page (Active Database)
+SOURCE EMAIL ID: 211880971943
+DESTINATION EMAIL: Touchmath | EM6: TouchMath Grades 3-5 Sample Page (Active Database)
+DESTINATION EMAIL ID: 222579248656
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:20.405Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: CASE Webinar
+SOURCE EMAIL ID: 212243860507
+DESTINATION EMAIL: Touchmath | EM2: CASE Webinar
+DESTINATION EMAIL ID: 222584929203
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:27.559Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 41 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 051126
+SOURCE EMAIL ID: 212526392080
+DESTINATION EMAIL: Touchmath | Monday Must Know - 051126
+DESTINATION EMAIL ID: 222582479667
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:34.727Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Registrants" (id 623) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 482). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM5: TouchMath Grades 3-5 Webinar (Active Database) - LAST CHANCE
+SOURCE EMAIL ID: 211590830682
+DESTINATION EMAIL: Touchmath | EM5: TouchMath Grades 3-5 Webinar (Active Database) - LAST CHANCE
+DESTINATION EMAIL ID: 222579248659
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:41.396Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Registrants" (id 623) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 498, 482). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM5: TouchMath Grades 3-5 Webinar (Customer List) - LAST CHANCE
+SOURCE EMAIL ID: 210461853194
+DESTINATION EMAIL: Touchmath | EM5: TouchMath Grades 3-5 Webinar (Customer List) - LAST CHANCE
+DESTINATION EMAIL ID: 222579248662
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:48.609Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: CASE Webinar
+SOURCE EMAIL ID: 211590870554
+DESTINATION EMAIL: Touchmath | EM1: CASE Webinar
+DESTINATION EMAIL ID: 222582479670
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:39:55.206Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 38 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 050426
+SOURCE EMAIL ID: 212080759053
+DESTINATION EMAIL: Touchmath | Monday Must Know - 050426
+DESTINATION EMAIL ID: 222584929206
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:01.557Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 46 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 042726
+SOURCE EMAIL ID: 211646930762
+DESTINATION EMAIL: Touchmath | Monday Must Know - 042726
+DESTINATION EMAIL ID: 222579248665
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:08.889Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Submissions | Grades 3-5 Sample" (id 654) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 498, 505). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM4: TouchMath Grades 3-5 Sample Page (Customer List)
+SOURCE EMAIL ID: 210461739055
+DESTINATION EMAIL: Touchmath | EM4: TouchMath Grades 3-5 Sample Page (Customer List)
+DESTINATION EMAIL ID: 222582479676
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:16.969Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Submissions | Grades 3-5 Sample" (id 654) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 505). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM4: TouchMath Grades 3-5 Sample Page (Active Database)
+SOURCE EMAIL ID: 211194161450
+DESTINATION EMAIL: Touchmath | EM4: TouchMath Grades 3-5 Sample Page (Active Database)
+DESTINATION EMAIL ID: 222579248668
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:22.688Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 50 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 498). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Newsletter - April 2026 - External
+SOURCE EMAIL ID: 211382616161
+DESTINATION EMAIL: Touchmath | Newsletter - April 2026 - External
+DESTINATION EMAIL ID: 222584929209
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:30.949Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1155639, "module_id":1976948). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Registrants" (id 623) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 498, 482). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: TouchMath Grades 3-5 Webinar (Active Database)
+SOURCE EMAIL ID: 211185004629
+DESTINATION EMAIL: Touchmath | EM3: TouchMath Grades 3-5 Webinar (Active Database)
+DESTINATION EMAIL ID: 222582479690
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:37.498Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1155639, "module_id":1976948). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Webinar | TouchMath 3-5 | 5.7.26 - Registrants" (id 623) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 498, 482). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: TouchMath Grades 3-5 Webinar (Customer List)
+SOURCE EMAIL ID: 210461739664
+DESTINATION EMAIL: Touchmath | EM3: TouchMath Grades 3-5 Webinar (Customer List)
+DESTINATION EMAIL ID: 222582479699
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:43.986Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 50 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Newsletter - April 2026 - Internal
+SOURCE EMAIL ID: 211060039810
+DESTINATION EMAIL: Touchmath | Newsletter - April 2026 - Internal
+DESTINATION EMAIL ID: 222584929306
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:50.610Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 38 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 042026
+SOURCE EMAIL ID: 211247802437
+DESTINATION EMAIL: Touchmath | Monday Must Know - 042026
+DESTINATION EMAIL ID: 222584929316
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:40:55.389Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: type | field mismatch: subcategory | field mismatch: webversion | custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal.
+SOURCE EMAIL: Automated | TouchMath Grades 3-5 Sample Page
+SOURCE EMAIL ID: 211120338101
+DESTINATION EMAIL: Touchmath | Automated | TouchMath Grades 3-5 Sample Page
+DESTINATION EMAIL ID: 222582479702
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:01.047Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 8 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 497). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Urban Collaborative Invite 2026
+SOURCE EMAIL ID: 211120460435
+DESTINATION EMAIL: Touchmath | EM1: Urban Collaborative Invite 2026
+DESTINATION EMAIL ID: 222584969351
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:07.322Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: TouchMath Grades 3-5 Sample Page (Customer List)
+SOURCE EMAIL ID: 210998963841
+DESTINATION EMAIL: Touchmath | EM2: TouchMath Grades 3-5 Sample Page (Customer List)
+DESTINATION EMAIL ID: 222584929325
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:13.726Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: webversion | custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 414, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: TouchMath Grades 3-5 Sample Page (Active Database)
+SOURCE EMAIL ID: 210998679476
+DESTINATION EMAIL: Touchmath | EM2: TouchMath Grades 3-5 Sample Page (Active Database)
+DESTINATION EMAIL ID: 222582479708
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:20.024Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 414, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TouchMath Grades 3-5 Webinar (Active Database)
+SOURCE EMAIL ID: 210280446367
+DESTINATION EMAIL: Touchmath | EM1: TouchMath Grades 3-5 Webinar (Active Database)
+DESTINATION EMAIL ID: 222584974774
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:26.345Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TouchMath Grades 3-5 Webinar (Customer List)
+SOURCE EMAIL ID: 210276406415
+DESTINATION EMAIL: Touchmath | EM1: TouchMath Grades 3-5 Webinar (Customer List)
+DESTINATION EMAIL ID: 222584945193
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:32.607Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 36 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 041326
+SOURCE EMAIL ID: 210836704355
+DESTINATION EMAIL: Touchmath | Monday Must Know - 041326
+DESTINATION EMAIL ID: 222584929328
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:38.938Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 28 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 04.06.26
+SOURCE EMAIL ID: 210397618574
+DESTINATION EMAIL: Touchmath | Monday Must Know - 04.06.26
+DESTINATION EMAIL ID: 222584969354
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:44.448Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 8 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 463). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: TouchMath Announcement 4.3.26
+SOURCE EMAIL ID: 210468109718
+DESTINATION EMAIL: Touchmath | TouchMath Announcement 4.3.26
+DESTINATION EMAIL ID: 222582479711
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:50.688Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 34 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 03.30.26
+SOURCE EMAIL ID: 210067901803
+DESTINATION EMAIL: Touchmath | Monday Must Know - 03.30.26
+DESTINATION EMAIL ID: 222584974777
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:41:57.537Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 431, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM6: Extend 2026
+SOURCE EMAIL ID: 208327000096
+DESTINATION EMAIL: Touchmath | EM6: Extend 2026
+DESTINATION EMAIL ID: 222584945196
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:04.937Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: to | custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 433, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM5: Dyscalculia
+SOURCE EMAIL ID: 209662922872
+DESTINATION EMAIL: Touchmath | EM5: Dyscalculia
+DESTINATION EMAIL ID: 222584974850
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:11.880Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 42 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 03.23.26
+SOURCE EMAIL ID: 209663069754
+DESTINATION EMAIL: Touchmath | Monday Must Know - 03.23.26
+DESTINATION EMAIL ID: 222584974853
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:17.373Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 431). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM5: Extend 2026 (test)
+SOURCE EMAIL ID: 209526574617
+DESTINATION EMAIL: Touchmath | EM5: Extend 2026 (test)
+DESTINATION EMAIL ID: 222584945199
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:23.866Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 431, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM5: Extend 2026
+SOURCE EMAIL ID: 208327443545
+DESTINATION EMAIL: Touchmath | EM5: Extend 2026
+DESTINATION EMAIL ID: 222584929334
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:30.057Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Unopens EM1: TM Announcement (Active)" (id 581) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 452). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: TM Announcement (Active List)
+SOURCE EMAIL ID: 209462809477
+DESTINATION EMAIL: Touchmath | EM2: TM Announcement (Active List)
+DESTINATION EMAIL ID: 222584974856
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:35.836Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Unopens EM1: TM Announcement (Customers)" (id 580) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 1 legacy contactLists reference(s) (source ids: 451). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: TM Announcement (Customers)
+SOURCE EMAIL ID: 209480810063
+DESTINATION EMAIL: Touchmath | EM2: TM Announcement (Customers)
+DESTINATION EMAIL ID: 222584974859
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:42.416Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 46 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 03.16.26
+SOURCE EMAIL ID: 209190634549
+DESTINATION EMAIL: Touchmath | Monday Must Know - 03.16.26
+DESTINATION EMAIL ID: 222584974862
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:49.849Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: to | custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 433, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM4: Dyscalculia
+SOURCE EMAIL ID: 208841625979
+DESTINATION EMAIL: Touchmath | EM4: Dyscalculia
+DESTINATION EMAIL ID: 222584945202
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:42:57.134Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: to | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 431, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TM Announcement (Active List)
+SOURCE EMAIL ID: 208716781649
+DESTINATION EMAIL: Touchmath | EM1: TM Announcement (Active List)
+DESTINATION EMAIL ID: 222584974865
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:03.879Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: field mismatch: to | custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":1367093, "module_id":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 431, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: TM Announcement (Customer List)
+SOURCE EMAIL ID: 209101450929
+DESTINATION EMAIL: Touchmath | EM1: TM Announcement (Customer List)
+DESTINATION EMAIL ID: 222584974868
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:10.359Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 431, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM4: Extend 2026
+SOURCE EMAIL ID: 208327423496
+DESTINATION EMAIL: Touchmath | EM4: Extend 2026
+DESTINATION EMAIL ID: 222584974871
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:16.718Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 42 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 03.09.26
+SOURCE EMAIL ID: 208716381809
+DESTINATION EMAIL: Touchmath | Monday Must Know - 03.09.26
+DESTINATION EMAIL ID: 222584974874
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:24.040Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 3 legacy contactLists reference(s) (source ids: 414, 433, 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: Dyscalculia
+SOURCE EMAIL ID: 208583698770
+DESTINATION EMAIL: Touchmath | EM3: Dyscalculia
+DESTINATION EMAIL ID: 222584929340
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:30.219Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 434). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1A: Dyscalculia (Webinar follow-up)
+SOURCE EMAIL ID: 208580144196
+DESTINATION EMAIL: Touchmath | EM1A: Dyscalculia (Webinar follow-up)
+DESTINATION EMAIL ID: 222584974877
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:36.563Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 431, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM3: Extend 2026
+SOURCE EMAIL ID: 208326869908
+DESTINATION EMAIL: Touchmath | EM3: Extend 2026
+DESTINATION EMAIL ID: 222584945205
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:43.128Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 45 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 03.02.26
+SOURCE EMAIL ID: 208184740464
+DESTINATION EMAIL: Touchmath | Monday Must Know - 03.02.26
+DESTINATION EMAIL ID: 222584929343
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:49.279Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 414, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: Dyscalculia
+SOURCE EMAIL ID: 208327378330
+DESTINATION EMAIL: Touchmath | EM2: Dyscalculia
+DESTINATION EMAIL ID: 222584929346
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:43:55.633Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Active List (Contacts who have opened emails or submitted forms)" (id 531) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 414, 433). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Dyscalculia
+SOURCE EMAIL ID: 208327327009
+DESTINATION EMAIL: Touchmath | EM1: Dyscalculia
+DESTINATION EMAIL ID: 222584974880
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:01.321Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 12 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 431). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM2: Extend 2026
+SOURCE EMAIL ID: 206649578625
+DESTINATION EMAIL: Touchmath | EM2: Extend 2026
+DESTINATION EMAIL ID: 222584929349
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:08.042Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 40 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 2.23.26
+SOURCE EMAIL ID: 208049669966
+DESTINATION EMAIL: Touchmath | Monday Must Know - 2.23.26
+DESTINATION EMAIL ID: 222584945208
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:14.735Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 10 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 431). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: EM1: Extend 2026
+SOURCE EMAIL ID: 206402267805
+DESTINATION EMAIL: Touchmath | EM1: Extend 2026
+DESTINATION EMAIL ID: 222584929352
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:21.761Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 32 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 2.16.26
+SOURCE EMAIL ID: 207540025873
+DESTINATION EMAIL: Touchmath | Monday Must Know - 2.16.26
+DESTINATION EMAIL ID: 222584929355
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:28.727Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 30 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 2.9.26
+SOURCE EMAIL ID: 207043111012
+DESTINATION EMAIL: Touchmath | Monday Must Know - 2.9.26
+DESTINATION EMAIL ID: 222584974883
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:35.049Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 34 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 2 legacy contactLists reference(s) (source ids: 179, 416). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 2.2.26
+SOURCE EMAIL ID: 206408459082
+DESTINATION EMAIL: Touchmath | Monday Must Know - 2.2.26
+DESTINATION EMAIL ID: 222584974886
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:41.256Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Texas Special Ed Titles 0126" (id 528) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Black List Communications" (id 117) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 412, 89). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending. | contact: Dropped 2 individually-addressed source contact id(s); the same ids identify different contacts in the destination portal. Re-add the intended recipients manually if this email targeted specific contacts.
+SOURCE EMAIL: Texas - TCASE 2026 - Email 3
+SOURCE EMAIL ID: 204391548525
+DESTINATION EMAIL: Touchmath | Texas - TCASE 2026 - Email 3
+DESTINATION EMAIL ID: 222584969357
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:46.849Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 30 reference(s) that look like a "custom_module" dependency (sample: "module_id":1155639, "module_id":2869621, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Dropped 1 legacy contactLists reference(s) (source ids: 179). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.
+SOURCE EMAIL: Monday Must Know - 1.26.26
+SOURCE EMAIL ID: 205683641146
+DESTINATION EMAIL: Touchmath | Monday Must Know - 1.26.26
+DESTINATION EMAIL ID: 222584969360
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:53.295Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Texas Special Ed Titles 0126" (id 528) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Black List Communications" (id 117) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 412, 89). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending. | contact: Dropped 2 individually-addressed source contact id(s); the same ids identify different contacts in the destination portal. Re-add the intended recipients manually if this email targeted specific contacts.
+SOURCE EMAIL: Texas - TCASE 2026 - Email 2
+SOURCE EMAIL ID: 204391548453
+DESTINATION EMAIL: Touchmath | Texas - TCASE 2026 - Email 2
+DESTINATION EMAIL ID: 222584945211
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---
+2026-09-23T09:44:59.783Z
+WHAT FAILED: Marketing email migrated with unresolved issues (PARTIAL)
+WHY IT FAILED: custom_module: Detected 14 reference(s) that look like a "custom_module" dependency (sample: "module_id":2869621, "module_id":2794854, "module_id":1367093). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal. | list: Source list "Texas Special Ed Titles 0126" (id 528) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Source list "Black List Communications" (id 117) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically. | list: Dropped 2 legacy contactLists reference(s) (source ids: 412, 89). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending. | contact: Dropped 2 individually-addressed source contact id(s); the same ids identify different contacts in the destination portal. Re-add the intended recipients manually if this email targeted specific contacts.
+SOURCE EMAIL: Texas - TCASE 2026 - Email 1
+SOURCE EMAIL ID: 204391547153
+DESTINATION EMAIL: Touchmath | Texas - TCASE 2026 - Email 1
+DESTINATION EMAIL ID: 222584945214
+WHAT WAS ATTEMPTED: UPDATED the destination email via /marketing/v3/emails, then re-fetched and compared field-by-field.
+WHAT NEEDS TO BE DONE MANUALLY: Review the listed field mismatches / dependency issues above (and in marketing-email-field-comparison.json), fix manually in the destination portal or via the mapping files, then rerun — this will UPDATE the same destination email, not duplicate it.
+CAN RERUN AFTER FIXING: YES
+---

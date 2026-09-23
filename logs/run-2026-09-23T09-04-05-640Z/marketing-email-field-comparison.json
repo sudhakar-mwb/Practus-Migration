@@ -1,0 +1,388 @@
+[
+  {
+    "sourceEmailId": "221905573744",
+    "destinationEmailId": "222579132290",
+    "sourceName": "EM4: Indiana Tier-2 FY26",
+    "destinationName": "Touchmath | EM4: Indiana Tier-2 FY26",
+    "status": "PARTIAL",
+    "action": "CREATED",
+    "fields": {
+      "name": {
+        "source": "Touchmath | EM4: Indiana Tier-2 FY26",
+        "destination": "Touchmath | EM4: Indiana Tier-2 FY26",
+        "match": true
+      },
+      "subject": {
+        "source": "Explore resources built for Indiana intervention goals",
+        "destination": "Explore resources built for Indiana intervention goals",
+        "match": true
+      },
+      "from": {
+        "source": {
+          "customReplyTo": "customerservice@touchmath.com",
+          "fromName": "TouchMath",
+          "replyTo": "hello@touchmath.com"
+        },
+        "destination": {
+          "customReplyTo": "customerservice@touchmath.com",
+          "fromName": "TouchMath",
+          "replyTo": "hello@touchmath.com"
+        },
+        "match": true
+      },
+      "language": {
+        "source": "en",
+        "destination": "en",
+        "match": true
+      },
+      "type": {
+        "source": "LOCALTIME_EMAIL",
+        "destination": "LOCALTIME_EMAIL",
+        "match": true
+      },
+      "subcategory": {
+        "source": "localtime",
+        "destination": "localtime",
+        "match": true
+      },
+      "emailTemplateMode": {
+        "source": "DRAG_AND_DROP",
+        "destination": "DRAG_AND_DROP",
+        "match": true
+      },
+      "isTransactional": {
+        "source": false,
+        "destination": false,
+        "match": true
+      },
+      "folderIdV2": {
+        "match": true
+      },
+      "to": {
+        "source": {
+          "contactIlsLists": {
+            "include": [],
+            "exclude": []
+          },
+          "contactIds": {
+            "include": [],
+            "exclude": []
+          },
+          "suppressGraymail": true
+        },
+        "destination": {
+          "contactIlsLists": {
+            "exclude": [],
+            "include": []
+          },
+          "contactIds": {
+            "exclude": [],
+            "include": []
+          },
+          "suppressGraymail": true
+        },
+        "match": true
+      },
+      "webversion": {
+        "source": {
+          "domain": "hello.touchmath.com",
+          "enabled": true,
+          "isPageRedirected": false,
+          "slug": "explore-resources-built-for-indiana-intervention-goals"
+        },
+        "destination": {
+          "domain": "hello.touchmath.com",
+          "enabled": true,
+          "isPageRedirected": false,
+          "slug": "explore-resources-built-for-indiana-intervention-goals"
+        },
+        "match": true
+      },
+      "content": {
+        "sourceHash": "e7c6ed5d14c57301280a7ab6a10fdc7f1465bd6688a1896e2036ea7d07276238",
+        "destinationHash": "e7c6ed5d14c57301280a7ab6a10fdc7f1465bd6688a1896e2036ea7d07276238",
+        "match": true
+      }
+    },
+    "dependencies": [
+      {
+        "kind": "file",
+        "sourceUrl": "https://46378923.fs1.hubspotusercontent-na1.net/hubfs/46378923/Indiana%20-%20StateCampaign%20-%20EMB%20-%20TM%20-%201200%20x%20627%20-EM4.png",
+        "status": "error",
+        "reason": "[files-dest] POST /files/v3/files/import-from-url/async responded with 400"
+      },
+      {
+        "kind": "custom_module",
+        "status": "MANUAL_REVIEW",
+        "reason": "Detected 12 reference(s) that look like a \"custom_module\" dependency (sample: \"module_id\":2869621, \"module_id\":1367093, \"module_id\":1155639). This script does not auto-migrate CTAs, HubDB data, custom modules, or embedded forms — there is no verified, documented HubSpot API for reliably recreating these cross-portal from a marketing-email-specific script. Recreate/verify manually in the destination portal."
+      },
+      {
+        "kind": "list",
+        "sourceId": "875",
+        "status": "unmigratable_dynamic",
+        "sourceListName": "Opens of 3: Indiana Tier 2 FY26",
+        "reason": "Source list \"Opens of 3: Indiana Tier 2 FY26\" (id 875) is a DYNAMIC/active list (processingType=DYNAMIC). Its filter criteria reference source-portal-specific property values/ids and cannot be safely reproduced automatically."
+      },
+      {
+        "kind": "list",
+        "status": "MANUAL_REVIEW",
+        "reason": "Dropped 1 legacy contactLists reference(s) (source ids: 669). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending."
+      }
+    ],
+    "fieldAudit": [
+      {
+        "field": "activeDomain",
+        "sourceValue": "hello.touchmath.com",
+        "classification": "DIRECT"
+      },
+      {
+        "field": "allEmailCampaignIds",
+        "sourceValue": [
+          "439434025",
+          "439433788",
+          "439434063"
+        ],
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "archived",
+        "sourceValue": false,
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "businessUnitId",
+        "sourceValue": "0",
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "campaign",
+        "sourceValue": "ef5449af-1591-48e0-89f6-51eb00ed4647",
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "campaignName",
+        "sourceValue": "State-Indiana-FY26",
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "campaignUtm",
+        "sourceValue": "52202635-State-Indiana-FY26",
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "clonedFrom",
+        "sourceValue": "221126949701",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "content",
+        "classification": "DIRECT_WITH_UNRESOLVED_REFERENCES",
+        "unresolvedReferenceCount": 2
+      },
+      {
+        "field": "createdAt",
+        "sourceValue": "2026-09-14T21:39:14.839Z",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "createdById",
+        "sourceValue": "89103420",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "emailCampaignGroupId",
+        "sourceValue": "439192676",
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "emailTemplateMode",
+        "sourceValue": "DRAG_AND_DROP",
+        "classification": "DIRECT"
+      },
+      {
+        "field": "from",
+        "sourceValue": {
+          "customReplyTo": "customerservice@touchmath.com",
+          "fromName": "TouchMath",
+          "replyTo": "hello@touchmath.com"
+        },
+        "classification": "DIRECT"
+      },
+      {
+        "field": "id",
+        "sourceValue": "221905573744",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "isAb",
+        "sourceValue": false,
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "isPublished",
+        "sourceValue": true,
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "isTransactional",
+        "sourceValue": false,
+        "classification": "DIRECT"
+      },
+      {
+        "field": "jitterSendTime",
+        "sourceValue": true,
+        "classification": "DIRECT"
+      },
+      {
+        "field": "language",
+        "sourceValue": "en",
+        "classification": "DIRECT"
+      },
+      {
+        "field": "name",
+        "sourceValue": "EM4: Indiana Tier-2 FY26",
+        "destinationValue": "Touchmath | EM4: Indiana Tier-2 FY26",
+        "classification": "DIRECT_WITH_PREFIX"
+      },
+      {
+        "field": "previewKey",
+        "sourceValue": "IrpKwlbF",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "primaryEmailCampaignId",
+        "sourceValue": "439192676",
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "publishDate",
+        "sourceValue": "2026-09-17T11:00:14Z",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "publishedAt",
+        "sourceValue": "2026-09-15T21:13:39.618Z",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "publishedByEmail",
+        "sourceValue": "kjohnson@95percentgroup.com",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "publishedById",
+        "sourceValue": "89103420",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "publishedByName",
+        "sourceValue": "Kyler Johnson",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "sendOnPublish",
+        "sourceValue": false,
+        "classification": "SAFETY_OVERRIDE",
+        "note": "Never sent — this script never sends or publishes destination emails."
+      },
+      {
+        "field": "state",
+        "sourceValue": "PUBLISHED",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "subcategory",
+        "sourceValue": "localtime",
+        "classification": "DIRECT"
+      },
+      {
+        "field": "subject",
+        "sourceValue": "Explore resources built for Indiana intervention goals",
+        "classification": "DIRECT"
+      },
+      {
+        "field": "subscriptionDetails",
+        "sourceValue": {
+          "officeLocationId": "169971512200",
+          "subscriptionId": "364496651",
+          "subscriptionName": "Marketing Information"
+        },
+        "classification": "PORTAL_SPECIFIC_DROPPED",
+        "note": "Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record."
+      },
+      {
+        "field": "to",
+        "sourceValue": {
+          "contactIds": {
+            "exclude": [],
+            "include": []
+          },
+          "contactIlsLists": {
+            "exclude": [],
+            "include": [
+              "875"
+            ]
+          },
+          "contactLists": {
+            "exclude": [],
+            "include": [
+              "669"
+            ]
+          },
+          "suppressGraymail": true
+        },
+        "destinationValue": {
+          "suppressGraymail": true,
+          "contactIlsLists": {
+            "include": [],
+            "exclude": []
+          },
+          "contactLists": {
+            "include": [],
+            "exclude": []
+          },
+          "contactIds": {
+            "include": [],
+            "exclude": []
+          }
+        },
+        "classification": "DEPENDENCY_PARTIAL"
+      },
+      {
+        "field": "type",
+        "sourceValue": "LOCALTIME_EMAIL",
+        "classification": "DIRECT"
+      },
+      {
+        "field": "updatedAt",
+        "sourceValue": "2026-09-17T14:04:59.054Z",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "updatedById",
+        "sourceValue": "89103420",
+        "classification": "READ_ONLY"
+      },
+      {
+        "field": "webversion",
+        "sourceValue": {
+          "domain": "hello.touchmath.com",
+          "enabled": true,
+          "isPageRedirected": false,
+          "slug": "explore-resources-built-for-indiana-intervention-goals",
+          "url": "https://hello.touchmath.com/explore-resources-built-for-indiana-intervention-goals"
+        },
+        "classification": "DIRECT"
+      }
+    ],
+    "missingFields": [],
+    "unsupportedFields": []
+  }
+]

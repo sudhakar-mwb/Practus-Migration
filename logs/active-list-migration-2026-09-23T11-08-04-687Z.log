@@ -1,0 +1,574 @@
+[2026-09-23 16:38:04] [INFO] Starting Active List migration
+[2026-09-23 16:38:04] [INFO] Configuration
+  DRY_RUN: true
+  ALLOW_LOSSY: false
+  Prefix: Touchmath | 
+  Requested lists: 19
+  Max retries: 5
+  Log file: /home/sudhakarpanday_1536/Desktop/Migration/Practus/Practus-Migration/logs/active-list-migration-2026-09-23T11-08-04-687Z.log
+[2026-09-23 16:38:04] [INFO] Loaded form id map
+  entries: 3
+[2026-09-23 16:38:05] [INFO] Enumerated source lists
+  count: 209
+[2026-09-23 16:38:12] [INFO] Enumerated destination lists
+  count: 1339
+[2026-09-23 16:38:13] [INFO] Loaded destination properties for pre-flight checks
+  count: 573
+[2026-09-23 16:38:38] [INFO] Form references pre-flight
+  referenced: 3
+  resolvableInDestination: 6
+  unresolved: none
+[2026-09-23 16:38:38] [INFO] Fetching list configuration...
+  Name: In US with State Information
+  ID: 532
+[2026-09-23 16:38:39] [SUCCESS] Source list configuration retrieved
+  ID: 532
+  Type: DYNAMIC
+[2026-09-23 16:38:39] [INFO] Fetching list configuration...
+  Name: FOC Webinar Registrants 5.19.26
+  ID: 751
+[2026-09-23 16:38:40] [SUCCESS] Source list configuration retrieved
+  ID: 751
+  Type: DYNAMIC
+[2026-09-23 16:38:40] [INFO] Fetching list configuration...
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live
+  ID: 682
+[2026-09-23 16:38:41] [SUCCESS] Source list configuration retrieved
+  ID: 682
+  Type: DYNAMIC
+[2026-09-23 16:38:41] [INFO] Fetching list configuration...
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead
+  ID: 683
+[2026-09-23 16:38:42] [SUCCESS] Source list configuration retrieved
+  ID: 683
+  Type: DYNAMIC
+[2026-09-23 16:38:42] [INFO] Fetching list configuration...
+  Name: Webinar | TouchMath 3-5 | 5.7.26 - Handraisers
+  ID: 672
+[2026-09-23 16:38:43] [SUCCESS] Source list configuration retrieved
+  ID: 672
+  Type: DYNAMIC
+[2026-09-23 16:38:43] [INFO] Fetching list configuration...
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser
+  ID: 684
+[2026-09-23 16:38:44] [SUCCESS] Source list configuration retrieved
+  ID: 684
+  Type: DYNAMIC
+[2026-09-23 16:38:44] [INFO] Fetching list configuration...
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead
+  ID: 685
+[2026-09-23 16:38:45] [SUCCESS] Source list configuration retrieved
+  ID: 685
+  Type: DYNAMIC
+[2026-09-23 16:38:45] [INFO] Fetching list configuration...
+  Name: Webinar | TouchMath 3-5 | 95PG Database Registrants
+  ID: 681
+[2026-09-23 16:38:46] [SUCCESS] Source list configuration retrieved
+  ID: 681
+  Type: MANUAL
+[2026-09-23 16:38:46] [INFO] Fetching list configuration...
+  Name: Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads
+  ID: 678
+[2026-09-23 16:38:47] [SUCCESS] Source list configuration retrieved
+  ID: 678
+  Type: DYNAMIC
+[2026-09-23 16:38:47] [INFO] Fetching list configuration...
+  Name: Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees
+  ID: 666
+[2026-09-23 16:38:48] [SUCCESS] Source list configuration retrieved
+  ID: 666
+  Type: DYNAMIC
+[2026-09-23 16:38:48] [INFO] Fetching list configuration...
+  Name: Submissions | Grades 3-5 Sample
+  ID: 654
+[2026-09-23 16:38:49] [SUCCESS] Source list configuration retrieved
+  ID: 654
+  Type: DYNAMIC
+[2026-09-23 16:38:49] [INFO] Fetching list configuration...
+  Name: CON_OR_2026.04_ORRTII_CY26 - Attendee
+  ID: 648
+[2026-09-23 16:38:50] [SUCCESS] Source list configuration retrieved
+  ID: 648
+  Type: MANUAL
+[2026-09-23 16:38:50] [INFO] Fetching list configuration...
+  Name: # Downloads | Dyscalculia Toolkit
+  ID: 646
+[2026-09-23 16:38:51] [SUCCESS] Source list configuration retrieved
+  ID: 646
+  Type: DYNAMIC
+[2026-09-23 16:38:51] [INFO] Fetching list configuration...
+  Name: (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+  ID: 624
+[2026-09-23 16:38:52] [SUCCESS] Source list configuration retrieved
+  ID: 624
+  Type: DYNAMIC
+[2026-09-23 16:38:52] [INFO] Fetching list configuration...
+  Name: Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+  ID: 623
+[2026-09-23 16:38:53] [SUCCESS] Source list configuration retrieved
+  ID: 623
+  Type: DYNAMIC
+[2026-09-23 16:38:53] [INFO] Fetching list configuration...
+  Name: Submissions | Dyscalculia Toolkit
+  ID: 566
+[2026-09-23 16:38:55] [SUCCESS] Source list configuration retrieved
+  ID: 566
+  Type: DYNAMIC
+[2026-09-23 16:38:55] [INFO] Fetching list configuration...
+  Name: EdWeek Registrants 3.3.26 - Bridging the Math Gap
+  ID: 559
+[2026-09-23 16:38:56] [SUCCESS] Source list configuration retrieved
+  ID: 559
+  Type: MANUAL
+[2026-09-23 16:38:56] [INFO] Fetching list configuration...
+  Name: TouchMath Customer List 2.24.26
+  ID: 557
+[2026-09-23 16:38:57] [SUCCESS] Source list configuration retrieved
+  ID: 557
+  Type: MANUAL
+[2026-09-23 16:38:57] [INFO] Fetching list configuration...
+  Name: Active List (Contacts who have opened emails or submitted forms)
+  ID: 531
+[2026-09-23 16:38:58] [SUCCESS] Source list configuration retrieved
+  ID: 531
+  Type: DYNAMIC
+[2026-09-23 16:38:58] [INFO] Migration order resolved (IN_LIST dependencies first)
+  order: 532 -> 751 -> 681 -> 666 -> 682 -> 678 -> 683 -> 672 -> 684 -> 685 -> 654 -> 648 -> 646 -> 624 -> 623 -> 566 -> 559 -> 557 -> 531
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: In US with State Information
+  ID: 532
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 504320
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - PROPERTY state IS_KNOWN [ALL_PROPERTY]
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | In US with State Information
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | In US with State Information
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: FOC Webinar Registrants 5.19.26
+  ID: 751
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 504
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[AND/AND] 0 filter(s), 2 sub-branch(es)
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - PROPERTY email IS_EQUAL_TO (619 values) [MULTISTRING]
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (2 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | FOC Webinar Registrants 5.19.26
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | FOC Webinar Registrants 5.19.26
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | TouchMath 3-5 | 95PG Database Registrants
+  ID: 681
+  Type: MANUAL
+  ObjectType: 0-1
+  Size: 156
+[2026-09-23 16:38:58] [WARNING] Source list contains configuration that is not supported by the destination API.
+  List: Webinar | TouchMath 3-5 | 95PG Database Registrants
+  Field: membership (processingType=MANUAL)
+  Reason: A MANUAL (static) list stores an explicit set of records rather than filters. Record ids are not portable between portals, so the destination list is created EMPTY and its members must be added separately.
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | TouchMath 3-5 | 95PG Database Registrants
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | TouchMath 3-5 | 95PG Database Registrants
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees
+  ID: 666
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 310
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 1 filter(s), 1 sub-branch(es)
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (2 values) [MULTISTRING]
+    [UNIFIED_EVENTS/AND] 1 filter(s), 0 sub-branch(es)
+      - PROPERTY ue_webinar_id IS_EQUAL_TO (1 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live
+  ID: 682
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 50
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - IN_LIST listId=681 IN_LIST
+    - IN_LIST listId=666 IN_LIST
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 681 -> dry-run:681
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 666 -> dry-run:666
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads
+  ID: 678
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 138
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - PROPERTY hs_analytics_source_data_1 IS_EQUAL_TO (1 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead
+  ID: 683
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 41
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - IN_LIST listId=678 IN_LIST
+    - IN_LIST listId=666 IN_LIST
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 678 -> dry-run:678
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 666 -> dry-run:666
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | TouchMath 3-5 | 5.7.26 - Handraisers
+  ID: 672
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 132
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - PROPERTY email IS_EQUAL_TO (133 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Handraisers
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Handraisers
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser
+  ID: 684
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 20
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - IN_LIST listId=681 IN_LIST
+    - IN_LIST listId=672 IN_LIST
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 681 -> dry-run:681
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 672 -> dry-run:672
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead
+  ID: 685
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 16
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - IN_LIST listId=678 IN_LIST
+    - IN_LIST listId=672 IN_LIST
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 678 -> dry-run:678
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: IN_LIST 672 -> dry-run:672
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Submissions | Grades 3-5 Sample
+  ID: 654
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 4727
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - FORM_SUBMISSION formId=c8606d0b-bd7e-44e3-9a0c-6d3a4e718820 FILLED_OUT
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: FORM_SUBMISSION c8606d0b-bd7e-44e3-9a0c-6d3a4e718820 -> ed8b8035-4b01-48cb-be1d-4f8c1e603f58
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Submissions | Grades 3-5 Sample
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Submissions | Grades 3-5 Sample
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: CON_OR_2026.04_ORRTII_CY26 - Attendee
+  ID: 648
+  Type: MANUAL
+  ObjectType: 0-1
+  Size: 65
+[2026-09-23 16:38:58] [WARNING] Source list contains configuration that is not supported by the destination API.
+  List: CON_OR_2026.04_ORRTII_CY26 - Attendee
+  Field: membership (processingType=MANUAL)
+  Reason: A MANUAL (static) list stores an explicit set of records rather than filters. Record ids are not portable between portals, so the destination list is created EMPTY and its members must be added separately.
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | CON_OR_2026.04_ORRTII_CY26 - Attendee
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | CON_OR_2026.04_ORRTII_CY26 - Attendee
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: # Downloads | Dyscalculia Toolkit
+  ID: 646
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 1221
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - FORM_SUBMISSION formId=e53986d0-6a4e-485b-83f4-9ff40bbe28c8 FILLED_OUT
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (2 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: FORM_SUBMISSION e53986d0-6a4e-485b-83f4-9ff40bbe28c8 -> 6641aebf-3aab-4b2c-9fea-c8a86707537e
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | # Downloads | Dyscalculia Toolkit
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | # Downloads | Dyscalculia Toolkit
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+  ID: 624
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 1225
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - FORM_SUBMISSION formId=2764f15b-f4a0-47b8-a7fe-c6a50641f41b FILLED_OUT
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (2 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: FORM_SUBMISSION 2764f15b-f4a0-47b8-a7fe-c6a50641f41b -> b317f20e-3353-4a37-967a-4cdef67c3f77
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+  ID: 623
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 1225
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - FORM_SUBMISSION formId=2764f15b-f4a0-47b8-a7fe-c6a50641f41b FILLED_OUT
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (2 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: FORM_SUBMISSION 2764f15b-f4a0-47b8-a7fe-c6a50641f41b -> b317f20e-3353-4a37-967a-4cdef67c3f77
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: Submissions | Dyscalculia Toolkit
+  ID: 566
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 1221
+[2026-09-23 16:38:58] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 1 sub-branch(es)
+  [AND/AND] 2 filter(s), 0 sub-branch(es)
+    - FORM_SUBMISSION formId=e53986d0-6a4e-485b-83f4-9ff40bbe28c8 FILLED_OUT
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (2 values) [MULTISTRING]
+[2026-09-23 16:38:58] [INFO] Rewrote cross-portal reference: FORM_SUBMISSION e53986d0-6a4e-485b-83f4-9ff40bbe28c8 -> 6641aebf-3aab-4b2c-9fea-c8a86707537e
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | Submissions | Dyscalculia Toolkit
+[2026-09-23 16:38:58] [INFO] Destination list does not exist
+[2026-09-23 16:38:58] [INFO] [DRY-RUN] Would create:
+Touchmath | Submissions | Dyscalculia Toolkit
+[2026-09-23 16:38:58] [INFO] --------------------------------------------------
+[2026-09-23 16:38:58] [INFO] Source list found
+  Name: EdWeek Registrants 3.3.26 - Bridging the Math Gap
+  ID: 559
+  Type: MANUAL
+  ObjectType: 0-1
+  Size: 1536
+[2026-09-23 16:38:58] [WARNING] Source list contains configuration that is not supported by the destination API.
+  List: EdWeek Registrants 3.3.26 - Bridging the Math Gap
+  Field: membership (processingType=MANUAL)
+  Reason: A MANUAL (static) list stores an explicit set of records rather than filters. Record ids are not portable between portals, so the destination list is created EMPTY and its members must be added separately.
+[2026-09-23 16:38:58] [INFO] Checking destination list...
+  Name: Touchmath | EdWeek Registrants 3.3.26 - Bridging the Math Gap
+[2026-09-23 16:38:58] [INFO] Destination list already exists
+  ID: 5589
+  Type: MANUAL
+[2026-09-23 16:38:59] [SUCCESS] Destination list is already synchronized.
+  Name: Touchmath | EdWeek Registrants 3.3.26 - Bridging the Math Gap
+  ID: 5589
+[2026-09-23 16:38:59] [INFO] --------------------------------------------------
+[2026-09-23 16:38:59] [INFO] Source list found
+  Name: TouchMath Customer List 2.24.26
+  ID: 557
+  Type: MANUAL
+  ObjectType: 0-1
+  Size: 482
+[2026-09-23 16:38:59] [WARNING] Source list contains configuration that is not supported by the destination API.
+  List: TouchMath Customer List 2.24.26
+  Field: membership (processingType=MANUAL)
+  Reason: A MANUAL (static) list stores an explicit set of records rather than filters. Record ids are not portable between portals, so the destination list is created EMPTY and its members must be added separately.
+[2026-09-23 16:38:59] [INFO] Checking destination list...
+  Name: Touchmath | TouchMath Customer List 2.24.26
+[2026-09-23 16:38:59] [INFO] Destination list already exists
+  ID: 5591
+  Type: MANUAL
+[2026-09-23 16:39:00] [SUCCESS] Destination list is already synchronized.
+  Name: Touchmath | TouchMath Customer List 2.24.26
+  ID: 5591
+[2026-09-23 16:39:00] [INFO] --------------------------------------------------
+[2026-09-23 16:39:00] [INFO] Source list found
+  Name: Active List (Contacts who have opened emails or submitted forms)
+  ID: 531
+  Type: ACTIVE (DYNAMIC)
+  ObjectType: 0-1
+  Size: 31412
+[2026-09-23 16:39:00] [DEBUG] Filter configuration being migrated (values redacted)
+  filters: 
+[OR/OR] 0 filter(s), 2 sub-branch(es)
+  [AND/AND] 3 filter(s), 0 sub-branch(es)
+    - PROPERTY hs_email_open IS_GREATER_THAN_OR_EQUAL_TO [NUMBER]
+    - PROPERTY hs_email_last_open_date IS_BETWEEN [TIME_RANGED]
+    - PROPERTY hs_email_domain IS_NOT_EQUAL_TO (3 values) [MULTISTRING]
+  [AND/AND] 1 filter(s), 0 sub-branch(es)
+    - PROPERTY num_conversion_events IS_GREATER_THAN_OR_EQUAL_TO [NUMBER]
+[2026-09-23 16:39:00] [INFO] Checking destination list...
+  Name: Touchmath | Active List (Contacts who have opened emails or submitted forms)
+[2026-09-23 16:39:00] [INFO] Destination list does not exist
+[2026-09-23 16:39:00] [INFO] [DRY-RUN] Would create:
+Touchmath | Active List (Contacts who have opened emails or submitted forms)
+
+==================================================
+ACTIVE LIST MIGRATION SUMMARY
+==================================================
+
+Total requested: 19
+Would create: 17
+Would update: 0
+Already synchronized: 0
+Partially migrated: 2
+Failed: 0
+Source lists not found: 0
+  (these categories are exclusive and total 19 of 19)
+
+==================================================
+MIGRATION DETAILS
+==================================================
+
+DRY RUN
+- In US with State Information
+  Would: created
+  Destination Name: Touchmath | In US with State Information
+- FOC Webinar Registrants 5.19.26
+  Would: created
+  Destination Name: Touchmath | FOC Webinar Registrants 5.19.26
+- Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live
+  Would: created
+  Destination Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live
+- Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead
+  Would: created
+  Destination Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead
+- Webinar | TouchMath 3-5 | 5.7.26 - Handraisers
+  Would: created
+  Destination Name: Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Handraisers
+- Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser
+  Would: created
+  Destination Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser
+- Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead
+  Would: created
+  Destination Name: Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead
+- Webinar | TouchMath 3-5 | 95PG Database Registrants
+  Would: created
+  Destination Name: Touchmath | Webinar | TouchMath 3-5 | 95PG Database Registrants
+- Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads
+  Would: created
+  Destination Name: Touchmath | Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads
+- Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees
+  Would: created
+  Destination Name: Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees
+- Submissions | Grades 3-5 Sample
+  Would: created
+  Destination Name: Touchmath | Submissions | Grades 3-5 Sample
+- CON_OR_2026.04_ORRTII_CY26 - Attendee
+  Would: created
+  Destination Name: Touchmath | CON_OR_2026.04_ORRTII_CY26 - Attendee
+- # Downloads | Dyscalculia Toolkit
+  Would: created
+  Destination Name: Touchmath | # Downloads | Dyscalculia Toolkit
+- (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+  Would: created
+  Destination Name: Touchmath | (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+- Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+  Would: created
+  Destination Name: Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Registrants
+- Submissions | Dyscalculia Toolkit
+  Would: created
+  Destination Name: Touchmath | Submissions | Dyscalculia Toolkit
+- Active List (Contacts who have opened emails or submitted forms)
+  Would: created
+  Destination Name: Touchmath | Active List (Contacts who have opened emails or submitted forms)
+
+PARTIAL
+- EdWeek Registrants 3.3.26 - Bridging the Math Gap
+  Source ID: 559
+  Destination ID: 5589
+  Action: already_synced
+  Reason: MANUAL list: membership not migrated (destination list is empty).
+- TouchMath Customer List 2.24.26
+  Source ID: 557
+  Destination ID: 5591
+  Action: already_synced
+  Reason: MANUAL list: membership not migrated (destination list is empty).
+
+==================================================

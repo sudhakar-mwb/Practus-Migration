@@ -4,7 +4,7 @@
  * HubSpot Marketing Email Migration Script
  * =========================================
  *
- * Migrates ONLY the 99 marketing emails named in REQUESTED_EMAIL_NAMES below,
+ * Migrates ONLY the 98 marketing emails named in REQUESTED_EMAIL_NAMES below,
  * from a SOURCE HubSpot portal to a DESTINATION HubSpot portal, using the
  * current Marketing Emails v3 API (`/marketing/v3/emails` — GET list,
  * GET /{id}, POST create, PATCH /{id} update). The old `/marketing-emails/v1/`
@@ -74,6 +74,29 @@
  *   DEPENDENCY_MAP_FILE       Defaults to ./marketing-email-dependency-map.json
  *   FOLDER_MAP_FILE           Defaults to ./marketing-email-folder-map.json
  *   LOG_DIRECTORY             Defaults to ./logs
+ *   LIMIT_EMAILS              Migrate only the first N matched emails. Unset =
+ *                             all of them. For verifying a change against one
+ *                             real email before committing to the full run.
+ *
+ * LOGGING
+ * -------
+ * Each execution writes to its own directory, ./logs/run-<timestamp>/, so no
+ * previous run's logs are ever appended to or overwritten. That directory
+ * holds marketing-email-run-log.jsonl (one JSON object per line: run start,
+ * one record per email with requested name / source id / destination id /
+ * action / status / HTTP status / API response on failure, then run end),
+ * alongside the human-readable success, error, retry and manual-review logs,
+ * the source and destination snapshots, the field-by-field comparison, and
+ * the run summary.
+ *
+ * PORTAL-SPECIFIC IDS
+ * -------------------
+ * The two portals reuse the same numeric id spaces for unrelated records —
+ * source contact list 875 and destination contact list 875 are different
+ * lists. Copying an id through therefore does not fail loudly, it silently
+ * attaches the destination email to the wrong thing. Every such field is
+ * translated to a verified destination equivalent or dropped and flagged:
+ * see PORTAL_SPECIFIC_DROP_FIELDS and resolveToAudience().
  *
  * USAGE
  * -----
@@ -126,7 +149,7 @@ const ALLOW_PUBLISH = String(process.env.ALLOW_PUBLISH ?? 'false').toLowerCase()
 const CONFIG = {
   sourceToken: process.env.SOURCE_HUBSPOT_TOKEN,
   destinationToken: process.env.DESTINATION_HUBSPOT_TOKEN,
-  prefix: 'TouchMath | ',
+  prefix: 'Touchmath | ',
   dryRun: DRY_RUN,
   allowPublish: ALLOW_PUBLISH,
   migrateDependencies: String(process.env.MIGRATE_DEPENDENCIES ?? 'true').toLowerCase() !== 'false',
@@ -138,18 +161,32 @@ const CONFIG = {
   dependencyMapFile: process.env.DEPENDENCY_MAP_FILE || path.join(process.cwd(), 'marketing-email-dependency-map.json'),
   folderMapFile: process.env.FOLDER_MAP_FILE || path.join(process.cwd(), 'marketing-email-folder-map.json'),
   logDirectory: process.env.LOG_DIRECTORY || path.join(process.cwd(), 'logs'),
+  // Stop after this many emails. Unset = all of them. Used to verify a fix
+  // against one real email before committing to the full run.
+  limitEmails: Number.parseInt(process.env.LIMIT_EMAILS, 10) || null,
+  // Destination file-manager folder that imported images/files land in.
+  fileFolderPath: process.env.FILE_FOLDER_PATH || '/Touchmath Migration',
 };
 
 fs.mkdirSync(CONFIG.logDirectory, { recursive: true });
 
-const RETRY_LOG_PATH = path.join(CONFIG.logDirectory, 'marketing-email-retries.log');
-const SUCCESS_LOG_PATH = path.join(CONFIG.logDirectory, 'marketing-email-success.log');
-const ERROR_LOG_PATH = path.join(CONFIG.logDirectory, 'marketing-email-errors.log');
-const MANUAL_REVIEW_LOG_PATH = path.join(CONFIG.logDirectory, 'marketing-email-manual-review.log');
-const SOURCE_SNAPSHOT_PATH = path.join(CONFIG.logDirectory, 'source-marketing-emails-snapshot.json');
-const DESTINATION_SNAPSHOT_PATH = path.join(CONFIG.logDirectory, 'destination-marketing-emails-snapshot.json');
-const FIELD_COMPARISON_PATH = path.join(CONFIG.logDirectory, 'marketing-email-field-comparison.json');
-const SUMMARY_PATH = path.join(CONFIG.logDirectory, 'marketing-email-migration-summary.json');
+// Every execution gets its own timestamped subdirectory. Earlier runs' logs
+// are never appended to and never overwritten — each run's history stands on
+// its own and stays readable after the fact.
+const RUN_ID = new Date().toISOString().replace(/[:.]/g, '-');
+const RUN_LOG_DIR = path.join(CONFIG.logDirectory, `run-${RUN_ID}`);
+fs.mkdirSync(RUN_LOG_DIR, { recursive: true });
+
+const RETRY_LOG_PATH = path.join(RUN_LOG_DIR, 'marketing-email-retries.log');
+const SUCCESS_LOG_PATH = path.join(RUN_LOG_DIR, 'marketing-email-success.log');
+const ERROR_LOG_PATH = path.join(RUN_LOG_DIR, 'marketing-email-errors.log');
+const MANUAL_REVIEW_LOG_PATH = path.join(RUN_LOG_DIR, 'marketing-email-manual-review.log');
+const SOURCE_SNAPSHOT_PATH = path.join(RUN_LOG_DIR, 'source-marketing-emails-snapshot.json');
+const DESTINATION_SNAPSHOT_PATH = path.join(RUN_LOG_DIR, 'destination-marketing-emails-snapshot.json');
+const FIELD_COMPARISON_PATH = path.join(RUN_LOG_DIR, 'marketing-email-field-comparison.json');
+const SUMMARY_PATH = path.join(RUN_LOG_DIR, 'marketing-email-migration-summary.json');
+// One JSON object per line: the machine-readable record of this run.
+const RUN_LOG_PATH = path.join(RUN_LOG_DIR, 'marketing-email-run-log.jsonl');
 
 const MARKETING_EMAILS_PATH = '/marketing/v3/emails';
 const LISTS_PATH = '/crm/v3/lists';
@@ -281,6 +318,29 @@ const DUPLICATE_NAME_OVERRIDES = {
 const READ_ONLY_EMAIL_FIELDS = new Set([
   'id', 'createdAt', 'updatedAt', 'publishDate', 'isPublished', 'state',
   'archived', 'stats', 'portalId', 'currentlyPublished', 'abTestOriginalEmailId',
+  // Audit/publish metadata HubSpot owns. These carry SOURCE portal user ids
+  // and timestamps; the destination portal assigns its own.
+  'createdById', 'updatedById', 'publishedById', 'publishedByEmail',
+  'publishedByName', 'publishedAt', 'previewKey', 'clonedFrom', 'isAb',
+]);
+
+/**
+ * Fields whose values are ids/handles that only mean something in the SOURCE
+ * portal. The destination portal reuses the same id spaces for unrelated
+ * records, so sending these through does not error — it silently attaches the
+ * destination email to the wrong campaign/subscription. They are dropped so
+ * the destination assigns its own, and each drop is recorded in the field
+ * audit rather than happening invisibly.
+ *
+ * Verified against the destination portal before adding: omitting
+ * subscriptionDetails makes HubSpot fill in the destination's own
+ * subscription and office location, which is the correct value; sending the
+ * source's subscriptionId leaves a dangling reference.
+ */
+const PORTAL_SPECIFIC_DROP_FIELDS = new Set([
+  'campaign', 'campaignName', 'campaignUtm',
+  'allEmailCampaignIds', 'primaryEmailCampaignId', 'emailCampaignGroupId',
+  'businessUnitId', 'subscriptionDetails',
 ]);
 
 // Fields that could cause the destination email to send/publish. Never sent —
@@ -435,6 +495,16 @@ function logError({ phase, sourceEmailId, sourceEmailName, destinationEmailId, d
     '---',
   ];
   appendLine(ERROR_LOG_PATH, lines.join('\n'));
+}
+
+/**
+ * Structured, one-object-per-line record of this run. Everything needed to
+ * audit the run afterwards without re-reading the portals: what was asked
+ * for, which source record it resolved to, what was created or updated in the
+ * destination, and the HTTP status / API response behind any failure.
+ */
+function logRunEvent(record) {
+  appendLine(RUN_LOG_PATH, JSON.stringify({ timestamp: nowIso(), runId: RUN_ID, ...record }));
 }
 
 function logManualReview({ what, why, sourceEmailId, sourceEmailName, destinationEmailId, destinationEmailName, whatWasAttempted, whatNeedsToBeDone, canRerun }) {
@@ -619,37 +689,29 @@ async function createStaticList(destToken, name) {
 }
 
 /**
- * Enumerates every destination list once (used for name-based dependency
- * matching). Only follows the documented paging.next.after cursor; if the
- * response ever indicates more pages through an unrecognized shape, this
- * stops rather than guessing an undocumented pagination parameter, and the
- * caller is told coverage may be incomplete.
+ * Enumerates every destination list once, for name-based dependency matching.
+ *
+ * Uses POST /crm/v3/lists/search, which pages with offset/hasMore. Note that
+ * GET /crm/v3/lists is NOT a list-all endpoint — it answers 200 with
+ * {"lists": []}, so reading it here looks like "the destination has no lists"
+ * and silently disables name matching, which in turn makes every rerun create
+ * another copy of each static list.
  */
 async function fetchAllDestinationLists(destToken) {
   const all = [];
-  let after;
-  let possiblyIncomplete = false;
+  const pageSize = 250;
+  let offset = 0;
   try {
-    do {
-      const query = new URLSearchParams({ limit: '250' });
-      if (after) query.set('after', after);
-      const page = await hubspotRequest(destToken, 'lists-dest', 'GET', `${LISTS_PATH}?${query.toString()}`);
-      const results = (page && (page.lists || page.results)) || [];
+    for (;;) {
+      const page = await hubspotRequest(destToken, 'lists-dest', 'POST', `${LISTS_PATH}/search`, { count: pageSize, offset });
+      const results = (page && page.lists) || [];
       all.push(...results);
-      const nextAfter = page && page.paging && page.paging.next && page.paging.next.after;
-      if (nextAfter) {
-        after = nextAfter;
-      } else {
-        if (page && page.hasMore) possiblyIncomplete = true;
-        after = undefined;
-      }
-    } while (after);
+      if (!page || !page.hasMore || results.length === 0) break;
+      offset = typeof page.offset === 'number' ? page.offset : offset + results.length;
+    }
   } catch (err) {
     console.warn(`[warn] Could not enumerate destination lists (${err.message}). List-name dependency matching is disabled for this run; unmatched list references will be logged for manual review instead of guessed at.`);
     return null;
-  }
-  if (possiblyIncomplete) {
-    console.warn('[warn] Destination lists response indicated more results exist but used an unrecognized pagination shape; list coverage may be incomplete. Verify list dependency matches manually if in doubt.');
   }
   return all;
 }
@@ -674,6 +736,10 @@ async function importFileFromUrlToDestination(destToken, sourceUrl) {
   const createResp = await hubspotRequest(destToken, 'files-dest', 'POST', FILES_IMPORT_PATH, {
     url: sourceUrl,
     name: buildDependencyFileName(sourceUrl),
+    // Required by the Files API — omitting both folderPath and folderId is a
+    // 400 ("Either folderId or folderPath is required"). The folder is created
+    // on first use, which also keeps every migrated asset in one place.
+    folderPath: CONFIG.fileFolderPath,
     access: 'PUBLIC_INDEXABLE',
     duplicateValidationStrategy: 'NONE',
   });
@@ -875,6 +941,71 @@ async function resolveContactIlsLists(value, ctx) {
   return { body: undefined, allResolved: false, issues };
 }
 
+/**
+ * Translates the email's recipient block.
+ *
+ * The source `to` block addresses the SOURCE portal's audience: its ILS list
+ * ids, its legacy list ids, and its contact ids. The destination portal
+ * reuses those same numeric id spaces for entirely unrelated records —
+ * verified directly: source ILS list 875 and destination ILS list 875 are
+ * different lists, created two years apart. Copying this block through
+ * therefore does NOT fail loudly; it silently points the destination email at
+ * the wrong audience, which is the worst possible outcome for a record a
+ * human may later send.
+ *
+ * So every id here is either translated to its verified destination
+ * equivalent or dropped and flagged — never passed through untranslated.
+ *
+ *   contactIlsLists  translated via the dependency resolver (same path the
+ *                    rest of the script uses for list dependencies).
+ *   contactLists     dropped. These are the legacy mirror of contactIlsLists
+ *                    and are not addressable through the v3 Lists API (source
+ *                    list 669 returns LIST_ID_DOES_NOT_EXIST), so there is no
+ *                    verified way to translate them. HubSpot repopulates this
+ *                    field itself from contactIlsLists.
+ *   contactIds       dropped. Source contact ids do not identify the same
+ *                    people in the destination portal.
+ */
+async function resolveToAudience(value, ctx) {
+  const issues = [];
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return { body: value, allResolved: true, issues };
+  }
+
+  const body = {};
+  if (value.suppressGraymail !== undefined) body.suppressGraymail = value.suppressGraymail;
+
+  const ils = await resolveContactIlsLists(value.contactIlsLists ?? { include: [], exclude: [] }, ctx);
+  issues.push(...ils.issues);
+  const ilsBody = (ils.body && typeof ils.body === 'object' && !Array.isArray(ils.body)) ? ils.body : {};
+  body.contactIlsLists = { include: ilsBody.include || [], exclude: ilsBody.exclude || [] };
+
+  const countIds = (block) => ((block && block.include) || []).length + ((block && block.exclude) || []).length;
+
+  if (countIds(value.contactLists) > 0) {
+    issues.push({
+      kind: 'list',
+      status: 'MANUAL_REVIEW',
+      reason: `Dropped ${countIds(value.contactLists)} legacy contactLists reference(s) (source ids: ${[...((value.contactLists.include) || []), ...((value.contactLists.exclude) || [])].join(', ')}). Legacy list ids are not resolvable through the v3 Lists API, and the destination portal uses the same numeric ids for different lists. Confirm the destination email's recipient lists in the HubSpot UI before sending.`,
+    });
+  }
+  // contactLists is deliberately NOT sent, not even as an empty block.
+  // HubSpot derives it from contactIlsLists and returns it populated. Sending
+  // an explicit empty contactLists is ignored on create but WINS on update:
+  // it clears contactIlsLists too, silently emptying the audience of an email
+  // that a rerun was only supposed to refresh.
+
+  if (countIds(value.contactIds) > 0) {
+    issues.push({
+      kind: 'contact',
+      status: 'MANUAL_REVIEW',
+      reason: `Dropped ${countIds(value.contactIds)} individually-addressed source contact id(s); the same ids identify different contacts in the destination portal. Re-add the intended recipients manually if this email targeted specific contacts.`,
+    });
+  }
+
+  return { body, allResolved: ils.allResolved && issues.length === 0, issues };
+}
+
 async function resolveContentDependencies(content, ctx) {
   const issues = [];
   const fileUrls = extractFileUrls(content);
@@ -934,6 +1065,10 @@ async function buildCreatePayload(sourceEmail, ctx) {
       fieldAudit.push({ field, sourceValue: summarizeForAudit(value), classification: 'SAFETY_OVERRIDE', note: 'Never sent — this script never sends or publishes destination emails.' });
       continue;
     }
+    if (PORTAL_SPECIFIC_DROP_FIELDS.has(field)) {
+      fieldAudit.push({ field, sourceValue: summarizeForAudit(value), classification: 'PORTAL_SPECIFIC_DROPPED', note: 'Source-portal-specific id; dropped so the destination portal assigns its own rather than inheriting a reference that points at an unrelated destination record.' });
+      continue;
+    }
     if (field === 'name') {
       body.name = destinationName;
       fieldAudit.push({ field, sourceValue: value, destinationValue: destinationName, classification: 'DIRECT_WITH_PREFIX' });
@@ -950,16 +1085,23 @@ async function buildCreatePayload(sourceEmail, ctx) {
       }
       continue;
     }
-    if (field === 'contactIlsLists') {
+    // The recipient block. Note this is `to`, not a top-level
+    // `contactIlsLists` — the v3 API nests the audience inside `to`, and
+    // handling it at the wrong level lets untranslated source list ids reach
+    // the destination email.
+    if (field === 'to') {
       if (!CONFIG.migrateDependencies) {
+        // Still must not pass source list ids through; send an empty audience
+        // and flag it rather than copying the block verbatim.
+        body.to = { contactIlsLists: { include: [], exclude: [] }, suppressGraymail: value && value.suppressGraymail };
         fieldAudit.push({ field, sourceValue: summarizeForAudit(value), classification: 'DEPENDENCY_SKIPPED', reason: 'MIGRATE_DEPENDENCIES=false' });
-        dependencyIssues.push({ kind: 'list', status: 'MANUAL_REVIEW', reason: 'Dependency migration is disabled (MIGRATE_DEPENDENCIES=false); list references were not resolved or sent.' });
+        dependencyIssues.push({ kind: 'list', status: 'MANUAL_REVIEW', reason: 'Dependency migration is disabled (MIGRATE_DEPENDENCIES=false); the destination email was created with an empty recipient audience. Set its lists manually before sending.' });
         continue;
       }
-      const resolvedLists = await resolveContactIlsLists(value, ctx);
-      if (resolvedLists.body !== undefined) body.contactIlsLists = resolvedLists.body;
-      fieldAudit.push({ field, sourceValue: summarizeForAudit(value), destinationValue: summarizeForAudit(resolvedLists.body), classification: resolvedLists.allResolved ? 'DEPENDENCY_MAPPED' : 'DEPENDENCY_PARTIAL' });
-      dependencyIssues.push(...resolvedLists.issues);
+      const resolvedTo = await resolveToAudience(value, ctx);
+      if (resolvedTo.body !== undefined) body.to = resolvedTo.body;
+      fieldAudit.push({ field, sourceValue: summarizeForAudit(value), destinationValue: summarizeForAudit(resolvedTo.body), classification: resolvedTo.allResolved ? 'DEPENDENCY_MAPPED' : 'DEPENDENCY_PARTIAL' });
+      dependencyIssues.push(...resolvedTo.issues);
       continue;
     }
     if (field === 'content') {
@@ -996,15 +1138,65 @@ function validateMigration(builtBody, destEmail) {
 
   compare('name', builtBody.name, destEmail.name);
   compare('subject', builtBody.subject, destEmail.subject);
-  compare('fromName', builtBody.fromName, destEmail.fromName);
-  compare('replyTo', builtBody.replyTo, destEmail.replyTo);
-  compare('webversion', builtBody.webversion, destEmail.webversion);
+  // `from` (fromName / replyTo / customReplyTo) and the recipient block are
+  // nested objects on the v3 API, not top-level fields.
+  compare('from', builtBody.from, destEmail.from);
   compare('language', builtBody.language, destEmail.language);
-  compare('campaign', builtBody.campaign, destEmail.campaign);
+  compare('type', builtBody.type, destEmail.type);
+  compare('subcategory', builtBody.subcategory, destEmail.subcategory);
+  compare('emailTemplateMode', builtBody.emailTemplateMode, destEmail.emailTemplateMode);
+  compare('isTransactional', builtBody.isTransactional, destEmail.isTransactional);
   compare('folderIdV2', builtBody.folderIdV2, destEmail.folderIdV2);
 
-  const sourceHash = sha256Hex(builtBody.content || {});
-  const destHash = sha256Hex(destEmail.content || {});
+  // HubSpot echoes the recipient block back with `contactLists` repopulated
+  // from `contactIlsLists`, so compare the parts this script actually sets.
+  // List ids also come back as strings whichever way they were sent, so
+  // compare them as strings — otherwise every email with a list reports a
+  // mismatch between the 5585 sent and the "5585" returned.
+  // List ids come back as strings whichever way they were sent, and in
+  // HubSpot's own order, so compare them as a sorted set of strings.
+  // Otherwise 5585 vs "5585", or ["5589","5585"] vs ["5585","5589"], reports
+  // as a mismatch on an email whose audience is exactly right.
+  const ids = (block) => ({
+    include: (((block || {}).include) || []).map(String).sort(),
+    exclude: (((block || {}).exclude) || []).map(String).sort(),
+  });
+  const audience = (block) => ({
+    contactIlsLists: ids(block && block.contactIlsLists),
+    contactIds: ids(block && block.contactIds),
+    suppressGraymail: block ? block.suppressGraymail : undefined,
+  });
+  compare('to', audience(builtBody.to), audience(destEmail.to));
+
+  // `webversion.url` is derived by HubSpot from the domain and slug and is
+  // not echoed back on create; comparing it would fail every single email.
+  const webversion = (wv) => {
+    if (!wv || typeof wv !== 'object') return wv;
+    const { url, ...rest } = wv;
+    return rest;
+  };
+  compare('webversion', webversion(builtBody.webversion), webversion(destEmail.webversion));
+
+  // HubSpot fills every unset style property in the returned content with an
+  // explicit null (borderTop, marginBottom, ...), which changes the hash
+  // without changing the email. Dropping null-valued keys from BOTH sides
+  // normalizes that away while still catching a real loss: a value present in
+  // the source and null in the destination survives on the source side only,
+  // so it still reports a mismatch.
+  const dropNulls = (value) => {
+    if (Array.isArray(value)) return value.map(dropNulls);
+    if (value && typeof value === 'object') {
+      const out = {};
+      for (const key of Object.keys(value)) {
+        if (value[key] === null) continue;
+        out[key] = dropNulls(value[key]);
+      }
+      return out;
+    }
+    return value;
+  };
+  const sourceHash = sha256Hex(dropNulls(builtBody.content || {}));
+  const destHash = sha256Hex(dropNulls(destEmail.content || {}));
   fields.content = { sourceHash, destinationHash: destHash, match: sourceHash === destHash };
   if (sourceHash !== destHash) mismatches.push('content');
 
@@ -1026,6 +1218,7 @@ async function migrateEmail(sourceSummary, ctx) {
     fullSource = await getMarketingEmailById(ctx.sourceToken, 'source', sourceId, meta);
   } catch (err) {
     logError({ phase: 'SOURCE_FETCH', sourceEmailId: sourceId, sourceEmailName: requestedName, method: 'GET', endpoint: `${MARKETING_EMAILS_PATH}/${sourceId}`, httpStatusCode: err.status, apiResponse: err.body, errorMessage: err.message, stack: err.stack });
+    logRunEvent({ event: 'email', requestedEmailName: requestedName, sourceEmailId: sourceId, destinationEmailId: null, action: 'NONE', status: 'FAILED', phase: 'SOURCE_FETCH', httpStatus: err.status ?? null, apiResponse: summarizeForAudit(err.body), error: err.message, durationMs: Date.now() - startedAt });
     return { status: 'FAILED', sourceEmailId: sourceId, sourceEmailName: requestedName, action: 'NONE' };
   }
   ctx.sourceSnapshots[sourceId] = fullSource;
@@ -1060,6 +1253,7 @@ async function migrateEmail(sourceSummary, ctx) {
         whatNeedsToBeDone: `Manually decide which destination email id corresponds to this source email, then add "${sourceId}": {"destinationEmailId": "<the correct id>", ...} to ${CONFIG.mappingFile} (or delete the extra destination email(s)).`,
         canRerun: true,
       });
+      logRunEvent({ event: 'email', requestedEmailName: requestedName, sourceEmailId: sourceId, destinationEmailId: null, action: 'NONE', status: 'SKIPPED', reason: `Ambiguous destination match: ${byName.length} destination emails named "${expectedDestinationName}" (ids ${byName.map((e) => e.id).join(', ')}). Skipped to avoid creating a duplicate.`, durationMs: Date.now() - startedAt });
       return { status: 'MANUAL_REVIEW_REQUIRED', sourceEmailId: sourceId, sourceEmailName: requestedName, action: 'NONE' };
     }
   }
@@ -1073,6 +1267,7 @@ async function migrateEmail(sourceSummary, ctx) {
     console.log(`\n[DRY RUN]\nSOURCE:\n${sourceId} - ${requestedName}\n\nACTION:\n${action}\n\nDESTINATION NAME:\n${destinationName}` +
       (dependencyIssues.length ? `\n\nDEPENDENCY NOTES:\n${dependencyIssues.map((i) => `  - [${i.kind}] ${i.reason}`).join('\n')}` : ''));
     logSuccess({ sourceEmailId: sourceId, sourceEmailName: requestedName, destinationEmailId: existingDestEmail ? existingDestEmail.id : null, destinationEmailName: destinationName, action: `DRY_RUN_${action}`, status: 'DRY_RUN', durationMs: Date.now() - startedAt, validation: 'N/A' });
+    logRunEvent({ event: 'email', requestedEmailName: requestedName, sourceEmailId: sourceId, destinationEmailId: existingDestEmail ? String(existingDestEmail.id) : null, destinationEmailName: destinationName, action: `DRY_RUN_${action}`, status: 'DRY_RUN', dependencies: dependencyIssues, durationMs: Date.now() - startedAt });
     return { status: 'DRY_RUN', sourceEmailId: sourceId, sourceEmailName: requestedName, action: `DRY_RUN_${action}` };
   }
 
@@ -1095,6 +1290,7 @@ async function migrateEmail(sourceSummary, ctx) {
       method: action === 'UPDATED' ? 'PATCH' : 'POST', endpoint: MARKETING_EMAILS_PATH,
       httpStatusCode: err.status, apiResponse: err.body, errorMessage: err.message, requestPayload: body, stack: err.stack,
     });
+    logRunEvent({ event: 'email', requestedEmailName: requestedName, sourceEmailId: sourceId, destinationEmailId: existingDestEmail ? String(existingDestEmail.id) : null, destinationEmailName: destinationName, action: 'NONE', status: 'FAILED', phase: action === 'UPDATED' ? 'UPDATE' : 'CREATE', method: action === 'UPDATED' ? 'PATCH' : 'POST', endpoint: MARKETING_EMAILS_PATH, httpStatus: err.status ?? null, apiResponse: summarizeForAudit(err.body), error: err.message, durationMs: Date.now() - startedAt });
     console.error(`[error] Failed to ${action === 'UPDATED' ? 'update' : 'create'} "${requestedName}" (source ${sourceId}): ${err.message}`);
     return { status: 'FAILED', sourceEmailId: sourceId, sourceEmailName: requestedName, action: 'NONE' };
   }
@@ -1125,6 +1321,7 @@ async function migrateEmail(sourceSummary, ctx) {
     logError({ phase: 'VALIDATION', sourceEmailId: sourceId, sourceEmailName: requestedName, destinationEmailId: destinationId, errorMessage: `Could not re-fetch destination email for validation: ${err.message}`, httpStatusCode: err.status, apiResponse: err.body });
     ctx.mappingState.emails[sourceId].status = 'FAILED_VALIDATION_FETCH';
     saveMigrationMap(ctx.mappingState);
+    logRunEvent({ event: 'email', requestedEmailName: requestedName, sourceEmailId: sourceId, destinationEmailId: destinationId, destinationEmailName: destinationName, action, status: 'FAILED', phase: 'VALIDATION', httpStatus: err.status ?? null, apiResponse: summarizeForAudit(err.body), error: `Destination email was ${action.toLowerCase()} but could not be re-fetched for validation: ${err.message}`, durationMs: Date.now() - startedAt });
     return { status: 'FAILED', sourceEmailId: sourceId, sourceEmailName: requestedName, action };
   }
 
@@ -1157,6 +1354,20 @@ async function migrateEmail(sourceSummary, ctx) {
   }
 
   logSuccess({ sourceEmailId: sourceId, sourceEmailName: fullSource.name, destinationEmailId: destinationId, destinationEmailName: destFull.name, action, status: finalStatus, durationMs: Date.now() - startedAt, validation: comparison.overall });
+  logRunEvent({
+    event: 'email',
+    requestedEmailName: requestedName,
+    sourceEmailId: sourceId,
+    destinationEmailId: destinationId,
+    destinationEmailName: destFull.name,
+    action,
+    status: finalStatus,
+    validation: comparison.overall,
+    fieldMismatches: comparison.mismatches,
+    dependencies: dependencyIssues,
+    destinationState: destFull.state ?? null,
+    durationMs: Date.now() - startedAt,
+  });
   console.log(`[${finalStatus === 'FULL_SUCCESS' ? 'ok' : 'warn'}] ${action} "${requestedName}" (source ${sourceId} -> destination ${destinationId}) [${finalStatus}]`);
 
   return { status: finalStatus, sourceEmailId: sourceId, sourceEmailName: requestedName, destinationEmailId: destinationId, action };
@@ -1174,6 +1385,8 @@ async function main() {
   console.log(`ALLOW_PUBLISH: ${ALLOW_PUBLISH}${ALLOW_PUBLISH ? ' (no-op — this script never calls a publish/send endpoint; see file header)' : ''}`);
   console.log(`MIGRATE_DEPENDENCIES: ${CONFIG.migrateDependencies}`);
   console.log(`Name prefix: "${CONFIG.prefix}"`);
+  console.log(`Run log directory: ${RUN_LOG_DIR}`);
+  logRunEvent({ event: 'run_start', startedAt, dryRun: DRY_RUN, migrateDependencies: CONFIG.migrateDependencies, prefix: CONFIG.prefix, requestedCount: REQUESTED_EMAIL_NAMES.length, limitEmails: CONFIG.limitEmails ?? null });
 
   if (ALLOW_PUBLISH) {
     logManualReview({
@@ -1358,7 +1571,12 @@ async function main() {
     manualReview: duplicateNameMatches.length, dryRun: 0,
   };
 
-  for (const sourceSummary of readyMatches) {
+  const toMigrate = CONFIG.limitEmails ? readyMatches.slice(0, CONFIG.limitEmails) : readyMatches;
+  if (CONFIG.limitEmails) {
+    console.log(`[info] LIMIT_EMAILS=${CONFIG.limitEmails} — migrating only the first ${toMigrate.length} of ${readyMatches.length} matched email(s).`);
+  }
+
+  for (const sourceSummary of toMigrate) {
     let result;
     try {
       result = await migrateEmail(sourceSummary, ctx);
@@ -1404,6 +1622,7 @@ async function main() {
     results: ctx.fieldComparisons.map((c) => ({ sourceEmailId: c.sourceEmailId, sourceEmailName: c.sourceName, destinationEmailId: c.destinationEmailId, destinationEmailName: c.destinationName, action: c.action, status: c.status })),
   };
   writeJsonFileAtomic(SUMMARY_PATH, summary);
+  logRunEvent({ event: 'run_end', ...summary, results: undefined });
 
   console.log('\n========================================');
   console.log('MIGRATION SUMMARY');
@@ -1423,7 +1642,7 @@ async function main() {
   console.log(`Dependency lists reused: ${listsReused}`);
   console.log(`Dependency files imported: ${filesImported}`);
   console.log('========================================');
-  console.log(`\nLogs directory: ${CONFIG.logDirectory}`);
+  console.log(`\nThis run's logs: ${RUN_LOG_DIR}`);
   console.log(`Migration mapping: ${CONFIG.mappingFile}`);
   console.log(`Dependency map: ${CONFIG.dependencyMapFile}`);
   console.log(`Folder map (edit manually): ${CONFIG.folderMapFile}`);
