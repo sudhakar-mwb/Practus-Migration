@@ -9,7 +9,7 @@
  * migrate-campaigns.js), from a SOURCE HubSpot portal to a DESTINATION
  * HubSpot portal — then migrate-campaigns.js's asset-linking (already
  * built) will pick these up automatically on its next re-run, since it
- * matches destination assets by exact "Touchmath - <name>" name.
+ * matches destination assets by exact "Touchmath | <name>" name.
  *
  * FACTS CONFIRMED LIVE AGAINST REAL HUBSPOT PORTALS BEFORE WRITING THIS
  * SCRIPT:
@@ -98,7 +98,7 @@ const DRY_RUN = String(process.env.DRY_RUN ?? 'true').toLowerCase() !== 'false';
 const CONFIG = {
   sourceToken: process.env.SOURCE_HUBSPOT_TOKEN,
   destToken: process.env.DESTINATION_HUBSPOT_TOKEN,
-  prefix: 'Touchmath - ',
+  prefix: 'Touchmath | ',
   dryRun: DRY_RUN,
   maxRetries: Number.parseInt(process.env.MAX_RETRIES, 10) || 5,
   retryBaseDelayMs: Number.parseInt(process.env.RETRY_BASE_DELAY_MS, 10) || 1000,
