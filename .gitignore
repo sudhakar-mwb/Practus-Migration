@@ -1,0 +1,8 @@
+.env
+workflow_migration_success.json
+workflow_migration_errors.json
+workflow_id_mapping.json
+node_modules/
+association_migration_errors.json
+JSON/association_migration_errors.json
+.sf/

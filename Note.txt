@@ -1,0 +1,44 @@
+Good news — the actual "create associations in destination" step is simpler than the file list suggests. Here's the real order:
+
+Step 1 (only needed to enable Step 3's checker) — refresh the ID snapshot
+
+
+node --env-file=.env fetch-destination-record-ids.js
+
+Env: DESTINATION_HUBSPOT_TOKEN. Produces destination_record_ids.json (source ID → destination ID map, read from each destination record's tm_*_record_id property).
+
+
+
+Step 2 — the actual migration into destination (this is the one you're looking for)
+
+node --env-file=.env migrate-company-associations.js
+node --env-file=.env migrate-contact-associations.js
+node --env-file=.env migrate-deal-associations.js
+
+
+Env: SOURCE_HUBSPOT_TOKEN + DESTINATION_HUBSPOT_TOKEN (optionally DRY_RUN=true to preview first). All three share hubspot-associations-common.js and build their own live source→destination ID map internally — they do not depend on destination_record_ids.json. This is the script that actually creates associations in the destination portal. Outputs: association_migration_success.json, association_migration_errors.json, association_migration_mapping.json (shared/appended across all three).
+
+
+
+Step 3 — read-only spot-check (needs Step 1's file)
+
+node --env-file=.env check-all-company-records-associations.js
+node --env-file=.env check-all-contact-records-associations.js
+node --env-file=.env check-all-deal-records-associations.js
+
+
+Env: SOURCE_HUBSPOT_TOKEN only. Compares source associations against the Step 1 snapshot (no live destination calls). Outputs all_<type>_records_association_check.json.
+
+Step 4 — live verification against destination (needs Step 3's file)
+
+
+node --env-file=.env verify-company-associations-in-destination.js
+node --env-file=.env verify-contact-associations-in-destination.js
+node --env-file=.env verify-deal-associations-in-destination.js
+
+
+Reads Step 3's output and re-checks each association live against the destination portal. Outputs <type>_association_destination_verification.json.
+
+So: run the migrate-*-associations.js files to actually push associations into the destination portal; check-all-* and verify-* are diagnostics for confirming it worked, run after.
+
+I won't run any of these myself per your earlier instruction — you should run them and I can help interpret the output/errors.

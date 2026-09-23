@@ -1,0 +1,62 @@
+[
+  {
+    "sourceObjectType": "deals",
+    "sourceRecordId": "62128946597",
+    "associatedSourceObjectType": "companies",
+    "associatedSourceRecordId": "22505980031",
+    "destinationObjectType": "companies",
+    "destinationRecordId": "58205011218",
+    "destinationFromRecordId": "64806625675",
+    "associationType": "deals_to_companies",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 5,
+    "associationLabel": "Primary",
+    "status": "success",
+    "timestamp": "2026-09-11T11:32:22.539Z"
+  },
+  {
+    "sourceObjectType": "deals",
+    "sourceRecordId": "62128946597",
+    "associatedSourceObjectType": "companies",
+    "associatedSourceRecordId": "22505980031",
+    "destinationObjectType": "companies",
+    "destinationRecordId": "58205011218",
+    "destinationFromRecordId": "64806625675",
+    "associationType": "deals_to_companies",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 341,
+    "associationLabel": null,
+    "status": "success",
+    "timestamp": "2026-09-11T11:32:22.539Z"
+  },
+  {
+    "sourceObjectType": "companies",
+    "sourceRecordId": "22505980031",
+    "associatedSourceObjectType": "deals",
+    "associatedSourceRecordId": "62128946597",
+    "destinationObjectType": "deals",
+    "destinationRecordId": "64806625675",
+    "destinationFromRecordId": "58205011218",
+    "associationType": "companies_to_deals",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 342,
+    "associationLabel": null,
+    "status": "already_exists",
+    "timestamp": "2026-09-11T12:07:06.667Z"
+  },
+  {
+    "sourceObjectType": "companies",
+    "sourceRecordId": "22505980031",
+    "associatedSourceObjectType": "deals",
+    "associatedSourceRecordId": "62128946597",
+    "destinationObjectType": "deals",
+    "destinationRecordId": "64806625675",
+    "destinationFromRecordId": "58205011218",
+    "associationType": "companies_to_deals",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 6,
+    "associationLabel": "Deal with Primary Company",
+    "status": "already_exists",
+    "timestamp": "2026-09-11T12:07:06.667Z"
+  }
+]

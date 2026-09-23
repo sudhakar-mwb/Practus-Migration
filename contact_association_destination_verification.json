@@ -1,0 +1,1700 @@
+[
+  {
+    "sourceRecordId": "247192069271",
+    "destinationRecordId": "247246191514",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505980433",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245894832188",
+    "destinationRecordId": "247246809745",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413211217",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246315594136",
+    "destinationRecordId": "247247276044",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413381735",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245864799124",
+    "destinationRecordId": "247248059731",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506012674",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245907890797",
+    "destinationRecordId": "247248835343",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22427747199",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245853438605",
+    "destinationRecordId": "247260525991",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505981527",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245034877990",
+    "destinationRecordId": "247260525994",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505999186",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246044278831",
+    "destinationRecordId": "247261753902",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413146132",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246261183881",
+    "destinationRecordId": "247263767690",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413108257",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245110110104",
+    "destinationRecordId": "247264086806",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505789981",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "247174388347",
+    "destinationRecordId": "247265008228",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506014213",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245859308698",
+    "destinationRecordId": "247265933434",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505701183",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245826773154",
+    "destinationRecordId": "247266252941",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22504379933",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      },
+      {
+        "associatedSourceObjectType": "deals",
+        "associatedSourceRecordId": "48391405319",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 4,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244521438628",
+    "destinationRecordId": "247266864288",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "58071950501",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244504912304",
+    "destinationRecordId": "247267484581",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505855028",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245824202679",
+    "destinationRecordId": "247268421133",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505908329",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246258639199",
+    "destinationRecordId": "247269350150",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413561942",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245801370763",
+    "destinationRecordId": "247269350164",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413553418",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245854459490",
+    "destinationRecordId": "247269494456",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505734071",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244477281622",
+    "destinationRecordId": "247269806490",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505707571",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246489732748",
+    "destinationRecordId": "247270280293",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505790469",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245854740866",
+    "destinationRecordId": "247271824278",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413247887",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244563980870",
+    "destinationRecordId": "247271824280",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22504492403",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246292621452",
+    "destinationRecordId": "247272299580",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505986419",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244477135661",
+    "destinationRecordId": "247272443808",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413183312",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246129152405",
+    "destinationRecordId": "247273527191",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505908074",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244501010036",
+    "destinationRecordId": "247273527192",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505927559",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244492179092",
+    "destinationRecordId": "247274157646",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413129809",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244332015880",
+    "destinationRecordId": "247274456339",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505889580",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244503535962",
+    "destinationRecordId": "247274623363",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413087298",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246062883368",
+    "destinationRecordId": "247274769051",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413481602",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245836835174",
+    "destinationRecordId": "247274922362",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22425873504",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245430240581",
+    "destinationRecordId": "247277418304",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505860449",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246254009195",
+    "destinationRecordId": "247277574790",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506035287",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "238749578012",
+    "destinationRecordId": "247277728870",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413022811",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "247215800144",
+    "destinationRecordId": "247277885058",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506021931",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244337746478",
+    "destinationRecordId": "247278815344",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "55357529529",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245894712325",
+    "destinationRecordId": "247278968940",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505986482",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245598950312",
+    "destinationRecordId": "247278968942",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413443998",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246294518027",
+    "destinationRecordId": "247283624971",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506035287",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246041430589",
+    "destinationRecordId": "247284243771",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413175605",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244563538995",
+    "destinationRecordId": "247284243772",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22504492403",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244936348754",
+    "destinationRecordId": "247284561554",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506045528",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245890314631",
+    "destinationRecordId": "247285029251",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505879558",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244724842887",
+    "destinationRecordId": "247285029271",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413066100",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244477176992",
+    "destinationRecordId": "247285947286",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413236887",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244997741987",
+    "destinationRecordId": "247286410406",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22427544466",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244503170186",
+    "destinationRecordId": "247286410407",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413087298",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244335532383",
+    "destinationRecordId": "247286567198",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506129749",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244491607323",
+    "destinationRecordId": "247286720089",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413129809",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245614649601",
+    "destinationRecordId": "247287338303",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "55341079431",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245110864806",
+    "destinationRecordId": "247288577651",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413345608",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "244526742172",
+    "destinationRecordId": "247289041507",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413087339",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245866885553",
+    "destinationRecordId": "247289505884",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22505885860",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "245573947228",
+    "destinationRecordId": "247289970263",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22506108723",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246071293070",
+    "destinationRecordId": "247291209831",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413066418",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "246017390116",
+    "destinationRecordId": "247291209833",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "57958488089",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  },
+  {
+    "sourceRecordId": "221995165200",
+    "destinationRecordId": "249952229259",
+    "associations": [
+      {
+        "associatedSourceObjectType": "companies",
+        "associatedSourceRecordId": "22413497378",
+        "associationTypes": [
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 279,
+            "label": null,
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          },
+          {
+            "category": "HUBSPOT_DEFINED",
+            "typeId": 1,
+            "label": "Primary",
+            "fromObjectTypeId": null,
+            "toObjectTypeId": null
+          }
+        ],
+        "foundInDestination": false,
+        "destinationRecordId": null,
+        "searchError": null
+      }
+    ]
+  }
+]

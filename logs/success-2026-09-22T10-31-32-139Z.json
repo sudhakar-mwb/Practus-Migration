@@ -1,0 +1,233 @@
+[
+  {
+    "timestamp": "2026-09-22T10:31:40.070Z",
+    "campaignName": "Survey-Tier-2-Math-FY26",
+    "sourceCampaignId": "587192750092",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:41.025Z",
+    "campaignName": "State-Indiana-FY26",
+    "sourceCampaignId": "582967304084",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:42.245Z",
+    "campaignName": "Conference | CON_KS_2026.07_KASA_CY26",
+    "sourceCampaignId": "580193053503",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:43.228Z",
+    "campaignName": "BTS-2026-2027",
+    "sourceCampaignId": "577103093846",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:44.455Z",
+    "campaignName": "State | Georgia Tier 2 | FY26",
+    "sourceCampaignId": "574345653020",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:45.491Z",
+    "campaignName": "TM Funding",
+    "sourceCampaignId": "567553755059",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:46.600Z",
+    "campaignName": "NYC District 75 Info Request",
+    "sourceCampaignId": "555654470835",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:47.564Z",
+    "campaignName": "FOC_Webinar_Q2026",
+    "sourceCampaignId": "551984168815",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:48.837Z",
+    "campaignName": "TAW2026",
+    "sourceCampaignId": "551971743252",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:49.597Z",
+    "campaignName": "TouchMath K-5 Sampler 2026",
+    "sourceCampaignId": "550780337924",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:50.320Z",
+    "campaignName": "Webinar Grades 3-5 5.7.26",
+    "sourceCampaignId": "546366573876",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:51.194Z",
+    "campaignName": "Grades 3-5 Sample",
+    "sourceCampaignId": "546036371007",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:51.942Z",
+    "campaignName": "Curriculum Bridges 2026",
+    "sourceCampaignId": "540218135556",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:52.677Z",
+    "campaignName": "95 Percent Group-Announcement-FY26",
+    "sourceCampaignId": "536818796459",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:53.390Z",
+    "campaignName": "TouchMath Curriculum Bridges",
+    "sourceCampaignId": "534249528128",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:54.112Z",
+    "campaignName": "Extend - 2026",
+    "sourceCampaignId": "525797104782",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:54.984Z",
+    "campaignName": "Dyscalculia 2026",
+    "sourceCampaignId": "523367868503",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:55.716Z",
+    "campaignName": "TCASE 2026",
+    "sourceCampaignId": "517479474740",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:56.525Z",
+    "campaignName": "Grades 3-5 Launch",
+    "sourceCampaignId": "501893831485",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:57.262Z",
+    "campaignName": "Winter Fun Sheets 2025",
+    "sourceCampaignId": "501622263197",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:58.371Z",
+    "campaignName": "National Conferences",
+    "sourceCampaignId": "493872352573",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:31:59.459Z",
+    "campaignName": "Fall Catalog 2025",
+    "sourceCampaignId": "463449453842",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:00.716Z",
+    "campaignName": "Workshop - 09.23.25",
+    "sourceCampaignId": "459910587531",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:01.904Z",
+    "campaignName": "AI Purchasing Guide 2025",
+    "sourceCampaignId": "459568287382",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:02.893Z",
+    "campaignName": "Regional Conferences",
+    "sourceCampaignId": "456808836385",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:03.934Z",
+    "campaignName": "Newsletter",
+    "sourceCampaignId": "456117456731",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:04.917Z",
+    "campaignName": "MyTouchMath Fall 2025 Updates",
+    "sourceCampaignId": "445579207000",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:05.873Z",
+    "campaignName": "Heartland",
+    "sourceCampaignId": "438293527363",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:06.917Z",
+    "campaignName": "Summer Workbooks 2025",
+    "sourceCampaignId": "434404253964",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:07.886Z",
+    "campaignName": "Texas",
+    "sourceCampaignId": "431772257865",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:08.907Z",
+    "campaignName": "Florida",
+    "sourceCampaignId": "424047480728",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:10.012Z",
+    "campaignName": "Extend - 2025 Promo",
+    "sourceCampaignId": "423065433179",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  },
+  {
+    "timestamp": "2026-09-22T10:32:11.141Z",
+    "campaignName": "Website Forms - Fun Sheets Sign Up",
+    "sourceCampaignId": "359061844332",
+    "destinationCampaignId": null,
+    "action": "DRY_RUN_CREATE"
+  }
+]

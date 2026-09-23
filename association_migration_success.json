@@ -1,0 +1,62 @@
+[
+  {
+    "sourceObjectType": "companies",
+    "sourceRecordId": "22505980031",
+    "associatedSourceObjectType": "deals",
+    "associatedSourceRecordId": "62128946597",
+    "destinationObjectType": "deals",
+    "destinationRecordId": "64806625675",
+    "destinationFromRecordId": "58205011218",
+    "associationType": "companies_to_deals",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 6,
+    "associationLabel": "Deal with Primary Company",
+    "status": "already_exists",
+    "timestamp": "2026-09-16T08:12:32.728Z"
+  },
+  {
+    "sourceObjectType": "companies",
+    "sourceRecordId": "22505980031",
+    "associatedSourceObjectType": "deals",
+    "associatedSourceRecordId": "62128946597",
+    "destinationObjectType": "deals",
+    "destinationRecordId": "64806625675",
+    "destinationFromRecordId": "58205011218",
+    "associationType": "companies_to_deals",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 342,
+    "associationLabel": null,
+    "status": "already_exists",
+    "timestamp": "2026-09-16T08:12:32.728Z"
+  },
+  {
+    "sourceObjectType": "companies",
+    "sourceRecordId": "22505980031",
+    "associatedSourceObjectType": "deals",
+    "associatedSourceRecordId": "62128946597",
+    "destinationObjectType": "deals",
+    "destinationRecordId": "64806625675",
+    "destinationFromRecordId": "58205011218",
+    "associationType": "companies_to_deals",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 342,
+    "associationLabel": null,
+    "status": "dry_run",
+    "timestamp": "2026-09-22T12:34:40.479Z"
+  },
+  {
+    "sourceObjectType": "companies",
+    "sourceRecordId": "22505980031",
+    "associatedSourceObjectType": "deals",
+    "associatedSourceRecordId": "62128946597",
+    "destinationObjectType": "deals",
+    "destinationRecordId": "64806625675",
+    "destinationFromRecordId": "58205011218",
+    "associationType": "companies_to_deals",
+    "associationCategory": "HUBSPOT_DEFINED",
+    "associationTypeId": 6,
+    "associationLabel": "Deal with Primary Company",
+    "status": "dry_run",
+    "timestamp": "2026-09-22T12:34:40.479Z"
+  }
+]

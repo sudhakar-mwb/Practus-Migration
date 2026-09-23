@@ -1,0 +1,2077 @@
+[
+  {
+    "name": "Survey-Tier-2-Math-FY26",
+    "found": true,
+    "sourceCampaignId": "587192750092",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "221130963738",
+          "name": "EM1: Tier-2 Math Survey"
+        },
+        {
+          "id": "221882351519",
+          "name": "EM2: Tier-2 Math Survey"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "State-Indiana-FY26",
+    "found": true,
+    "sourceCampaignId": "582967304084",
+    "assets": {
+      "AUTOMATION_PLATFORM_FLOW": [
+        {
+          "id": "1873840723",
+          "name": "State | Indiana | FY26 - Sync to SF Campaign"
+        }
+      ],
+      "LANDING_PAGE": [
+        {
+          "id": "220499551800",
+          "name": "State | Indiana | FY26"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "222209135474",
+          "name": "EM5: Indiana Tier-2 FY26"
+        },
+        {
+          "id": "220765652141",
+          "name": "EM1: Indiana Tier-2 FY26"
+        },
+        {
+          "id": "220493676103",
+          "name": "Automated | Indiana | FY26"
+        },
+        {
+          "id": "221905573744",
+          "name": "EM4: Indiana Tier-2 FY26"
+        },
+        {
+          "id": "221617188101",
+          "name": "EM3: Indiana Tier-2 FY26"
+        },
+        {
+          "id": "221126949701",
+          "name": "EM2: Indiana Tier-2 FY26"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Conference | CON_KS_2026.07_KASA_CY26",
+    "found": true,
+    "sourceCampaignId": "580193053503",
+    "assets": {
+      "AUTOMATION_PLATFORM_FLOW": [
+        {
+          "id": "1868189285",
+          "name": "Conferences - CON_KS_2026.07_KASA_CY26 - Sync to SF"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "BTS-2026-2027",
+    "found": true,
+    "sourceCampaignId": "577103093846",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "221725071696",
+          "name": "EM2: Back to School 2026-2027"
+        },
+        {
+          "id": "218791042136",
+          "name": "EM2: Back to School 2026-2027 - Not IN Use"
+        },
+        {
+          "id": "218786186847",
+          "name": "EM1: Back to School 2026-2027"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "State | Georgia Tier 2 | FY26",
+    "found": true,
+    "sourceCampaignId": "574345653020",
+    "assets": {
+      "AUTOMATION_PLATFORM_FLOW": [
+        {
+          "id": "1858586226",
+          "name": "State | Georgia | FY26 - Sync to SF"
+        }
+      ],
+      "FORM": [
+        {
+          "id": "e012cf20-e229-41c5-8b94-d716155794a6",
+          "name": "State | TM Georgia Tier 2 | FY26"
+        }
+      ],
+      "LANDING_PAGE": [
+        {
+          "id": "218108916298",
+          "name": "State | Georgia TM K-5 | FY26"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "219408522835",
+          "name": "EM2: Georgia FY26 (TM Database)"
+        },
+        {
+          "id": "219408522877",
+          "name": "EM5: Georgia FY26 (TM Database)"
+        },
+        {
+          "id": "219414938523",
+          "name": "EM3: Georgia FY26 (TM Database)"
+        },
+        {
+          "id": "219402401574",
+          "name": "EM4: Georgia FY26 (TM Database)"
+        },
+        {
+          "id": "219414911539",
+          "name": "EM6: Georgia FY26 (TM Database)"
+        },
+        {
+          "id": "219414911508",
+          "name": "EM1: Georgia FY26 (TM Database)"
+        },
+        {
+          "id": "218134817845",
+          "name": "Automated | TM Georgia Tier 2 | FY26"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "TM Funding",
+    "found": true,
+    "sourceCampaignId": "567553755059",
+    "assets": {
+      "FORM": [
+        {
+          "id": "5ce6f7af-6674-477a-8af3-08af589fa74d",
+          "name": "Funding Alignments Guide"
+        }
+      ],
+      "LANDING_PAGE": [
+        {
+          "id": "216659404865",
+          "name": "Funding Alignment Guide"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "216742855515",
+          "name": "EM1: TM Funding Guide FY26"
+        },
+        {
+          "id": "217760152350",
+          "name": "EM2: TM Funding Guide FY26"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "NYC District 75 Info Request",
+    "found": true,
+    "sourceCampaignId": "555654470835",
+    "assets": {},
+    "crmAssociations": {}
+  },
+  {
+    "name": "FOC_Webinar_Q2026",
+    "found": true,
+    "sourceCampaignId": "551984168815",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "212243860507",
+          "name": "EM2: CASE Webinar"
+        },
+        {
+          "id": "211590870554",
+          "name": "EM1: CASE Webinar"
+        },
+        {
+          "id": "212401409335",
+          "name": "EM3: CASE Webinar"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "376665926",
+          "name": null
+        },
+        {
+          "id": "376665647",
+          "name": null
+        },
+        {
+          "id": "376665925",
+          "name": "What actually counts as SDI in math? Find out May 19! \n\nIn this session, you'll explore what Specially Designed Instruction really looks like in a math classroom—from adapting content and methodology to delivering explicit, multisensory instruction that meets students where they are. \n\nReserve your spot today:  https://hubs.ly/Q04dVM-P0\n\n#Math #TouchMath # SDI  "
+        },
+        {
+          "id": "376665942",
+          "name": null
+        },
+        {
+          "id": "376665698",
+          "name": null
+        },
+        {
+          "id": "376666153",
+          "name": "Accommodations are important—but they're not SDI. And when it comes to math instruction for students with disabilities, knowing the difference can change everything. \n\nJoin TouchMath® and our friends at CASE on May 19 at 3:30 PM ET for a practical, eye-opening webinar: \"What counts as SDI in math? Moving beyond accommodations.\" \n\nSeats are limited. Register now:  https://hubs.ly/Q04dScW70\n\n#Math #TouchMath # SDI "
+        },
+        {
+          "id": "376661114",
+          "name": "CASE and TouchMath are teaming up to tackle a critical question for math educators:\nWhat actually counts as SDI in math? There's still time to join us — but not much! \n\nOur free webinar, \"What counts as SDI in math? Moving beyond accommodations,” is happening on May 19 at 3:30 PM ET, and we'd love to have you in the room. \n\nDon't miss it. Register today: https://hubs.ly/Q04dSkdX0\n\n#Math #TouchMath # SDI "
+        },
+        {
+          "id": "376665929",
+          "name": "What actually counts as SDI in math? Find out May 19! \n\nIn this session, you'll explore what Specially Designed Instruction really looks like in a math classroom—from adapting content and methodology to delivering explicit, multisensory instruction that meets students where they are. \n\nReserve your spot today:  https://hubs.ly/Q04dSl4l0\n\n#Math #TouchMath # SDI  "
+        },
+        {
+          "id": "376666154",
+          "name": null
+        },
+        {
+          "id": "376660514",
+          "name": null
+        },
+        {
+          "id": "376665928",
+          "name": "What actually counts as SDI in math? Find out May 19! \n\nIn this session, you'll explore what Specially Designed Instruction really looks like in a math classroom—from adapting content and methodology to delivering explicit, multisensory instruction that meets students where they are. \n\nReserve your spot today:  https://us02web.zoom.us/webinar/register/WN_wsTULWFcTb2KBL6lM7g41w\n\n#Math #TouchMath # SDI  "
+        },
+        {
+          "id": "376666158",
+          "name": null
+        },
+        {
+          "id": "376661116",
+          "name": "CASE and TouchMath are teaming up to tackle a critical question for math educators:\nWhat actually counts as SDI in math? There's still time to join us — but not much! \n\nOur free webinar, \"What counts as SDI in math? Moving beyond accommodations,” is happening on May 19 at 3:30 PM ET, and we'd love to have you in the room. \n\nDon't miss it. Register today: https://us02web.zoom.us/webinar/register/WN_wsTULWFcTb2KBL6lM7g41w\n\n#Math #TouchMath # SDI "
+        },
+        {
+          "id": "376666155",
+          "name": "Accommodations are important—but they're not SDI. And when it comes to math instruction for students with disabilities, knowing the difference can change everything. \n\nJoin TouchMath® and our friends at CASE on May 19 at 3:30 PM ET for a practical, eye-opening webinar: \"What counts as SDI in math? Moving beyond accommodations.\" \n\nSeats are limited. Register now:  https://hubs.ly/Q04dS7_X0\n\n#Math #TouchMath # SDI "
+        },
+        {
+          "id": "376661115",
+          "name": "CASE and TouchMath are teaming up to tackle a critical question for math educators:\nWhat actually counts as SDI in math? There's still time to join us — but not much! \n\nOur free webinar, \"What counts as SDI in math? Moving beyond accommodations,” is happening on May 19 at 3:30 PM ET, and we'd love to have you in the room. \n\nDon't miss it. Register today: https://hubs.ly/Q04dShB50\n\n#Math #TouchMath # SDI "
+        },
+        {
+          "id": "376666157",
+          "name": "Accommodations are important—but they're not SDI. And when it comes to math instruction for students with disabilities, knowing the difference can change everything. \n\nJoin TouchMath® and our friends at CASE on May 19 at 3:30 PM ET for a practical, eye-opening webinar: \"What counts as SDI in math? Moving beyond accommodations.\" \n\nSeats are limited. Register now:  https://us02web.zoom.us/webinar/register/WN_wsTULWFcTb2KBL6lM7g41w\n\n#Math #TouchMath # SDI "
+        },
+        {
+          "id": "376665927",
+          "name": "What actually counts as SDI in math? Find out May 19! \n\nIn this session, you'll explore what Specially Designed Instruction really looks like in a math classroom—from adapting content and methodology to delivering explicit, multisensory instruction that meets students where they are. \n\nReserve your spot today:  https://hubs.ly/Q04dScWX0\n\n#Math #TouchMath # SDI  "
+        },
+        {
+          "id": "376666156",
+          "name": null
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "TAW2026",
+    "found": true,
+    "sourceCampaignId": "551971743252",
+    "assets": {
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "376656467",
+          "name": null
+        },
+        {
+          "id": "376656042",
+          "name": null
+        },
+        {
+          "id": "376658829",
+          "name": null
+        },
+        {
+          "id": "376658545",
+          "name": null
+        },
+        {
+          "id": "376656186",
+          "name": "Meeting students where they are isn’t easy, but it makes all the difference. \n\nOur TouchMath teachers do that and more—helping students master one skill at a time so they can move forward with confidence. \n\n#TouchMath #TeacherAppreciation"
+        },
+        {
+          "id": "376656045",
+          "name": "Great math instruction isn’t just a great concrete-, representational-, and abstract-method, it’s how you show up. \n\nOur TouchMath teachers put the other CRA into their teaching everyday--care, resourcefulness, and authenticity! \n\n#TeacherAppreciation #CRA #TouchMath "
+        },
+        {
+          "id": "376655916",
+          "name": "It’s not just what you teach, it’s how you teach it. \n\nOur TouchMath teachers bring a full stack of strategies to the classroom to make math click for their students. \n\n#TeacherAppreciation #TouchMath  "
+        },
+        {
+          "id": "376656464",
+          "name": "When math finally makes sense, confidence follows. \n\nThank you to our TouchMath teachers for making abstract concepts clear, concrete, and accessible for every learner. \n\n#TouchMath #TeacherAppreciation "
+        },
+        {
+          "id": "376655915",
+          "name": "It’s not just what you teach, it’s how you teach it. \n\nOur TouchMath teachers bring a full stack of strategies to the classroom to make math click for their students. \n\n#TeacherAppreciation #TouchMath  "
+        },
+        {
+          "id": "376658547",
+          "name": "Great teaching is personal, and our TouchMath teachers prove it every day.  \n\nThey take the time to truly know their students and make learning meaningful for each one. \n\n#TeacherAppreciation #PersonalizedLearning #TouchMath "
+        },
+        {
+          "id": "376656465",
+          "name": null
+        },
+        {
+          "id": "376658744",
+          "name": null
+        },
+        {
+          "id": "376656185",
+          "name": null
+        },
+        {
+          "id": "376655949",
+          "name": null
+        },
+        {
+          "id": "376656041",
+          "name": "Great math instruction isn’t just a great concrete-, representational-, and abstract-method, it’s how you show up. \n\nOur TouchMath teachers put the other CRA into their teaching everyday--care, resourcefulness, and authenticity! \n\n#TeacherAppreciation #CRA #TouchMath "
+        },
+        {
+          "id": "376656294",
+          "name": null
+        },
+        {
+          "id": "376655918",
+          "name": "It’s not just what you teach, it’s how you teach it. \n\nOur TouchMath teachers bring a full stack of strategies to the classroom to make math click for their students. \n\n#TeacherAppreciation #TouchMath  "
+        },
+        {
+          "id": "376655959",
+          "name": null
+        },
+        {
+          "id": "376658769",
+          "name": null
+        },
+        {
+          "id": "376656187",
+          "name": null
+        },
+        {
+          "id": "376659105",
+          "name": "The best teachers are always learning. \nOur TouchMath teachers turn reflection into action—and action into impact. \n\n#TouchMath #TeacherAppreciation "
+        },
+        {
+          "id": "376659101",
+          "name": null
+        },
+        {
+          "id": "376656189",
+          "name": "Meeting students where they are isn’t easy, but it makes all the difference. \n\nOur TouchMath teachers do that and more—helping students master one skill at a time so they can move forward with confidence. \n\n#TouchMath #TeacherAppreciation"
+        },
+        {
+          "id": "376656044",
+          "name": null
+        },
+        {
+          "id": "376659102",
+          "name": "The best teachers are always learning. \nOur TouchMath teachers turn reflection into action—and action into impact. \n\n#TouchMath #TeacherAppreciation "
+        },
+        {
+          "id": "376655917",
+          "name": "It’s not just what you teach, it’s how you teach it. \n\nOur TouchMath teachers bring a full stack of strategies to the classroom to make math click for their students. \n\n#TeacherAppreciation #TouchMath  "
+        },
+        {
+          "id": "376656188",
+          "name": "Meeting students where they are isn’t easy, but it makes all the difference. \n\nOur TouchMath teachers do that and more—helping students master one skill at a time so they can move forward with confidence. \n\n#TouchMath #TeacherAppreciation"
+        },
+        {
+          "id": "376656049",
+          "name": null
+        },
+        {
+          "id": "376655965",
+          "name": null
+        },
+        {
+          "id": "376658548",
+          "name": "Great teaching is personal, and our TouchMath teachers prove it every day.  \n\nThey take the time to truly know their students and make learning meaningful for each one. \n\n#TeacherAppreciation #PersonalizedLearning #TouchMath "
+        },
+        {
+          "id": "376658716",
+          "name": "Great teaching is personal, and our TouchMath teachers prove it every day.  \n\nThey take the time to truly know their students and make learning meaningful for each one. \n\n#TeacherAppreciation #PersonalizedLearning #TouchMath "
+        },
+        {
+          "id": "376659104",
+          "name": "The best teachers are always learning. \nOur TouchMath teachers turn reflection into action—and action into impact. \n\n#TouchMath #TeacherAppreciation "
+        },
+        {
+          "id": "376658546",
+          "name": "Great teaching is personal, and our TouchMath teachers prove it every day.  \n\nThey take the time to truly know their students and make learning meaningful for each one. \n\n#TeacherAppreciation #PersonalizedLearning #TouchMath "
+        },
+        {
+          "id": "376656184",
+          "name": "Meeting students where they are isn’t easy, but it makes all the difference. \n\nOur TouchMath teachers do that and more—helping students master one skill at a time so they can move forward with confidence. \n\n#TouchMath #TeacherAppreciation"
+        },
+        {
+          "id": "376659103",
+          "name": null
+        },
+        {
+          "id": "376656466",
+          "name": "When math finally makes sense, confidence follows. \n\nThank you to our TouchMath teachers for making abstract concepts clear, concrete, and accessible for every learner. \n\n#TouchMath #TeacherAppreciation "
+        },
+        {
+          "id": "377117856",
+          "name": "Great math instruction isn’t just a great concrete-, representational-, and abstract-method, it’s how you show up.\n\nOur TouchMath teachers put the other CRA into their teaching everyday--care, resourcefulness, and authenticity!\n\n#teacherappreciation #CRA #TouchMath"
+        },
+        {
+          "id": "376659100",
+          "name": "The best teachers are always learning. \nOur TouchMath teachers turn reflection into action—and action into impact. \n\n#TouchMath #TeacherAppreciation "
+        },
+        {
+          "id": "376656207",
+          "name": null
+        },
+        {
+          "id": "376656043",
+          "name": "Great math instruction isn’t just a great concrete-, representational-, and abstract-method, it’s how you show up. \n\nOur TouchMath teachers put the other CRA into their teaching everyday--care, resourcefulness, and authenticity! \n\n#TeacherAppreciation #CRA #TouchMath "
+        },
+        {
+          "id": "376656046",
+          "name": "Great math instruction isn’t just a great concrete-, representational-, and abstract-method, it’s how you show up. \n\nOur TouchMath teachers put the other CRA into their teaching everyday--care, resourcefulness, and authenticity! \n\n#TeacherAppreciation #CRA #TouchMath "
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "TouchMath K-5 Sampler 2026",
+    "found": true,
+    "sourceCampaignId": "550780337924",
+    "assets": {
+      "FORM": [
+        {
+          "id": "a373c9d0-956f-4739-91b7-f896e46260a4",
+          "name": "TouchMath K-5 Program Sampler"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "219365425165",
+          "name": "EM5: K-5 FY26 (TM Active List)"
+        },
+        {
+          "id": "218869877169",
+          "name": "EM4: K-5 FY26 (TM Active List)"
+        },
+        {
+          "id": "218623581773",
+          "name": "EM3: K-5 FY26 (TM Active List)"
+        },
+        {
+          "id": "217729998122",
+          "name": "EM1: K-5 FY26 (TM Customers)"
+        },
+        {
+          "id": "218634662505",
+          "name": "EM3: K-5 FY26 (TM Customer List)"
+        },
+        {
+          "id": "218190612006",
+          "name": "EM2: K-5 FY26 (TM Active List)"
+        },
+        {
+          "id": "211673878109",
+          "name": "Automated | TouchMath Program Sampler"
+        },
+        {
+          "id": "217657242033",
+          "name": "EM1: K-5 FY26 (TM Active List)"
+        },
+        {
+          "id": "218200040986",
+          "name": "EM2: K-5 FY26 (TM Customer List)"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "383006542",
+          "name": "Students with special learning needs often need more time, more practice, and more ways to engage, and TouchMath® delivers all three.  \n \nTouchMath curriculum and manipulatives for grades K-5 are here to support you!    \n \nGet a peek of the K-5 curriculum with our free sample.  \n \nWhy TouchMath?   \n·         Evidence-based & CASE-endorsed \n·         Concrete-Representational-Abstract (CRA) methodology \n·         Multisensory engagement \n·         Explicit, systematic instruction \n \nDownload your free sample.  https://touchmath.com/unlock-prek-5-sampler/ "
+        },
+        {
+          "id": "383006501",
+          "name": "Concrete understanding. Real confidence. Proven results. \n \nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and proficiency they deserve.  \n \nHelp your students bridge the gap between concrete understanding and abstract mastery. \n \nLearn more.  \nhttps://hubs.ly/Q04q9Zkc0 "
+        },
+        {
+          "id": "383002545",
+          "name": "More than math. It’s confidence, proficiency, and growth. \nIt’s here! TouchMath® for Grades K-5 brings hands-on, multisensory learning. \n\nLearn more.  \nhttps://touchmath.com/unlock-prek-5-sampler/ "
+        },
+        {
+          "id": "383006543",
+          "name": "Students with special learning needs often need more time, more practice, and more ways to engage, and TouchMath® delivers all three.  \n \nTouchMath curriculum and manipulatives for grades K-5 are here to support you!    \n \nGet a peek of the K-5 curriculum with our free sample.  \n \nWhy TouchMath?   \n·         Evidence-based & CASE-endorsed \n·         Concrete-Representational-Abstract (CRA) methodology \n·         Multisensory engagement \n·         Explicit, systematic instruction \n \nDownload your free sample.  https://hubs.ly/Q04q9Z8Z0 "
+        },
+        {
+          "id": "383006500",
+          "name": "Concrete understanding. Real confidence. Proven results. \n \nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and proficiency they deserve.  \n \nHelp your students bridge the gap between concrete understanding and abstract mastery. \n \nLearn more.  \nhttps://touchmath.com/unlock-prek-5-sampler/ "
+        },
+        {
+          "id": "383002546",
+          "name": "More than math. It’s confidence, proficiency, and growth. \nIt’s here! TouchMath® for Grades K-5 brings hands-on, multisensory learning. \n\nLearn more.  \nhttps://hubs.ly/Q04q9Vd70 "
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Webinar Grades 3-5 5.7.26",
+    "found": true,
+    "sourceCampaignId": "546366573876",
+    "assets": {
+      "LANDING_PAGE": [
+        {
+          "id": "212751526504",
+          "name": "On-Demand Webinar | TouchMath 3-5 | 5.7.26"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "210461853194",
+          "name": "EM5: TouchMath Grades 3-5 Webinar (Customer List) - LAST CHANCE"
+        },
+        {
+          "id": "211185004629",
+          "name": "EM3: TouchMath Grades 3-5 Webinar (Active Database)"
+        },
+        {
+          "id": "211590830682",
+          "name": "EM5: TouchMath Grades 3-5 Webinar (Active Database) - LAST CHANCE"
+        },
+        {
+          "id": "212911072142",
+          "name": "EM1: TouchMath Grades 3-5 OD Webinar (Active Database)"
+        },
+        {
+          "id": "212906503297",
+          "name": "EM1: TouchMath Grades 3-5 OD Webinar (Live Attendees)"
+        },
+        {
+          "id": "212911021204",
+          "name": "EM1: TouchMath Grades 3-5 OD Webinar (Non Live Attendees)"
+        },
+        {
+          "id": "210461739664",
+          "name": "EM3: TouchMath Grades 3-5 Webinar (Customer List)"
+        },
+        {
+          "id": "210280446367",
+          "name": "EM1: TouchMath Grades 3-5 Webinar (Active Database)"
+        },
+        {
+          "id": "210276406415",
+          "name": "EM1: TouchMath Grades 3-5 Webinar (Customer List)"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "375505759",
+          "name": null
+        },
+        {
+          "id": "375499631",
+          "name": "50 years of multisensory math success now extends to Grades 3-5! Don't miss our exclusive webinar featuring brand new manipulatives that bring fractions, measurement, and data to life for every learner.  \n\nJoin us to engage in:  \n✔️A live demo of TouchCubes™ & TouchFractions™  \n✔️Implementation strategies across special education classroom settings \n✔️An exclusive preview of new grades 3-5 content \n\nRegister now for the webinar on May 7 at 3:30 pm ET.  \nhttps://hello.touchmath.com/webinar-touchmath-grades-3-5 \n\n#TouchMath #Math "
+        },
+        {
+          "id": "375504781",
+          "name": null
+        },
+        {
+          "id": "375499635",
+          "name": null
+        },
+        {
+          "id": "375504530",
+          "name": "Meet the newest TouchMath® tools! TouchCubes™ bring geometry and measurement to life, while TouchFractions™ make fraction concepts crystal clear. These hands-on manipulatives are designed specifically for grades 3-5 students who learn best through touch and discovery.  \n\nThis session equips you with strategies for: \n✔️Building solid foundational understanding in grades 3-5  \n✔️Implementing CRA methodology using new TouchFractions™ and TouchCubes™ manipulatives \n✔️Empowering students to achieve success with grade-level curriculum \n\nSee them in action during our FREE webinar May 7th, 3:30pm ET! \nhttps://hello.touchmath.com/webinar-touchmath-grades-3-5 "
+        },
+        {
+          "id": "375499630",
+          "name": "50 years of multisensory math success now extends to Grades 3-5! Don't miss our exclusive webinar featuring brand new manipulatives that bring fractions, measurement, and data to life for every learner.  \n\nJoin us to engage in:  \n✔️A live demo of TouchCubes™ & TouchFractions™  \n✔️Implementation strategies across special education classroom settings \n✔️An exclusive preview of new grades 3-5 content \n\nRegister now for the webinar on May 7 at 3:30 pm ET.  \nhttps://hubs.ly/Q04bCK8M0 \n\n#TouchMath #Math "
+        },
+        {
+          "id": "375499636",
+          "name": null
+        },
+        {
+          "id": "375504736",
+          "name": "When students can see, touch, and manipulate math concepts, comprehension soars! Join us May 7th to explore TouchCubes™ and TouchFractions™ - designed specifically for upper elementary learners who need concrete understanding.  \n\nWe’ll explore: \n✔️Strengthening foundational understanding in grades 3-5  \n✔️Leveraging CRA methodology with TouchFractions™ and TouchCubes™  \n✔️Bridging the gap between student needs and grade-level curriculum expectations \n✔️Q&A with math special education experts \n\nFree webinar registration, May 7 at 3:30 pm ET: https://hello.touchmath.com/webinar-touchmath-grades-3-5\n\n#Math #TouchMath "
+        },
+        {
+          "id": "375504531",
+          "name": "Meet the newest TouchMath® tools! TouchCubes™ bring geometry and measurement to life, while TouchFractions™ make fraction concepts crystal clear. These hands-on manipulatives are designed specifically for grades 3-5 students who learn best through touch and discovery.  \n\nThis session equips you with strategies for: \n✔️Building solid foundational understanding in grades 3-5  \n✔️Implementing CRA methodology using new TouchFractions™ and TouchCubes™ manipulatives \n✔️Empowering students to achieve success with grade-level curriculum \n\nSee them in action during our FREE webinar May 7th, 3:30pm ET! \nhttps://hubs.ly/Q04bJLDP0 "
+        },
+        {
+          "id": "375504528",
+          "name": "Meet the newest TouchMath® tools! TouchCubes™ bring geometry and measurement to life, while TouchFractions™ make fraction concepts crystal clear. These hands-on manipulatives are designed specifically for grades 3-5 students who learn best through touch and discovery.  \n\nThis session equips you with strategies for: \n✔️Building solid foundational understanding in grades 3-5  \n✔️Implementing CRA methodology using new TouchFractions™ and TouchCubes™ manipulatives \n✔️Empowering students to achieve success with grade-level curriculum \n\nSee them in action during our FREE webinar May 7th, 3:30pm ET! \nhttps://hubs.ly/Q04bJtlx0 "
+        },
+        {
+          "id": "375504661",
+          "name": null
+        },
+        {
+          "id": "375504780",
+          "name": null
+        },
+        {
+          "id": "375499629",
+          "name": "50 years of multisensory math success now extends to Grades 3-5! Don't miss our exclusive webinar featuring brand new manipulatives that bring fractions, measurement, and data to life for every learner.  \n\nJoin us to engage in:  \n✔️A live demo of TouchCubes™ & TouchFractions™  \n✔️Implementation strategies across special education classroom settings \n✔️An exclusive preview of new grades 3-5 content \n\nRegister now for the webinar on May 7 at 3:30 pm ET.  \nhttps://hubs.ly/Q04bJsH90 \n\n#TouchMath #Math "
+        },
+        {
+          "id": "375504735",
+          "name": "When students can see, touch, and manipulate math concepts, comprehension soars! Join us May 7th to explore TouchCubes™ and TouchFractions™ - designed specifically for upper elementary learners who need concrete understanding.  \n\nWe’ll explore: \n✔️Strengthening foundational understanding in grades 3-5  \n✔️Leveraging CRA methodology with TouchFractions™ and TouchCubes™  \n✔️Bridging the gap between student needs and grade-level curriculum expectations \n✔️Q&A with math special education experts \n\nFree webinar registration, May 7 at 3:30 pm ET: https://hubs.ly/Q04bJtlM0\n\n#Math #TouchMath "
+        },
+        {
+          "id": "375504734",
+          "name": "When students can see, touch, and manipulate math concepts, comprehension soars! Join us May 7th to explore TouchCubes™ and TouchFractions™ - designed specifically for upper elementary learners who need concrete understanding.  \n\nWe’ll explore: \n✔️Strengthening foundational understanding in grades 3-5  \n✔️Leveraging CRA methodology with TouchFractions™ and TouchCubes™  \n✔️Bridging the gap between student needs and grade-level curriculum expectations \n✔️Q&A with math special education experts \n\nFree webinar registration, May 7 at 3:30 pm ET: https://hubs.ly/Q04bLn9C0\n\n#Math #TouchMath "
+        },
+        {
+          "id": "375504529",
+          "name": "Meet the newest TouchMath® tools! TouchCubes™ bring geometry and measurement to life, while TouchFractions™ make fraction concepts crystal clear. These hands-on manipulatives are designed specifically for grades 3-5 students who learn best through touch and discovery.  \n\nThis session equips you with strategies for: \n✔️Building solid foundational understanding in grades 3-5  \n✔️Implementing CRA methodology using new TouchFractions™ and TouchCubes™ manipulatives \n✔️Empowering students to achieve success with grade-level curriculum \n\nSee them in action during our FREE webinar May 7th, 3:30pm ET! \nhttps://hubs.ly/Q04bCLkN0 "
+        },
+        {
+          "id": "375499637",
+          "name": null
+        },
+        {
+          "id": "375499632",
+          "name": "50 years of multisensory math success now extends to Grades 3-5! Don't miss our exclusive webinar featuring brand new manipulatives that bring fractions, measurement, and data to life for every learner.  \n\nJoin us to engage in:  \n✔️A live demo of TouchCubes™ & TouchFractions™  \n✔️Implementation strategies across special education classroom settings \n✔️An exclusive preview of new grades 3-5 content \n\nRegister now for the webinar on May 7 at 3:30 pm ET.  \nhttps://hubs.ly/Q04bCHbk0 \n\n#TouchMath #Math "
+        },
+        {
+          "id": "375504662",
+          "name": null
+        },
+        {
+          "id": "375504663",
+          "name": null
+        },
+        {
+          "id": "375504737",
+          "name": "When students can see, touch, and manipulate math concepts, comprehension soars! Join us May 7th to explore TouchCubes™ and TouchFractions™ - designed specifically for upper elementary learners who need concrete understanding.  \n\nWe’ll explore: \n✔️Strengthening foundational understanding in grades 3-5  \n✔️Leveraging CRA methodology with TouchFractions™ and TouchCubes™  \n✔️Bridging the gap between student needs and grade-level curriculum expectations \n✔️Q&A with math special education experts \n\nFree webinar registration, May 7 at 3:30 pm ET: https://hubs.ly/Q04bLw6L0\n\n#Math #TouchMath "
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Grades 3-5 Sample",
+    "found": true,
+    "sourceCampaignId": "546036371007",
+    "assets": {
+      "FORM": [
+        {
+          "id": "c8606d0b-bd7e-44e3-9a0c-6d3a4e718820",
+          "name": "TouchMath Grades 3-5 Sampler"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "211120338101",
+          "name": "Automated | TouchMath Grades 3-5 Sample Page"
+        },
+        {
+          "id": "210461739055",
+          "name": "EM4: TouchMath Grades 3-5 Sample Page (Customer List)"
+        },
+        {
+          "id": "211194161450",
+          "name": "EM4: TouchMath Grades 3-5 Sample Page (Active Database)"
+        },
+        {
+          "id": "210998963841",
+          "name": "EM2: TouchMath Grades 3-5 Sample Page (Customer List)"
+        },
+        {
+          "id": "210998679476",
+          "name": "EM2: TouchMath Grades 3-5 Sample Page (Active Database)"
+        },
+        {
+          "id": "210461739698",
+          "name": "EM6: TouchMath Grades 3-5 Sample Page (Customer List)"
+        },
+        {
+          "id": "211880971943",
+          "name": "EM6: TouchMath Grades 3-5 Sample Page (Active Database)"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "375501485",
+          "name": null
+        },
+        {
+          "id": "375506518",
+          "name": "Meet the newest members of the TouchMath® family: TouchCubes™ and TouchFractions™! These hands-on tools, included with our new curriculum for grades 3-5, make measurement and fractions come alive for students who learn best through doing.   \n\nConcrete understanding. Real confidence. Proven results. \n\nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and mastery they deserve.  \n\n Help your students bridge the gap between concrete understanding and abstract mastery. \n\n Learn more. https://touchmath.com/grades-3-4-5-expansion/ "
+        },
+        {
+          "id": "375501484",
+          "name": null
+        },
+        {
+          "id": "375505939",
+          "name": "More than math. It’s confidence, mastery, and growth. \n\nIt’s here! TouchMath® for Grades 3-5 brings hands-on, multisensory learning to upper elementary math. Includes two new manipulatives, TouchCubes™ and TouchFractions™, to deepen comprehension.   \n\nLearn more. https://hubs.ly/Q04bMct90 "
+        },
+        {
+          "id": "375505938",
+          "name": "More than math. It’s confidence, mastery, and growth. \n\nIt’s here! TouchMath® for Grades 3-5 brings hands-on, multisensory learning to upper elementary math. Includes two new manipulatives, TouchCubes™ and TouchFractions™, to deepen comprehension.   \n\nLearn more. https://hubs.ly/Q04bMGrp0 "
+        },
+        {
+          "id": "375505941",
+          "name": "More than math. It’s confidence, mastery, and growth. \n\nIt’s here! TouchMath® for Grades 3-5 brings hands-on, multisensory learning to upper elementary math. Includes two new manipulatives, TouchCubes™ and TouchFractions™, to deepen comprehension.   \n\nLearn more. https://hubs.ly/Q04bLkfs0 "
+        },
+        {
+          "id": "375506517",
+          "name": "Meet the newest members of the TouchMath® family: TouchCubes™ and TouchFractions™! These hands-on tools, included with our new curriculum for grades 3-5, make measurement and fractions come alive for students who learn best through doing.   \n\nConcrete understanding. Real confidence. Proven results. \n\nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and mastery they deserve.  \n\n Help your students bridge the gap between concrete understanding and abstract mastery. \n\n Learn more. https://hubs.ly/Q04bGp4c0 "
+        },
+        {
+          "id": "375517024",
+          "name": "Students with special learning needs often need more time, more practice, and more ways to engage, and TouchMath® delivers all three.  \n\nTouchMath curriculum and manipulatives for grades 3, 4, and 5 are now available!   \n\nGet a peek at the new activities for grades 3-5 with our free sample.  \n\nWhy TouchMath?   \n✔️Evidence-based & CASE-endorsed \n✔️Concrete-Representational-Abstract (CRA) methodology \n✔️Multisensory engagement \n✔️Explicit, systematic instruction \n\nDownload your free sample. https://touchmath.com/grades-3-4-5-expansion/ "
+        },
+        {
+          "id": "375506547",
+          "name": null
+        },
+        {
+          "id": "375506519",
+          "name": "Meet the newest members of the TouchMath® family: TouchCubes™ and TouchFractions™! These hands-on tools, included with our new curriculum for grades 3-5, make measurement and fractions come alive for students who learn best through doing.   \n\nConcrete understanding. Real confidence. Proven results. \n\nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and mastery they deserve.  \n\n Help your students bridge the gap between concrete understanding and abstract mastery. \n\n Learn more. https://hubs.ly/Q04bLcwV0 "
+        },
+        {
+          "id": "375506432",
+          "name": null
+        },
+        {
+          "id": "375506360",
+          "name": null
+        },
+        {
+          "id": "375506546",
+          "name": null
+        },
+        {
+          "id": "375506545",
+          "name": null
+        },
+        {
+          "id": "375505940",
+          "name": "More than math. It’s confidence, mastery, and growth. \n\nIt’s here! TouchMath® for Grades 3-5 brings hands-on, multisensory learning to upper elementary math. Includes two new manipulatives, TouchCubes™ and TouchFractions™, to deepen comprehension.   \n\nLearn more. https://touchmath.com/grades-3-4-5-expansion/ "
+        },
+        {
+          "id": "375501483",
+          "name": null
+        },
+        {
+          "id": "375517022",
+          "name": "Students with special learning needs often need more time, more practice, and more ways to engage, and TouchMath® delivers all three.  \n\nTouchMath curriculum and manipulatives for grades 3, 4, and 5 are now available!   \n\nGet a peek at the new activities for grades 3-5 with our free sample.  \n\nWhy TouchMath?   \n✔️Evidence-based & CASE-endorsed \n✔️Concrete-Representational-Abstract (CRA) methodology \n✔️Multisensory engagement \n✔️Explicit, systematic instruction \n\nDownload your free sample. https://hubs.ly/Q04bGXjd0 "
+        },
+        {
+          "id": "375506361",
+          "name": null
+        },
+        {
+          "id": "375506516",
+          "name": "Meet the newest members of the TouchMath® family: TouchCubes™ and TouchFractions™! These hands-on tools, included with our new curriculum for grades 3-5, make measurement and fractions come alive for students who learn best through doing.   \n\nConcrete understanding. Real confidence. Proven results. \n\nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and mastery they deserve.  \n\n Help your students bridge the gap between concrete understanding and abstract mastery. \n\n Learn more. https://hubs.ly/Q04bM9HL0 "
+        },
+        {
+          "id": "375517023",
+          "name": "Students with special learning needs often need more time, more practice, and more ways to engage, and TouchMath® delivers all three.  \n\nTouchMath curriculum and manipulatives for grades 3, 4, and 5 are now available!   \n\nGet a peek at the new activities for grades 3-5 with our free sample.  \n\nWhy TouchMath?   \n✔️Evidence-based & CASE-endorsed \n✔️Concrete-Representational-Abstract (CRA) methodology \n✔️Multisensory engagement \n✔️Explicit, systematic instruction \n\nDownload your free sample. https://hubs.ly/Q04bGCdZ0 "
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Curriculum Bridges 2026",
+    "found": true,
+    "sourceCampaignId": "540218135556",
+    "assets": {
+      "FORM": [
+        {
+          "id": "8d0b8935-3f43-4446-9e65-dc9a12944e99",
+          "name": "Curriculum Bridges - HMH Go Math "
+        },
+        {
+          "id": "557714f7-d116-4cbb-b710-b791eae5082c",
+          "name": "Curriculum Bridges - TeachTown enCore Math "
+        },
+        {
+          "id": "2ec21166-bac0-40f9-9e8f-0b3536e1d7b5",
+          "name": "Curriculum Bridges - Bluebonnet Math "
+        },
+        {
+          "id": "a2e6d788-08c0-44b1-86eb-b1176e5f1ee3",
+          "name": "Curriculum Bridges - Paradigm by SwunMath"
+        },
+        {
+          "id": "7844efc9-7724-4494-94b4-bc8601429e10",
+          "name": "Curriculum Bridges - Into Math "
+        },
+        {
+          "id": "49af30b1-05cb-4a1a-a05e-b084eeb25896",
+          "name": "Curriculum Bridges - Amplify Desmos "
+        },
+        {
+          "id": "74b71a8b-245a-47de-8c9f-5eac32e00a97",
+          "name": "Curriculum Bridges - Everway ULS Math  "
+        },
+        {
+          "id": "e17cb664-4b94-4606-9904-88110789fddf",
+          "name": "Curriculum Bridges - Illustrative Math "
+        },
+        {
+          "id": "fe19315e-45c2-4cd1-b3fa-be8863ef01f3",
+          "name": "Curriculum Bridges - SwunMath"
+        },
+        {
+          "id": "3e25e9aa-25b6-4f5e-b66c-69f3e6332839",
+          "name": "Curriculum Bridges - iReady Math "
+        },
+        {
+          "id": "52bd2ac5-78d2-4290-8742-b9f0508bc6d9",
+          "name": "Curriculum Bridges - HMH Math in Focus"
+        },
+        {
+          "id": "bedd291f-1dac-4ed6-840e-d0cd8f4c407f",
+          "name": "Curriculum Bridges - Bridges Mathematics "
+        },
+        {
+          "id": "064e2524-7d48-4fad-936e-4ed5392547b4",
+          "name": "Curriculum Bridges - Reveal Math "
+        },
+        {
+          "id": "991d4592-a233-4609-9be7-9c864cc0540b",
+          "name": "Curriculum Bridges - Eureka Math² "
+        },
+        {
+          "id": "6b7c84e7-5103-4d5b-bbfc-e34ace4b6937",
+          "name": "Curriculum Bridges - Envision Math "
+        },
+        {
+          "id": "bd835d1c-68e1-4986-8be2-4c9b3603ee5c",
+          "name": "Curriculum Bridges - StemScopes Math"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "95 Percent Group-Announcement-FY26",
+    "found": true,
+    "sourceCampaignId": "536818796459",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "209480810063",
+          "name": "EM2: TM Announcement (Customers)"
+        },
+        {
+          "id": "208716781649",
+          "name": "EM1: TM Announcement (Active List)"
+        },
+        {
+          "id": "209101450929",
+          "name": "EM1: TM Announcement (Customer List)"
+        },
+        {
+          "id": "209462809477",
+          "name": "EM2: TM Announcement (Active List)"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "372726674",
+          "name": "We have exciting news! \n\nTouchMath® is joining 95 Percent Group™, an educational publishing and technology company with a 20-year legacy of empowering educators with the high-quality, evidence-based resources they need to unlock the power of literacy for every child.\n\nWhat does this mean? One amazing destination for proven foundational skills in both literacy AND math!\n\nLearn more: https://hubs.ly/Q046lY9T0 \n"
+        },
+        {
+          "id": "372726675",
+          "name": "We have exciting news! \n\nTouchMath® is joining 95 Percent Group™, an educational publishing and technology company with a 20-year legacy of empowering educators with the high-quality, evidence-based resources they need to unlock the power of literacy for every child.\n\nWhat does this mean? One amazing destination for proven foundational skills in both literacy AND math!\n\n\n"
+        },
+        {
+          "id": "372726676",
+          "name": "We have exciting news! \n\nTouchMath® is joining 95 Percent Group™, an educational publishing and technology company with a 20-year legacy of empowering educators with the high-quality, evidence-based resources they need to unlock the power of literacy for every child.\n\nWhat does this mean? One amazing destination for proven foundational skills in both literacy AND math!\n\nLearn more: https://hubs.ly/Q046lX6l0 \n"
+        },
+        {
+          "id": "372758138",
+          "name": "We have exciting news! \n\nTouchMath® is joining 95 Percent Group™, an educational publishing and technology company with a 20-year legacy of empowering educators with the high-quality, evidence-based resources they need to unlock the power of literacy for every child.\n\nWhat does this mean? One amazing destination for proven foundational skills in both literacy AND math!\n\nLearn more: https://hubs.ly/Q046qlWR0 \n"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "TouchMath Curriculum Bridges",
+    "found": true,
+    "sourceCampaignId": "534249528128",
+    "assets": {
+      "FILE_MANAGER_FILE": [
+        {
+          "id": "208257341520",
+          "name": "/TouchMath Curriculum Bridges/TouchMath HMH Math in Focus K-5 Instructional Bridge.pdf"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Extend - 2026",
+    "found": true,
+    "sourceCampaignId": "525797104782",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "208327443545",
+          "name": "EM5: Extend 2026"
+        },
+        {
+          "id": "206649578625",
+          "name": "EM2: Extend 2026"
+        },
+        {
+          "id": "208326869908",
+          "name": "EM3: Extend 2026"
+        },
+        {
+          "id": "206402267805",
+          "name": "EM1: Extend 2026"
+        },
+        {
+          "id": "208327423496",
+          "name": "EM4: Extend 2026"
+        },
+        {
+          "id": "209526574617",
+          "name": "EM5: Extend 2026 (test)"
+        },
+        {
+          "id": "208327000096",
+          "name": "EM6: Extend 2026"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "368004632",
+          "name": "New staff. Rotating teams. Limited prep time. \n\nTouchMath Extend is designed to be easy for everyone. Step-by-step lessons and on-demand video modeling make it simple to jump right in, even for educators new to math instruction. \n\nTouchMath Extend is: \n\n✅ Structured & easy to follow \n\n✅ Engaging & hands-on \n\n✅ Perfect for all learning styles \n\nGive your students the gift of “Fun in the Sum” and keep their skills sharp! \n\n"
+        },
+        {
+          "id": "368003909",
+          "name": "ESY goes by fast, so every math minute matters. \n\nTouchMath Extend is a ready-to-teach, six-week math program built specifically for extended school year and summer learning. Everything is included so teachers can focus on instruction, not prep. \n\n✅ Engaging, hands-on activities \n\n✅ Prevents summer learning loss \n\n✅ Easy for teachers, fun for students! \n\nKeep math momentum going all year long. \n\n👉 Order now: https://hubs.ly/Q041nnht0 "
+        },
+        {
+          "id": "368003908",
+          "name": "ESY goes by fast, so every math minute matters. \n\nTouchMath Extend is a ready-to-teach, six-week math program built specifically for extended school year and summer learning. Everything is included so teachers can focus on instruction, not prep. \n\n✅ Engaging, hands-on activities \n\n✅ Prevents summer learning loss \n\n✅ Easy for teachers, fun for students! \n\nKeep math momentum going all year long. "
+        },
+        {
+          "id": "368004633",
+          "name": "New staff. Rotating teams. Limited prep time. \n\nTouchMath Extend is designed to be easy for everyone. Step-by-step lessons and on-demand video modeling make it simple to jump right in, even for educators new to math instruction. \n\nTouchMath Extend is: \n\n✅ Structured & easy to follow \n\n✅ Engaging & hands-on \n\n✅ Perfect for all learning styles \n\nGive your students the gift of “Fun in the Sum” and keep their skills sharp! \n\n👉 Order now: https://hubs.ly/Q041nv2x0"
+        },
+        {
+          "id": "368004631",
+          "name": "New staff. Rotating teams. Limited prep time. \n\nTouchMath Extend is designed to be easy for everyone. Step-by-step lessons and on-demand video modeling make it simple to jump right in, even for educators new to math instruction. \n\nTouchMath Extend is: \n\n✅ Structured & easy to follow \n\n✅ Engaging & hands-on \n\n✅ Perfect for all learning styles \n\nGive your students the gift of “Fun in the Sum” and keep their skills sharp! \n\n👉 Order now: https://hubs.ly/Q041nxDV0"
+        },
+        {
+          "id": "368003907",
+          "name": "ESY goes by fast, so every math minute matters. \n\nTouchMath Extend is a ready-to-teach, six-week math program built specifically for extended school year and summer learning. Everything is included so teachers can focus on instruction, not prep. \n\n✅ Engaging, hands-on activities \n\n✅ Prevents summer learning loss \n\n✅ Easy for teachers, fun for students! \n\nKeep math momentum going all year long. \n\n👉 Order now: https://hubs.ly/Q041nv1P0 "
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Dyscalculia 2026",
+    "found": true,
+    "sourceCampaignId": "523367868503",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "216747939428",
+          "name": "EM2: Dyscalculia (Phase 2)"
+        },
+        {
+          "id": "208327378330",
+          "name": "EM2: Dyscalculia"
+        },
+        {
+          "id": "208580144196",
+          "name": "EM1A: Dyscalculia (Webinar follow-up)"
+        },
+        {
+          "id": "208583698770",
+          "name": "EM3: Dyscalculia"
+        },
+        {
+          "id": "209662922872",
+          "name": "EM5: Dyscalculia"
+        },
+        {
+          "id": "208327327009",
+          "name": "EM1: Dyscalculia"
+        },
+        {
+          "id": "208841625979",
+          "name": "EM4: Dyscalculia"
+        },
+        {
+          "id": "216090238131",
+          "name": "EM1: Dyscalculia (Phase 2)"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "371086891",
+          "name": "Dyscalculia awareness is growing—and so are new strategies to support students struggling with math.\n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action to explore new research, state policy trends, and practical classroom strategies.\n\nMarch 3, 2026 | 2:00 p.m. ET\n\n"
+        },
+        {
+          "id": "366909880",
+          "name": "New Podcast!\nDr. Sandra Elliott joins Dr. Steven Miletto on Teaching Learning Leading K12 to shine a light on dyscalculia and share insights from her new book Sum Thing is Up.\n\nListen now and help spread awareness!\nhttps://hubs.ly/Q040h20l0\n\n#MathIntervention #dyscalculia #Math #TouchMath \n"
+        },
+        {
+          "id": "371087752",
+          "name": "Today is the day! \n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action and hear the latest research, policy updates, and instructional strategies for supporting students with dyscalculia.\n\nMarch 3 | 2:00 p.m. ET\n\nRegister now! https://hubs.ly/Q044xDCc0\n\n#SPEDMath #specialeducation #EdWeek #SPED #MathIntervention #dyscalculia #Math #TouchMath "
+        },
+        {
+          "id": "371092627",
+          "name": "Dyscalculia affects far more people than most realize. Understanding it brings connection, confidence, and support.\n\nLearn more at https://hubs.ly/Q046zXrt0 \n\n#DyscalculiaAwareness #YouAreNotAlone #TouchMath #MyDyscalculia #SPEDMath #specialeducation #SPED #MathIntervention #dyscalculia #Math \n"
+        },
+        {
+          "id": "366677092",
+          "name": "New Podcast!\nDr. Sandra Elliott joins Dr. Steven Miletto on Teaching Learning Leading K12 to shine a light on dyscalculia and share insights from her new book Sum Thing is Up.\n\nListen now and help spread awareness! https://www.stevenmiletto.com/sandra-t-elliott-phd-sum-thing-is-up-a-practical-guide-to-dyscalculia-tips-tools-and-resour/\n\n#MathIntervention #dyscalculia #Math #TouchMath \n"
+        },
+        {
+          "id": "371087521",
+          "name": "Happening tomorrow!\n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action and hear the latest research, policy updates, and instructional strategies for supporting students with dyscalculia.\n\nMarch 3 | 2:00 p.m. ET\n\nRegister now! https://hubs.ly/Q044xxTH0\n\n#EdWeek #SPEDMath #specialeducation #SPED #MathIntervention #dyscalculia #Math #TouchMath "
+        },
+        {
+          "id": "371087750",
+          "name": "Today is the day! \n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action and hear the latest research, policy updates, and instructional strategies for supporting students with dyscalculia.\n\nMarch 3 | 2:00 p.m. ET\n\nRegister now! https://hubs.ly/Q044xMyw0\n\n#SPEDMath #specialeducation #EdWeek #SPED #MathIntervention #dyscalculia #Math #TouchMath "
+        },
+        {
+          "id": "371087751",
+          "name": "Today is the day! \n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action and hear the latest research, policy updates, and instructional strategies for supporting students with dyscalculia.\n\nMarch 3 | 2:00 p.m. ET\n\n#SPEDMath #specialeducation #EdWeek #SPED #MathIntervention #dyscalculia #Math #TouchMath "
+        },
+        {
+          "id": "371092629",
+          "name": "Dyscalculia affects far more people than most realize. Understanding it brings connection, confidence, and support.\n\nLearn more at https://hubs.ly/Q046zXy00 \n\n#DyscalculiaAwareness #YouAreNotAlone #TouchMath #MyDyscalculia #SPEDMath #specialeducation #SPED #MathIntervention #dyscalculia #Math \n"
+        },
+        {
+          "id": "371092628",
+          "name": "Dyscalculia affects far more people than most realize. Understanding it brings connection, confidence, and support.\n\nLearn more at http://www.mydyscalculia.com \n\n#DyscalculiaAwareness #YouAreNotAlone #TouchMath #MyDyscalculia #SPEDMath #specialeducation #SPED #MathIntervention #dyscalculia #Math \n"
+        },
+        {
+          "id": "371087520",
+          "name": "Happening tomorrow!\n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action and hear the latest research, policy updates, and instructional strategies for supporting students with dyscalculia.\n\nMarch 3 | 2:00 p.m. ET \n\n#EdWeek #SPEDMath #specialeducation #SPED #MathIntervention #dyscalculia #Math #TouchMath \n"
+        },
+        {
+          "id": "366909881",
+          "name": "New Podcast!\nDr. Sandra Elliott joins Dr. Steven Miletto on Teaching Learning Leading K12 to shine a light on dyscalculia and share insights from her new book Sum Thing is Up.\n\nListen now and help spread awareness!\n\n\n#MathIntervention #dyscalculia #Math #TouchMath \n"
+        },
+        {
+          "id": "366909952",
+          "name": "New Podcast!\nDr. Sandra Elliott joins Dr. Steven Miletto on Teaching Learning Leading K12 to shine a light on dyscalculia and share insights from her new book Sum Thing is Up.\n\nListen now and help spread awareness!\nhttps://hubs.ly/Q040h1SZ0\n\n#MathIntervention #dyscalculia #Math #TouchMath \n"
+        },
+        {
+          "id": "371086890",
+          "name": "Dyscalculia awareness is growing—and so are new strategies to support students struggling with math.\n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action to explore new research, state policy trends, and practical classroom strategies.\n\nMarch 3, 2026 | 2:00 p.m. ET\n\nRegister: https://hubs.ly/Q044xCSL0\n\n"
+        },
+        {
+          "id": "371087519",
+          "name": "Happening tomorrow!\n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action and hear the latest research, policy updates, and instructional strategies for supporting students with dyscalculia.\n\nMarch 3 | 2:00 p.m. ET\n\nRegister now! https://hubs.ly/Q044xM9Z0\n\n#EdWeek #SPEDMath #specialeducation #SPED #MathIntervention #dyscalculia #Math #TouchMath "
+        },
+        {
+          "id": "371086892",
+          "name": "Dyscalculia awareness is growing—and so are new strategies to support students struggling with math.\n\nJoin TouchMath, in partnership with Education Week, for Bridging the Math Gap: What’s New in Dyscalculia Identification, Instruction & State Action to explore new research, state policy trends, and practical classroom strategies.\n\nMarch 3, 2026 | 2:00 p.m. ET\n\nRegister: https://hubs.ly/Q044xqyT0\n\n"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "TCASE 2026",
+    "found": true,
+    "sourceCampaignId": "517479474740",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "204391547153",
+          "name": "Texas - TCASE 2026 - Email 1"
+        },
+        {
+          "id": "204391548525",
+          "name": "Texas - TCASE 2026 - Email 3"
+        },
+        {
+          "id": "204391548453",
+          "name": "Texas - TCASE 2026 - Email 2"
+        }
+      ],
+      "OBJECT_LIST": [
+        {
+          "id": "528",
+          "name": "Texas Special Ed Titles 0126"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Grades 3-5 Launch",
+    "found": true,
+    "sourceCampaignId": "501893831485",
+    "assets": {
+      "FORM": [
+        {
+          "id": "ec6706ca-e4a4-4c66-9884-514c4289f558",
+          "name": "Grades 3-5 Fun Sheets - Download "
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "200118650792",
+          "name": "Grades 3-5 Launch - Non-customers - Email 1 - Eastern 2"
+        },
+        {
+          "id": "199954221619",
+          "name": "Grades 3-5 Launch - Non-customers - Email 1 - Eastern 1"
+        },
+        {
+          "id": "200119288341",
+          "name": "Grades 3-5 Launch - Non-customers - Email 1 - Eastern 3"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "357898111",
+          "name": "It’s here! 🎉 TouchMath for Grades 3–5 brings hands-on, multisensory learning to upper elementary math. Includes two new manipulatives (TouchCubes and TouchFractions) to deepen comprehension.  \n\n👉 Learn more at https://hubs.ly/Q03V3_4H0"
+        },
+        {
+          "id": "357898112",
+          "name": "It’s here! 🎉 TouchMath for Grades 3–5 brings hands-on, multisensory learning to upper elementary math. Includes two new manipulatives (TouchCubes and TouchFractions) to deepen comprehension.  \n\n👉 Learn more via the link in our bio!"
+        },
+        {
+          "id": "357898113",
+          "name": "We’re thrilled to announce TouchMath for Grades 3–5, the trusted multisensory math solution now supporting upper elementary learners. \n\nFor more than 50 years, TouchMath has helped students who learn differently gain the confidence and mastery they deserve. Now, teachers can deliver that same success to students struggling with key foundational skills in grades 3–5, using our new manipulatives: TouchCubes and TouchFractions. \n\n✔️ 720+ structured, multisensory activities per grade level \n✔️ Step-by-step Teacher’s Guides \n✔️ Print and digital curriculum formats \n✔️ AI-powered progress monitoring \n\nHelp your students bridge the gap between concrete understanding and abstract mastery. \n\nLearn more or schedule a demo: https://hubs.ly/Q03V3-B_0"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Winter Fun Sheets 2025",
+    "found": true,
+    "sourceCampaignId": "501622263197",
+    "assets": {
+      "FORM": [
+        {
+          "id": "0a22d292-b6df-4b41-8f3c-3bbd1397b4ba",
+          "name": "Winter Fun Sheets 2025 - Download"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "National Conferences",
+    "found": true,
+    "sourceCampaignId": "493872352573",
+    "assets": {
+      "FORM": [
+        {
+          "id": "2929c5ca-4ad4-4e14-a315-c2bec6c6951a",
+          "name": "Conferences - NCTM/NCSM - Claim Copy of Elliott's Book"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "199407097682",
+          "name": "Conference Follow Up - NCTM/NCSM - 2"
+        },
+        {
+          "id": "198994865783",
+          "name": "Conference Follow Up - NCTM/NCSM"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Fall Catalog 2025",
+    "found": true,
+    "sourceCampaignId": "463449453842",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "196633683717",
+          "name": "Fall Catalog 2025 - Email 1 - Internal"
+        },
+        {
+          "id": "197014467177",
+          "name": "Fall Catalog 2025 - Email 2 - Internal"
+        },
+        {
+          "id": "197030095413",
+          "name": "Fall Catalog 2025 - Email 2-3"
+        },
+        {
+          "id": "196498188581",
+          "name": "Fall Catalog 2025 - Email 1-3"
+        },
+        {
+          "id": "196637376658",
+          "name": "Fall Catalog 2025 - Email 1 - 2"
+        },
+        {
+          "id": "197019368000",
+          "name": "Fall Catalog 2025 - Email 2-2"
+        },
+        {
+          "id": "197272134985",
+          "name": "Fall Catalog 2025 - Email 3 - 2"
+        },
+        {
+          "id": "196499238146",
+          "name": "Fall Catalog 2025 - Email 2-1"
+        },
+        {
+          "id": "196633683375",
+          "name": "Fall Catalog 2025 - Email 1 - 1"
+        },
+        {
+          "id": "197272132385",
+          "name": "Fall Catalog 2025 - Email 3 - 1"
+        },
+        {
+          "id": "197272135329",
+          "name": "Fall Catalog 2025 - Email 3 - 3"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Workshop - 09.23.25",
+    "found": true,
+    "sourceCampaignId": "459910587531",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "196499451567",
+          "name": "Workshops - 09.23.25 - Follow Up - Absent"
+        },
+        {
+          "id": "192915012868",
+          "name": "Workshops - 09.23.25 - Invite 1"
+        },
+        {
+          "id": "195820256010",
+          "name": "Workshops - 09.23.25 - Invite 1."
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "AI Purchasing Guide 2025",
+    "found": true,
+    "sourceCampaignId": "459568287382",
+    "assets": {
+      "FORM": [
+        {
+          "id": "f9e5bb8e-c478-41b0-a9ed-0f13273d78da",
+          "name": "AI Purchasing Guide (2025)"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "200107186295",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - SUPES - Central"
+        },
+        {
+          "id": "196434389896",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - Elem - 1"
+        },
+        {
+          "id": "196200120617",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Eastern 2"
+        },
+        {
+          "id": "195768089702",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025"
+        },
+        {
+          "id": "197643474327",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Supes - Eastern"
+        },
+        {
+          "id": "195770901312",
+          "name": "AI Purchasing Guide - Email 7 - Sept 2025"
+        },
+        {
+          "id": "197026940784",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Eastern 3"
+        },
+        {
+          "id": "197013199696",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Eastern"
+        },
+        {
+          "id": "196198812287",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Eastern 1"
+        },
+        {
+          "id": "196262258802",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SUPES - Pacific"
+        },
+        {
+          "id": "196260737069",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SUPES - Central"
+        },
+        {
+          "id": "195769219235",
+          "name": "AI Purchasing Guide - Email 6 - Sept 2025"
+        },
+        {
+          "id": "196963958788",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Eastern 1"
+        },
+        {
+          "id": "195770935988",
+          "name": "AI Purchasing Guide - Email 8 - Sept 2025"
+        },
+        {
+          "id": "196211361408",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Central 1"
+        },
+        {
+          "id": "198014084994",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Supes - Central"
+        },
+        {
+          "id": "199201520722",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - Central"
+        },
+        {
+          "id": "200108047408",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - SUPES - Mountain"
+        },
+        {
+          "id": "197272330365",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Central 2"
+        },
+        {
+          "id": "199580602992",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - Pacific"
+        },
+        {
+          "id": "200118395904",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - SUPES - Eastern"
+        },
+        {
+          "id": "195770099492",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - SPED - Eastern 1"
+        },
+        {
+          "id": "197271232359",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Central 1"
+        },
+        {
+          "id": "200119005185",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - SUPES - Pacific"
+        },
+        {
+          "id": "198066317960",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Supes - Mountain"
+        },
+        {
+          "id": "195770934130",
+          "name": "AI Purchasing Guide - Email 4 - Sept 2025"
+        },
+        {
+          "id": "198992407171",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - Eastern 2"
+        },
+        {
+          "id": "196432085505",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - Elem - 2"
+        },
+        {
+          "id": "197398412169",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Mountain"
+        },
+        {
+          "id": "195770933872",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025"
+        },
+        {
+          "id": "195768091710",
+          "name": "AI Purchasing Guide - Email 5 - Sept 2025"
+        },
+        {
+          "id": "196211365384",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Mountain"
+        },
+        {
+          "id": "199044045629",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - Eastern 3"
+        },
+        {
+          "id": "196210051848",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Central 2"
+        },
+        {
+          "id": "198179289170",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Supes - Pacific"
+        },
+        {
+          "id": "196262258560",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SUPES - Mounain"
+        },
+        {
+          "id": "197610410564",
+          "name": "AI Purchasing Guide - Email 2 - Sept 2025 - Pacific"
+        },
+        {
+          "id": "196259411884",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SUPES - Eastern"
+        },
+        {
+          "id": "196205140774",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Eastern 3"
+        },
+        {
+          "id": "196215924074",
+          "name": "AI Purchasing Guide - Email 1 - Sept 2025 - SPED - Pacific"
+        },
+        {
+          "id": "199274854569",
+          "name": "AI Purchasing Guide - Email 3 - Sept 2025 - Mountain"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "347974236",
+          "name": " 🚨 Federal grants for AI in K-12 will only fund tools that are responsible, teacher-centered, and privacy-safe. \n\nHow can your district be sure you’re making the right choice? Download our K-12 AI Purchasing Guide – a guide and scorecard for school leaders.  \n\nInside, you’ll find: \n ✔️ A rubric for evaluating AI vendors \n ✔️ Red flags to watch for \n ✔️ Expert-level questions to ensure compliance with federal priorities \n\nDownload your copy today and make confident, compliant AI decisions: https://hubs.ly/Q03JN0710"
+        },
+        {
+          "id": "347974515",
+          "name": "The U.S. Department of Education has made it clear: federal AI funding will go to districts that integrate AI responsibly. \n\nBut how do school leaders know which tools meet those standards? \n\nWe created the AI Buyer’s Guide for School Leaders to help districts: \n✔️ Evaluate AI tools against federal funding priorities \n✔️ Ensure teacher control and classroom efficiency \n✔️ Safeguard student data and support equity \n\nThis guide includes a ready-to-use rubric and expert questions to ask vendors before you buy. \n\nDownload the guide here: https://hubs.ly/Q03JMYHg0\n\n#K12 #EducationLeadership #AIinEducation #EdTech "
+        },
+        {
+          "id": "347975206",
+          "name": "✨ AI is here—but not all tools qualify for federal funding. \n School leaders, don’t risk investing in the wrong solution. \n\nOur AI Purchasing Guide helps you: \n ✅ Keep teachers in control \n ✅ Protect student privacy \n ✅ Personalize learning for every student \n ✅ Qualify for upcoming federal grants \n\n📥 Download today and evaluate tools with confidence.  \n 👉 Link in bio! "
+        },
+        {
+          "id": "347985743",
+          "name": "Not all AI tools qualify for federal funding. The AI Purchasing Guide for K-12 Administrators helps districts keep teachers in control, protect student data, personalize learning, and align with federal priorities. Download here: https://hubs.ly/Q03JMYTs0"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Regional Conferences",
+    "found": true,
+    "sourceCampaignId": "456808836385",
+    "assets": {
+      "FORM": [
+        {
+          "id": "cf57747c-afbc-47c3-b54a-f13eff38ba30",
+          "name": "Conferences - VACASE - Fall 2025"
+        },
+        {
+          "id": "ffb2da4d-d60f-40c8-9ae1-19527fa8fee3",
+          "name": "Conferences - SSTAGE - Fall 2025"
+        },
+        {
+          "id": "ce724cc0-d1d6-4ac1-8b80-7d950c9dbda5",
+          "name": "Conferences - MS CEC 2025 - Fall 2025"
+        },
+        {
+          "id": "ea3c8388-4414-4add-8767-e4c895e88cf2",
+          "name": "Conferences - NJSBA - Fall 2025"
+        },
+        {
+          "id": "af70b8e0-15cb-47a9-a5ea-92489f876d84",
+          "name": "Conferences - IAASE - Fall 2025"
+        },
+        {
+          "id": "85b6f1a4-f1ba-4681-bd1d-928d349f21d6",
+          "name": "Conferences - OASPA 2025 - Fall 2025"
+        },
+        {
+          "id": "e2e0439a-869d-4841-a252-84c80009bafe",
+          "name": "Conferences - LASE - Fall 2025"
+        },
+        {
+          "id": "a133d72d-83d4-4fe7-8efb-e76fff535f5c",
+          "name": "Conferences - NCASE 2025 - Fall 2025"
+        },
+        {
+          "id": "92c971fc-6e39-42f7-8be5-62a071dfb28a",
+          "name": "Conferences - WTN SPED 2025 - Fall 2025"
+        },
+        {
+          "id": "2f66f199-6358-4ddc-8c4e-5208b8539e16",
+          "name": "Conferences - MO CASE 2025 - Fall 2025"
+        },
+        {
+          "id": "e5f942bf-d222-4be5-a731-3e9ac9b3eb81",
+          "name": "Conferences - Region 10 SPED Vendor Fair - Fall 2025"
+        },
+        {
+          "id": "74542e5e-12b0-4126-b8bd-c8ab278f3d86",
+          "name": "Conferences - ALACASE - Fall 2025"
+        },
+        {
+          "id": "507bc61d-a0db-4bfd-aa57-544f4efd266f",
+          "name": "Conferences - TN DOE - Fall 2025"
+        },
+        {
+          "id": "3d9ae6f8-5a5e-494b-b9cf-3ebf03d5ae49",
+          "name": "Conferences - WCASS 2025 - Fall 2025"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Newsletter",
+    "found": true,
+    "sourceCampaignId": "456117456731",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "209921507438",
+          "name": "Newsletter - April 2026 - Internal"
+        },
+        {
+          "id": "195153800066",
+          "name": "Newsletter - August 2025 - External"
+        },
+        {
+          "id": "199990778662",
+          "name": "Grades 3-5 Launch - Non-customers - Email 3"
+        },
+        {
+          "id": "215594555460",
+          "name": "TouchMath Announcement 6.22.26"
+        },
+        {
+          "id": "199990778217",
+          "name": "Grades 3-5 Launch - Non-customers - Email 2"
+        },
+        {
+          "id": "204233398389",
+          "name": "testing take 2"
+        },
+        {
+          "id": "199600545936",
+          "name": "Newsletter - November 2025 - Internal"
+        },
+        {
+          "id": "211060039810",
+          "name": "Newsletter - April 2026 - Internal"
+        },
+        {
+          "id": "211382616161",
+          "name": "Newsletter - April 2026 - External"
+        },
+        {
+          "id": "200196940943",
+          "name": "Newsletter - November 2025 - External"
+        },
+        {
+          "id": "210468109718",
+          "name": "TouchMath Announcement 4.3.26"
+        },
+        {
+          "id": "195152971108",
+          "name": "Newsletter - August 2025 - Internal"
+        },
+        {
+          "id": "195615295400",
+          "name": "Newsletter - August 2025 - Internal (Clone)"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "MyTouchMath Fall 2025 Updates",
+    "found": true,
+    "sourceCampaignId": "445579207000",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "193554447150",
+          "name": "MyTouchMath Fall 2025 Updates - Email 3 - Group B"
+        },
+        {
+          "id": "197608494450",
+          "name": "MyTouchMath Update - State Standards - Oct 2025 - Email 2"
+        },
+        {
+          "id": "193554447134",
+          "name": "MyTouchMath Fall 2025 Updates - Email 1 - Group B"
+        },
+        {
+          "id": "197615898703",
+          "name": "MyTouchMath Update - State Standards - Oct 2025 - Email 2 - Internal"
+        },
+        {
+          "id": "193257885728",
+          "name": "MyTouchMath Fall 2025 Updates - Email 3 - Group A"
+        },
+        {
+          "id": "197608490533",
+          "name": "MyTouchMath Update - State Standards - Oct 2025 - Email 1"
+        },
+        {
+          "id": "193082409835",
+          "name": "MyTouchMath Fall 2025 Updates - Email 2 - Group A"
+        },
+        {
+          "id": "193552059794",
+          "name": "MyTouchMath Fall 2025 Updates - Email 2 - Group B"
+        },
+        {
+          "id": "197615862867",
+          "name": "MyTouchMath Update - State Standards - Oct 2025 - Email 1 - Internal"
+        },
+        {
+          "id": "193082347626",
+          "name": "MyTouchMath Fall 2025 Updates - Email 1 - Group A"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Heartland",
+    "found": true,
+    "sourceCampaignId": "438293527363",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "192531698547",
+          "name": "Heartland - Small Districts - July 2025 - 4 - Lynne"
+        },
+        {
+          "id": "192531698525",
+          "name": "Heartland - Small Districts - July 2025 - 2 - Lynne"
+        },
+        {
+          "id": "204233398307",
+          "name": "Testing do not touch or worry about"
+        },
+        {
+          "id": "202111091879",
+          "name": "Heartland - LA Charter Schools - Email 1- Dec 2025"
+        },
+        {
+          "id": "202458102800",
+          "name": "Heartland - LA Charter Schools - Email 2- Dec 2025"
+        },
+        {
+          "id": "192352026477",
+          "name": "Heartland - Small Districts - July 2025 - 1 - Lynne"
+        },
+        {
+          "id": "192530893149",
+          "name": "Heartland - Small Districts - July 2025 - 3 - Lynne"
+        },
+        {
+          "id": "191566599595",
+          "name": "Heartland - Small Districts - July 2025 - 1"
+        },
+        {
+          "id": "191566973063",
+          "name": "Heartland - Small Districts - July 2025 - 4"
+        },
+        {
+          "id": "191567278855",
+          "name": "Heartland - Small Districts - July 2025 - 3"
+        },
+        {
+          "id": "202739331763",
+          "name": "Heartland - LA Charter Schools - Email 3"
+        },
+        {
+          "id": "191566972284",
+          "name": "Heartland - Small Districts - July 2025 - 2"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Summer Workbooks 2025",
+    "found": true,
+    "sourceCampaignId": "434404253964",
+    "assets": {
+      "FORM": [
+        {
+          "id": "459270c7-9a62-4744-9bc1-4a440dc14f26",
+          "name": "Summer Math Workbook 2025 - Downloads"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "190942780314",
+          "name": "Summer Workbook 2025 - Email 2"
+        },
+        {
+          "id": "190942780230",
+          "name": "Summer Workbook 2025 - Email 1"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "334551169",
+          "name": "LAST CHANCE to Grab Your FREE Summer Math Workbook! Don’t miss out on this FREE printable workbook packed with 50 hands-on, multisensory math activities — perfect for kids in preschool through 5th grade. \n\n✅ Visuals, tactile tools, games & puzzles \n✅ Supports learners with ADHD, autism, dyscalculia & more \n✅ Created by experienced educators \n\nMake the rest of this summer summer count. Download your copy before it’s gone! \n🔗 https://hubs.ly/Q03qjRbP0\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334551167",
+          "name": "LAST CHANCE to Grab Your FREE Summer Math Workbook! Don’t miss out on this FREE printable workbook packed with 50 hands-on, multisensory math activities — perfect for kids in preschool through 5th grade. \n\n✅ Visuals, tactile tools, games & puzzles \n✅ Supports learners with ADHD, autism, dyscalculia & more \n✅ Created by experienced educators \n\nMake the rest of this summer summer count. Download your copy before it’s gone! \n🔗 https://hubs.ly/Q03qjWRz0\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334608938",
+          "name": "FREE Summer Math Workbook – Make Learning Feel Like Play! Keep math skills sharp and kids smiling with our free Summer Fun Math Workbook! \n\n✅ 50 printable, low-prep worksheets \n✅ Designed for preschool to 5th grade \n✅ Perfect for kids with learning differences \n\nLet’s make summer count! Download now via the link in our bio! ✍️\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334608937",
+          "name": "FREE Summer Math Workbook – Make Learning Feel Like Play! Keep math skills sharp and kids smiling with our free Summer Fun Math Workbook! \n\n✅ 50 printable, low-prep worksheets \n✅ Designed for preschool to 5th grade \n✅ Perfect for kids with learning differences \n\nLet’s make summer count! Download now: https://hubs.ly/Q03qqfcB0\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334550788",
+          "name": "Hands-on learning meets summer fun! This FREE Summer Math Workbook is packed with: \n\n✅ Cut-and-paste math pages \n✅ Color-by-number activities \n✅ Beach-themed puzzles and games \n\nPerfect for early learners and kids who need visual, tactile support. Let them explore numbers through movement, play, and creativity! \n\nGrab your FREE copy here: https://hubs.ly/Q03qjStt0\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334550789",
+          "name": "Hands-on learning meets summer fun! This FREE Summer Math Workbook is packed with: \n\n✅ Cut-and-paste math pages \n✅ Color-by-number activities \n✅ Beach-themed puzzles and games \n\nPerfect for early learners and kids who need visual, tactile support. Let them explore numbers through movement, play, and creativity! \n\nGrab your FREE copy here via the link in our bio ✍️\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334551079",
+          "name": "Don't let math skills slip over the summer! Download our FREE 50-page workbook designed for: \n\n✅ Skill retention \n✅ Executive functioning & processing support \n✅ Scaffolded tasks for independent learning \n✅ Created by educators with experience in early intervention & special ed \n\nFree to print and easy to use all summer long: https://hubs.ly/Q03wWxyG0\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334551077",
+          "name": "Don't let math skills slip over the summer! Download our FREE 50-page workbook designed for: \n\n✅ Skill retention \n✅ Executive functioning & processing support \n✅ Scaffolded tasks for independent learning \n✅ Created by educators with experience in early intervention & special ed \n\nFree to print and easy to use all summer long: https://hubs.ly/Q03wWxF80\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334551168",
+          "name": "LAST CHANCE to Grab Your FREE Summer Math Workbook! Don’t miss out on this FREE printable workbook packed with 50 hands-on, multisensory math activities — perfect for kids in preschool through 5th grade. \n\n✅ Visuals, tactile tools, games & puzzles \n✅ Supports learners with ADHD, autism, dyscalculia & more \n✅ Created by experienced educators \n\nMake the rest of this summer summer count. Download your copy before it’s gone via the link in our bio! \n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334608939",
+          "name": "FREE Summer Math Workbook – Make Learning Feel Like Play! Keep math skills sharp and kids smiling with our free Summer Fun Math Workbook! \n\n✅ 50 printable, low-prep worksheets \n✅ Designed for preschool to 5th grade \n✅ Perfect for kids with learning differences \n\nLet’s make summer count! Download now: https://hubs.ly/Q03qq8bw0\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334551078",
+          "name": "Don't let math skills slip over the summer! Download our FREE 50-page workbook designed for: \n\n✅ Skill retention \n✅ Executive functioning & processing support \n✅ Scaffolded tasks for independent learning \n✅ Created by educators with experience in early intervention & special ed \n\nFree to print and easy to use all summer long - get yours via the link in our bio!\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        },
+        {
+          "id": "334550790",
+          "name": "Hands-on learning meets summer fun! This FREE Summer Math Workbook is packed with: \n\n✅ Cut-and-paste math pages \n✅ Color-by-number activities \n✅ Beach-themed puzzles and games \n\nPerfect for early learners and kids who need visual, tactile support. Let them explore numbers through movement, play, and creativity! \n\nGrab your FREE copy here: https://hubs.ly/Q03qjSr10\n\n#SummerMathFun #EarlyChildhoodEducation #FreeDownload #TouchMath #FreeMathWorksheets "
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Texas",
+    "found": true,
+    "sourceCampaignId": "431772257865",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "189851543845",
+          "name": "TX - Small Districts - May 2025 - 4"
+        },
+        {
+          "id": "189851543962",
+          "name": "TX - Small Districts - May 2025 - 5"
+        },
+        {
+          "id": "190542906384",
+          "name": "TX - Small Districts - May 2025 - 4 - Deena"
+        },
+        {
+          "id": "190542906396",
+          "name": "TX - Small Districts - May 2025 - 5 - Deena"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Florida",
+    "found": true,
+    "sourceCampaignId": "424047480728",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "190542541888",
+          "name": "FL - Charters - May 2025 - 5 - Vanessa"
+        },
+        {
+          "id": "191439229319",
+          "name": "FL - SumShine News - June 2025"
+        },
+        {
+          "id": "191853706498",
+          "name": "FL - SumShine News - Internal - June 2025"
+        },
+        {
+          "id": "190542541674",
+          "name": "FL - Charters - May 2025 - 4 - Vanessa"
+        },
+        {
+          "id": "189852297116",
+          "name": "FL - Charters - May 2025 - 4"
+        },
+        {
+          "id": "189854021386",
+          "name": "FL - Charters - May 2025 - 5"
+        },
+        {
+          "id": "189152339588",
+          "name": "FL - SumShine News - April 2025"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Extend - 2025 Promo",
+    "found": true,
+    "sourceCampaignId": "423065433179",
+    "assets": {
+      "MARKETING_EMAIL": [
+        {
+          "id": "189024903682",
+          "name": "Extend - 2025 - 1A - CW"
+        },
+        {
+          "id": "190427189593",
+          "name": "Extend - 2025 - 3B - Jenn - Round 2"
+        },
+        {
+          "id": "189904898198",
+          "name": "Extend - 2025 - 1A - CW - Round 2"
+        },
+        {
+          "id": "190427189565",
+          "name": "Extend - 2025 - 3A - Round 2"
+        },
+        {
+          "id": "190427189579",
+          "name": "Extend - 2025 - 3A - Round 2 - CW"
+        },
+        {
+          "id": "190431354373",
+          "name": "Extend - 2025 - 3A - Jenn - Round 2"
+        }
+      ],
+      "SOCIAL_BROADCAST": [
+        {
+          "id": "331567106",
+          "name": "☀️ School’s almost out—but math skills don’t have to be! ☀️ \n\nWith TouchMath Extend, summer learning is all about FUN in the SUM! 🎉 \n\n✅ Engaging, hands-on activities \n✅ Prevents summer learning loss \n✅ Easy for teachers, fun for students! \n\nKeep math momentum going all summer long. Are you ready to make learning fun? \n\nShop now: https://hubs.ly/Q03kk5Yf0\n\n#ESY #SummerLearning #SummerSchool"
+        },
+        {
+          "id": "331567108",
+          "name": "☀️ School’s almost out—but math skills don’t have to be! ☀️ \n\nWith TouchMath Extend, summer learning is all about FUN in the SUM! 🎉 \n\n✅ Engaging, hands-on activities \n✅ Prevents summer learning loss \n✅ Easy for teachers, fun for students! \n\nKeep math momentum going all summer long. Are you ready to make learning fun? \n\nShop now: https://hubs.ly/Q03kjM980\n\n#ESY #SummerLearning #SummerSchool"
+        },
+        {
+          "id": "331567107",
+          "name": "☀️ School’s almost out—but math skills don’t have to be! ☀️ \n\nWith TouchMath Extend, summer learning is all about FUN in the SUM! 🎉 \n\n✅ Engaging, hands-on activities \n✅ Prevents summer learning loss \n✅ Easy for teachers, fun for students! \n\nKeep math momentum going all summer long. Are you ready to make learning fun? \n\nShop now via the link in our bio!\n\n#ESY #SummerLearning #SummerSchool"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  },
+  {
+    "name": "Website Forms - Fun Sheets Sign Up",
+    "found": true,
+    "sourceCampaignId": "359061844332",
+    "assets": {
+      "AUTOMATION_PLATFORM_FLOW": [
+        {
+          "id": "606173492",
+          "name": "Fun Sheet Sign Up to Email List"
+        }
+      ],
+      "FORM": [
+        {
+          "id": "bafc8016-7c6c-4b84-ae19-ab170f929147",
+          "name": "Fun Sheets"
+        }
+      ],
+      "MARKETING_EMAIL": [
+        {
+          "id": "188394573849",
+          "name": "Fun Sheets 04.04.25"
+        },
+        {
+          "id": "189062295554",
+          "name": "Fun Sheets 04.18.25"
+        },
+        {
+          "id": "189650875654",
+          "name": "Fun Sheets 05.02.25"
+        },
+        {
+          "id": "185885803658",
+          "name": "Fun Sheets 02.07.25"
+        },
+        {
+          "id": "179605190169",
+          "name": "Fun Sheets 09.27.24"
+        },
+        {
+          "id": "184761438886",
+          "name": "Fun Sheets 01.17.25"
+        },
+        {
+          "id": "186441645122",
+          "name": "Fun Sheets 02.21.25"
+        },
+        {
+          "id": "184761393969",
+          "name": "Fun Sheets 01.31.25"
+        },
+        {
+          "id": "190231177019",
+          "name": "Fun Sheets 05.16.25"
+        },
+        {
+          "id": "182208310303",
+          "name": "Fun Sheets 11.01.24"
+        },
+        {
+          "id": "180257236749",
+          "name": "Fun Sheets 10.04.24"
+        },
+        {
+          "id": "182217432357",
+          "name": "Fun Sheets 11.15.24"
+        },
+        {
+          "id": "187015303337",
+          "name": "Fun Sheets 03.07.25"
+        },
+        {
+          "id": "175804235645",
+          "name": "Fun Sheets 08.15.24"
+        },
+        {
+          "id": "186171817823",
+          "name": "Fun Sheets 02.14.25"
+        },
+        {
+          "id": "186731188120",
+          "name": "Fun Sheets 02.28.25"
+        },
+        {
+          "id": "179015519030",
+          "name": "Fun Sheets 09.20.24"
+        },
+        {
+          "id": "190547595555",
+          "name": "Fun Sheets 05.23.25"
+        },
+        {
+          "id": "188735558425",
+          "name": "Fun Sheets 04.11.25"
+        },
+        {
+          "id": "181940490242",
+          "name": "Fun Sheets 10.25.24"
+        },
+        {
+          "id": "182216598895",
+          "name": "Fun Sheets 11.22.24"
+        },
+        {
+          "id": "184758485606",
+          "name": "Fun Sheets 01.10.25"
+        },
+        {
+          "id": "182216598671",
+          "name": "Fun Sheets 11.08.24"
+        },
+        {
+          "id": "190836480858",
+          "name": "Fun Sheets 05.30.25"
+        },
+        {
+          "id": "177772195896",
+          "name": "Fun Sheets 09.06.24"
+        },
+        {
+          "id": "181461878114",
+          "name": "Fun Sheets 10.18.24"
+        },
+        {
+          "id": "175813363117",
+          "name": "Fun Sheets 08.23.24"
+        },
+        {
+          "id": "187679870248",
+          "name": "Fun Sheets 03.21.25"
+        },
+        {
+          "id": "188033523289",
+          "name": "Fun Sheets 03.28.25"
+        },
+        {
+          "id": "175814563989",
+          "name": "Fun Sheets 08.30.24"
+        },
+        {
+          "id": "189358989865",
+          "name": "Fun Sheets 04.25.25"
+        },
+        {
+          "id": "183592758392",
+          "name": "Fun Sheets 12.13.24"
+        },
+        {
+          "id": "183591478424",
+          "name": "Fun Sheets 12.06.24"
+        },
+        {
+          "id": "189943905792",
+          "name": "Fun Sheets 05.09.25"
+        },
+        {
+          "id": "187328419201",
+          "name": "Fun Sheets 03.14.25"
+        }
+      ]
+    },
+    "crmAssociations": {}
+  }
+]
