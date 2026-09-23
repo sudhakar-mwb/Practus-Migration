@@ -140,6 +140,17 @@ const DRY_RUN = String(process.env.DRY_RUN || 'false').toLowerCase() === 'true';
 // prefix on its name (e.g. "Touchmath | <original name>").
 const WORKFLOW_NAME_PREFIX = 'Touchmath | ';
 
+/** The name a source workflow gets in the destination portal. */
+function migratedWorkflowName(name) {
+  const value = String(name || '');
+  return value.startsWith(WORKFLOW_NAME_PREFIX) ? value : `${WORKFLOW_NAME_PREFIX}${value}`;
+}
+
+/** Whitespace-insensitive key for comparing workflow names. */
+function workflowNameKey(name) {
+  return String(name || '').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
 // Only source workflows whose name exactly matches an entry here are
 // migrated; everything else in the source portal is left untouched. Edit
 // this list to change which workflows this script processes.
@@ -621,9 +632,7 @@ function sanitizeForCreate(workflow) {
   // Always create unpublished (OFF); workflows are reviewed and turned on
   // manually in the destination portal.
   body.isEnabled = false;
-  if (typeof body.name === 'string' && !body.name.startsWith(WORKFLOW_NAME_PREFIX)) {
-    body.name = `${WORKFLOW_NAME_PREFIX}${body.name}`;
-  }
+  if (typeof body.name === 'string') body.name = migratedWorkflowName(body.name);
   return body;
 }
 
@@ -730,26 +739,362 @@ function findMappingBySourceId(idMapping, sourceId) {
 }
 
 // ---------------------------------------------------------------------------
+// Automatic asset mapping by name (forms, lists, marketing emails)
+// ---------------------------------------------------------------------------
+
+async function fetchAllPaged(token, basePath) {
+  const results = [];
+  let after;
+  do {
+    const query = new URLSearchParams({ limit: '100' });
+    if (after) query.set('after', after);
+    await throttle();
+    const page = await hubspotRequest(token, 'GET', `${basePath}?${query.toString()}`);
+    results.push(...((page && page.results) || []));
+    after = page && page.paging && page.paging.next ? page.paging.next.after : undefined;
+  } while (after);
+  return results;
+}
+
+async function fetchAllLists(token) {
+  const lists = [];
+  let offset = 0;
+  let hasMore = true;
+  while (hasMore) {
+    await throttle();
+    const page = await hubspotRequest(token, 'POST', '/crm/v3/lists/search', { offset, count: 500 });
+    lists.push(...((page && page.lists) || []));
+    hasMore = Boolean(page && page.hasMore);
+    offset = page ? page.offset : 0;
+  }
+  return lists;
+}
+
+const normalizeAssetName = (name) => String(name || '').replace(/\s+/g, ' ').trim().toLowerCase();
+// Assets migrated by the other scripts in this project carry a brand prefix.
+const stripBrandPrefix = (normalized) => normalized.replace(/^touchmath\s*[-|]\s*/, '');
+
+/**
+ * Fills assetMap.forms / .lists / .emails with source ID -> destination ID
+ * pairs by matching names. Entries already present (from ASSET_ID_MAP_FILE)
+ * win. Only a single, unambiguous destination match is accepted; lists must
+ * also be for the same object type.
+ */
+async function autoMapAssetsByName(sourceToken, destToken, assetMap) {
+  const sections = [
+    { key: 'forms', label: 'forms', fetch: (t) => fetchAllPaged(t, '/marketing/v3/forms'), id: (x) => x.id, group: () => '' },
+    { key: 'lists', label: 'lists', fetch: fetchAllLists, id: (x) => x.listId, group: (x) => x.objectTypeId || '' },
+    { key: 'emails', label: 'marketing emails', fetch: (t) => fetchAllPaged(t, '/marketing/v3/emails'), id: (x) => x.id, group: () => '' },
+  ];
+
+  for (const section of sections) {
+    let sourceItems;
+    let destItems;
+    try {
+      [sourceItems, destItems] = [await section.fetch(sourceToken), await section.fetch(destToken)];
+    } catch (err) {
+      const status = err instanceof HubSpotApiError ? ` (HTTP ${err.status})` : '';
+      console.warn(`[warn] Could not auto-map ${section.label} by name${status}: ${err.message}. ` +
+        `Grant the read scope for ${section.label} to both private apps, or add them to ${path.basename(ASSET_ID_MAP_FILE)}.`);
+      continue;
+    }
+
+    const exact = new Map();
+    const stripped = new Map();
+    const add = (index, key, id) => index.set(key, [...(index.get(key) || []), String(id)]);
+    for (const item of destItems) {
+      const name = normalizeAssetName(item.name);
+      if (!name) continue;
+      add(exact, `${section.group(item)}|${name}`, section.id(item));
+      add(stripped, `${section.group(item)}|${stripBrandPrefix(name)}`, section.id(item));
+    }
+
+    let mapped = 0;
+    let ambiguous = 0;
+    for (const item of sourceItems) {
+      const sourceId = String(section.id(item));
+      if (Object.prototype.hasOwnProperty.call(assetMap[section.key], sourceId)) continue;
+      const key = `${section.group(item)}|${normalizeAssetName(item.name)}`;
+      const candidates = exact.get(key) || stripped.get(key) || [];
+      if (candidates.length === 1) {
+        assetMap[section.key][sourceId] = candidates[0];
+        mapped += 1;
+      } else if (candidates.length > 1) {
+        ambiguous += 1;
+      }
+    }
+    console.log(`[info] Auto-mapped ${mapped} of ${sourceItems.length} source ${section.label} to the destination by name` +
+      (ambiguous ? ` (${ambiguous} skipped: more than one destination match)` : '') + '.');
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Properties a workflow depends on
+// ---------------------------------------------------------------------------
+
+const DEFAULT_PROPERTY_GROUPS = { '0-1': 'contactinformation', '0-2': 'companyinformation', '0-3': 'dealinformation' };
+
+/** Property names used by PROPERTY filters and "set property" actions. */
+function collectWorkflowPropertyNames(workflow) {
+  const names = new Set();
+  const walk = (node) => {
+    if (Array.isArray(node)) return node.forEach(walk);
+    if (!node || typeof node !== 'object') return;
+    if (node.filterType === 'PROPERTY' && typeof node.property === 'string') names.add(node.property);
+    Object.values(node).forEach(walk);
+  };
+  walk(workflow.enrollmentCriteria);
+  walk(workflow.actions);
+  for (const action of workflow.actions || []) {
+    if (action.actionTypeId === '0-5' && action.fields && typeof action.fields.property_name === 'string') {
+      names.add(action.fields.property_name);
+    }
+  }
+  return [...names];
+}
+
+async function getPropertySafe(token, objectTypeId, name) {
+  try {
+    await throttle();
+    return await hubspotRequest(token, 'GET', `/crm/v3/properties/${objectTypeId}/${encodeURIComponent(name)}`);
+  } catch (err) {
+    if (err instanceof HubSpotApiError && err.status === 404) return null;
+    throw err;
+  }
+}
+
+/**
+ * Makes sure every property the workflow uses exists in the destination,
+ * copying missing ones from the source when CREATE_MISSING_PROPERTIES is on.
+ * Returns the names that are still missing (the workflow must be held).
+ * `cache` remembers names already confirmed/created during this run.
+ */
+async function ensureWorkflowProperties(workflow, sourceToken, destToken, dryRun, cache) {
+  const objectTypeId = workflow.objectTypeId;
+  const missing = [];
+  if (!objectTypeId) return missing;
+
+  for (const name of collectWorkflowPropertyNames(workflow)) {
+    const cacheKey = `${objectTypeId}|${name}`;
+    if (cache.has(cacheKey)) continue;
+    if (await getPropertySafe(destToken, objectTypeId, name)) {
+      cache.add(cacheKey);
+      continue;
+    }
+    const sourceProp = await getPropertySafe(sourceToken, objectTypeId, name);
+    // Not a property of this object in the source either (e.g. a filter on
+    // an associated object) - nothing we can copy, leave it to validation.
+    if (!sourceProp) continue;
+
+    if (dryRun) {
+      console.log(`[dry-run] Would create missing ${objectTypeId} property "${name}" (${sourceProp.label}) in the destination.`);
+      continue;
+    }
+    if (!CREATE_MISSING_PROPERTIES) {
+      missing.push(name);
+      continue;
+    }
+
+    const body = {
+      name: sourceProp.name,
+      label: sourceProp.label,
+      type: sourceProp.type,
+      fieldType: sourceProp.fieldType,
+      groupName: sourceProp.groupName,
+      description: sourceProp.description || '',
+      displayOrder: sourceProp.displayOrder,
+      hasUniqueValue: Boolean(sourceProp.hasUniqueValue),
+      hidden: Boolean(sourceProp.hidden),
+      formField: Boolean(sourceProp.formField),
+      options: (sourceProp.options || []).map(({ label, value, description, displayOrder, hidden }) =>
+        ({ label, value, description, displayOrder, hidden })),
+    };
+    try {
+      await throttle();
+      await hubspotRequest(destToken, 'POST', `/crm/v3/properties/${objectTypeId}`, body);
+    } catch (err) {
+      // The source property group may not exist in the destination; retry
+      // once in the object's default group.
+      const fallbackGroup = DEFAULT_PROPERTY_GROUPS[objectTypeId];
+      if (!(err instanceof HubSpotApiError && err.status === 400 && fallbackGroup && body.groupName !== fallbackGroup)) throw err;
+      await throttle();
+      await hubspotRequest(destToken, 'POST', `/crm/v3/properties/${objectTypeId}`, { ...body, groupName: fallbackGroup });
+      body.groupName = fallbackGroup;
+    }
+    cache.add(cacheKey);
+    console.log(`[property] Created ${objectTypeId} property "${name}" (${body.label}) in the destination (group "${body.groupName}").`);
+  }
+  return missing;
+}
+
+// ---------------------------------------------------------------------------
+// Holding workflows with unmapped references
+// ---------------------------------------------------------------------------
+
+// Cross-workflow references are resolved in a second pass after all
+// workflows exist, so they never block a workflow on their own.
+const DEFERRED_REFERENCE_KINDS = new Set(['flow_id', 'workflow_id']);
+
+function blockingReferences(unresolvedRefs) {
+  return unresolvedRefs.filter((r) => !DEFERRED_REFERENCE_KINDS.has(r.kind));
+}
+
+function logHeldWorkflow(state, sourceId, workflowName, blocking, allRefs, note) {
+  const summary = [...new Set(blocking.map((r) => `${r.kind} ${r.sourceId}`))].join(', ');
+  console.warn(`[hold] "${workflowName}" (source ${sourceId}) has unmapped reference(s): ${summary}; ${note}`);
+  state.errorLog.push({
+    sourceWorkflowId: sourceId,
+    sourceWorkflowName: workflowName,
+    errorStatus: 'held_unmapped_references',
+    httpStatusCode: null,
+    errorMessage: `Held: ${note} Migrate the referenced form/list/email/property to the destination (or add its ID to ` +
+      `${path.basename(ASSET_ID_MAP_FILE)}), then re-run.`,
+    apiResponse: { unresolvedAssetReferences: allRefs },
+    timestamp: nowIso(),
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Repairing an already-migrated workflow in place (REPAIR_EXISTING=true)
+// ---------------------------------------------------------------------------
+
+const REPAIRABLE_FIELDS = [
+  'name', 'description', 'startActionId', 'nextAvailableActionId', 'actions', 'enrollmentCriteria',
+  'timeWindows', 'blockedDates', 'customProperties', 'suppressionListIds',
+];
+
+async function repairExistingWorkflow(summary, destFull, ctx) {
+  const { sourceToken, destToken, assetMap, state, dryRun, propertyCache } = ctx;
+  const sourceId = String(summary.id);
+  const destinationId = String(destFull.id);
+  const name = summary.name || `(unnamed workflow ${sourceId})`;
+
+  // Once someone has reviewed and turned a workflow on, it's theirs.
+  if (destFull.isEnabled) {
+    console.log(`[skip] "${name}" (destination ${destinationId}) is turned ON in the destination; not modifying it.`);
+    return { status: 'skipped' };
+  }
+
+  try {
+    const fullSource = await fetchFullWorkflow(sourceToken, sourceId);
+    const unresolvedRefs = [];
+    const remapped = remapWorkflowReferences(fullSource, withResolvedWorkflowIds(assetMap, state.idMapping), unresolvedRefs);
+    const desired = sanitizeForCreate(remapped);
+
+    const blocking = blockingReferences(unresolvedRefs);
+    if (blocking.length) {
+      logHeldWorkflow(state, sourceId, fullSource.name || name, blocking, unresolvedRefs,
+        `existing destination workflow ${destinationId} left unchanged (still OFF).`);
+      return { status: 'held' };
+    }
+    const missingProps = await ensureWorkflowProperties(desired, sourceToken, destToken, dryRun, propertyCache);
+    if (missingProps.length) {
+      const refs = missingProps.map((p) => ({ kind: 'property', sourceId: p, where: 'property' }));
+      logHeldWorkflow(state, sourceId, fullSource.name || name, refs, refs,
+        `existing destination workflow ${destinationId} left unchanged (still OFF).`);
+      return { status: 'held' };
+    }
+
+    const drift = validateMigratedWorkflow(desired, destFull).filter((f) => f !== 'isEnabled');
+    if (drift.length === 0) {
+      console.log(`[skip] "${name}" (destination ${destinationId}) already matches the source.`);
+      return { status: 'skipped' };
+    }
+    if (dryRun) {
+      console.log(`[dry-run] Would repair "${name}" (destination ${destinationId}): ${drift.join(', ')}`);
+      return { status: 'dry_run' };
+    }
+
+    const body = { ...destFull };
+    for (const field of REPAIRABLE_FIELDS) {
+      if (Object.prototype.hasOwnProperty.call(desired, field)) body[field] = desired[field];
+    }
+    await updateWorkflow(destToken, destinationId, sanitizeForUpdate(body));
+
+    const after = await getWorkflowByIdSafe(destToken, destinationId);
+    const mismatches = after ? validateMigratedWorkflow(desired, after) : ['(could not re-fetch destination workflow to validate)'];
+    const ok = mismatches.length === 0 && unresolvedRefs.length === 0;
+
+    state.successLog.push({
+      sourceWorkflowId: sourceId,
+      sourceWorkflowName: fullSource.name || name,
+      destinationWorkflowId: destinationId,
+      destinationWorkflowName: desired.name,
+      migrationStatus: ok ? 'repaired' : 'repaired_with_validation_warnings',
+      repairedFields: drift,
+      timestamp: nowIso(),
+    });
+    if (!ok) {
+      state.errorLog.push({
+        sourceWorkflowId: sourceId,
+        sourceWorkflowName: fullSource.name || name,
+        errorStatus: 'validation_failed',
+        httpStatusCode: null,
+        errorMessage: `Workflow was repaired in place (destination ID ${destinationId}) but validation found differences requiring manual review.`,
+        apiResponse: { fieldMismatches: mismatches, unresolvedAssetReferences: unresolvedRefs },
+        timestamp: nowIso(),
+      });
+    }
+    console.log(`[repair] Updated "${name}" (destination ${destinationId}): ${drift.join(', ')}${ok ? '' : ' [needs manual review]'}`);
+    return { status: ok ? 'repaired' : 'repaired_with_warnings' };
+  } catch (err) {
+    const isHubSpotErr = err instanceof HubSpotApiError;
+    state.errorLog.push({
+      sourceWorkflowId: sourceId,
+      sourceWorkflowName: name,
+      errorStatus: 'repair_failed',
+      httpStatusCode: isHubSpotErr ? err.status : null,
+      errorMessage: err.message,
+      apiResponse: isHubSpotErr ? err.body : null,
+      timestamp: nowIso(),
+    });
+    console.error(`[error] Failed to repair "${name}" (destination ${destinationId}): ${err.message}`);
+    return { status: 'failed' };
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Per-workflow migration
 // ---------------------------------------------------------------------------
 
-async function migrateOneWorkflow(summary, sourceToken, destToken, assetMap, state, dryRun) {
+async function migrateOneWorkflow(summary, ctx) {
+  const { sourceToken, destToken, assetMap, state, dryRun, propertyCache } = ctx;
   const sourceId = String(summary.id);
   const sourceNameHint = summary.name || `(unnamed workflow ${sourceId})`;
 
   // --- Idempotency check: already migrated in a previous run? ---
   const existingMapping = findMappingBySourceId(state.idMapping, sourceId);
   if (existingMapping) {
-    if (dryRun) {
-      console.log(`[dry-run] "${sourceNameHint}" (source ${sourceId}) already migrated -> destination ${existingMapping.destinationWorkflowId}; would skip.`);
-      return { status: 'skipped' };
-    }
     const stillExists = await getWorkflowByIdSafe(destToken, existingMapping.destinationWorkflowId);
     if (stillExists) {
+      if (REPAIR_EXISTING) return repairExistingWorkflow(summary, stillExists, ctx);
       console.log(`[skip] "${sourceNameHint}" (source ${sourceId}) already migrated -> destination ${existingMapping.destinationWorkflowId}`);
       return { status: 'skipped' };
     }
-    console.warn(`[warn] Mapping for source ${sourceId} points to destination workflow ${existingMapping.destinationWorkflowId}, which no longer exists there. Re-migrating.`);
+    console.warn(`[warn] Mapping for source ${sourceId} points to destination workflow ${existingMapping.destinationWorkflowId}, which no longer exists there.`);
+  }
+
+  // --- Second idempotency check: a destination workflow with the migrated
+  //     name already exists (e.g. the mapping file was lost or reset). Adopt
+  //     it into the mapping instead of creating a duplicate. ---
+  const sameNameIds = ctx.destWorkflowIdsByName.get(workflowNameKey(migratedWorkflowName(sourceNameHint))) || [];
+  if (sameNameIds.length) {
+    const adoptedId = sameNameIds[0];
+    if (sameNameIds.length > 1) {
+      console.warn(`[warn] ${sameNameIds.length} destination workflows are named "${migratedWorkflowName(sourceNameHint).trim()}" (${sameNameIds.join(', ')}); using ${adoptedId}. Review and delete the duplicates.`);
+    }
+    const existing = await getWorkflowByIdSafe(destToken, adoptedId);
+    if (existing) {
+      if (!dryRun) {
+        const mappingEntry = { sourceWorkflowId: sourceId, destinationWorkflowId: String(adoptedId), workflowName: sourceNameHint, migratedAt: nowIso() };
+        const index = state.idMapping.findIndex((e) => String(e.sourceWorkflowId) === sourceId);
+        if (index >= 0) state.idMapping[index] = mappingEntry;
+        else state.idMapping.push(mappingEntry);
+      }
+      console.log(`[adopt] "${sourceNameHint}" (source ${sourceId}) already exists in the destination as ${adoptedId}; not creating it again.`);
+      if (REPAIR_EXISTING) return repairExistingWorkflow(summary, existing, ctx);
+      return { status: 'skipped' };
+    }
   }
 
   try {
@@ -765,23 +1110,21 @@ async function migrateOneWorkflow(summary, sourceToken, destToken, assetMap, sta
     const remapped = remapWorkflowReferences(fullSource, effectiveAssetMap, unresolvedRefs);
     const createBody = sanitizeForCreate(remapped);
 
-    // --- Hold back workflows that send emails not yet in the destination ---
-    // Creating them now would leave "send email" steps pointing at source
-    // portal email IDs. They are logged and retried on the next run, once
-    // the emails are migrated and mapped in the asset ID mapping file.
-    const unmappedEmails = unresolvedRefs.filter((r) => r.kind === 'content_id');
-    if (unmappedEmails.length) {
-      const emailIds = [...new Set(unmappedEmails.map((r) => r.sourceId))];
-      console.warn(`[hold] "${fullSource.name || sourceNameHint}" (source ${sourceId}) sends ${emailIds.length} email(s) not mapped to the destination (${emailIds.join(', ')}); not migrated this run.`);
-      state.errorLog.push({
-        sourceWorkflowId: sourceId,
-        sourceWorkflowName: fullSource.name || sourceNameHint,
-        errorStatus: 'held_unmapped_emails',
-        httpStatusCode: null,
-        errorMessage: 'Not migrated: workflow sends marketing email(s) that have no destination mapping yet. Migrate the emails, add them to the "emails" section of the asset ID mapping file, then re-run.',
-        apiResponse: { unresolvedAssetReferences: unresolvedRefs },
-        timestamp: nowIso(),
-      });
+    // --- Hold back workflows with references we couldn't map ---
+    // Creating them now would leave triggers/steps pointing at source-portal
+    // form/list/email IDs, which in the destination either don't exist or,
+    // worse, belong to unrelated assets. They are retried on the next run.
+    const blocking = blockingReferences(unresolvedRefs);
+    if (blocking.length) {
+      logHeldWorkflow(state, sourceId, fullSource.name || sourceNameHint, blocking, unresolvedRefs, 'not migrated this run.');
+      return { status: 'held' };
+    }
+
+    // --- Properties the workflow filters on or sets must exist ---
+    const missingProps = await ensureWorkflowProperties(createBody, sourceToken, destToken, dryRun, propertyCache);
+    if (missingProps.length) {
+      const refs = missingProps.map((p) => ({ kind: 'property', sourceId: p, where: 'property' }));
+      logHeldWorkflow(state, sourceId, fullSource.name || sourceNameHint, refs, refs, 'not migrated this run.');
       return { status: 'held' };
     }
 
@@ -803,6 +1146,7 @@ async function migrateOneWorkflow(summary, sourceToken, destToken, assetMap, sta
     // --- Create in destination portal ---
     const created = await createWorkflow(destToken, createBody);
     const destinationId = String(created.id);
+    ctx.destWorkflowIdsByName.set(workflowNameKey(createBody.name), [destinationId]);
 
     // --- Validate what actually landed in the destination portal ---
     let destFull = await getWorkflowByIdSafe(destToken, destinationId);
@@ -1005,7 +1349,11 @@ async function main() {
   }
 
   const assetMap = loadAssetIdMap();
+  await autoMapAssetsByName(sourceToken, destToken, assetMap);
   const state = loadLogState();
+  if (REPAIR_EXISTING) {
+    console.log('[info] REPAIR_EXISTING=true - already-migrated workflows that differ from the source will be updated in place (kept OFF).');
+  }
 
   console.log('[info] Fetching workflow list from source portal...');
   let summaries;
@@ -1036,10 +1384,34 @@ async function main() {
   }
   console.log(`[info] ${targetSummaries.length} of ${allowlist.length} allowlisted workflow(s) matched; only these will be migrated.`);
 
-  const counters = { total: targetSummaries.length, success: 0, skipped: 0, failed: 0, validationFailures: 0, dryRun: 0, held: 0 };
+  const counters = { total: targetSummaries.length, success: 0, skipped: 0, failed: 0, validationFailures: 0, dryRun: 0, held: 0, repaired: 0 };
+  // Index existing destination workflows by name, so a workflow that was
+  // already created is never created a second time.
+  const destWorkflowIdsByName = new Map();
+  try {
+    for (const w of await fetchAllWorkflowSummaries(destToken)) {
+      const key = workflowNameKey(w.name);
+      destWorkflowIdsByName.set(key, [...(destWorkflowIdsByName.get(key) || []), String(w.id)]);
+    }
+  } catch (err) {
+    console.error(`[fatal] Could not list destination workflows (needed to avoid creating duplicates): ${err.message}`);
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`[info] Found ${destWorkflowIdsByName.size} distinct workflow name(s) in the destination portal.`);
+
+  const ctx = { sourceToken, destToken, assetMap, state, dryRun: DRY_RUN, propertyCache: new Set(), destWorkflowIdsByName };
 
   for (const summary of targetSummaries) {
-    const result = await migrateOneWorkflow(summary, sourceToken, destToken, assetMap, state, DRY_RUN);
+    // Earlier runs' error entries for this workflow are replaced by whatever
+    // this run finds, so the error log reflects the current state. They're
+    // kept if the workflow is skipped (nothing was re-checked).
+    const sourceId = String(summary.id);
+    const priorErrors = state.errorLog.filter((e) => String(e.sourceWorkflowId) === sourceId);
+    state.errorLog = state.errorLog.filter((e) => String(e.sourceWorkflowId) !== sourceId);
+
+    const result = await migrateOneWorkflow(summary, ctx);
+    if (result.status === 'skipped') state.errorLog.push(...priorErrors);
     // Persist after every workflow so progress survives a crash/interrupt.
     saveLogState(state);
 
@@ -1050,6 +1422,11 @@ async function main() {
     } else if (result.status === 'skipped') counters.skipped += 1;
     else if (result.status === 'dry_run') counters.dryRun += 1;
     else if (result.status === 'held') counters.held += 1;
+    else if (result.status === 'repaired') counters.repaired += 1;
+    else if (result.status === 'repaired_with_warnings') {
+      counters.repaired += 1;
+      counters.validationFailures += 1;
+    }
     else counters.failed += 1;
   }
 
@@ -1069,7 +1446,8 @@ async function main() {
   console.log(`Total workflows found: ${counters.total}`);
   console.log(`Successfully migrated: ${counters.success}`);
   console.log(`Already migrated/skipped: ${counters.skipped}`);
-  console.log(`Held (unmapped emails, not created): ${counters.held}`);
+  if (REPAIR_EXISTING) console.log(`Repaired in place: ${counters.repaired}`);
+  console.log(`Held (unmapped references, not created/updated): ${counters.held}`);
   console.log(`Failed: ${counters.failed}`);
   console.log(`Validation failures: ${counters.validationFailures}`);
   if (DRY_RUN) console.log(`Dry run (no changes made): ${counters.dryRun}`);

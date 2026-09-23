@@ -83,24 +83,22 @@
  *     back EMBEDDED directly in the single-campaign GET response as
  *     `assets: { <ASSET_TYPE>: { results: [{id, name}] } }` — confirmed
  *     across real campaigns with MARKETING_EMAIL, FORM, and SOCIAL_BROADCAST
- *     asset types. No separate per-type listing call is needed to discover
- *     what's associated; this script reads `assets` directly off the
- *     campaign object. (The separate GET .../assets/{assetType} endpoint
- *     that HubSpot also documents is for paginating a single, possibly
- *     large, asset type — not needed here since none of the 32 target
- *     campaigns have enough assets of one type to paginate.)
- *   - Budget/spend line items have NO list-all endpoint. GET
- *     /marketing/v3/campaigns/{guid}/budget (no id) returns 405 Method Not
- *     Allowed — confirming only get-by-known-id/create/update/delete exist,
- *     with no way to discover which ids exist. Because there is no reliable
- *     way to enumerate a source campaign's existing budget/spend line items
- *     via the public API, THIS SCRIPT DOES NOT AUTO-MIGRATE INDIVIDUAL
- *     BUDGET/SPEND LINE ITEMS — it logs the source campaign's read-only
- *     rollup totals (hs_budget_items_sum_amount, hs_spend_items_sum_amount)
- *     so a human has the numbers needed to recreate them manually in the
- *     destination portal's UI. This is a confirmed API limitation, not a
- *     shortcut — see MIGRATE-CAMPAIGNS-NOTES in the delivery message for the
- *     full explanation.
+ *     asset types. CONFIRMED LIVE: that embedded list is capped at 50
+ *     assets per type (with a `paging.next` link), so whenever there are
+ *     more this script pages through GET .../assets/{assetType} to get them
+ *     all (see fetchAllCampaignAssets).
+ *   - Budget/spend line items: CONFIRMED LIVE that GET .../{guid}/budget/totals
+ *     returns every budget and spend line item (`budgetItems`, `spendItems`),
+ *     so they are enumerated there and any missing in the destination are
+ *     created (see syncBudgetAndSpend).
+ *   - Standard properties the Marketing API refuses to write (hs_owner,
+ *     hs_color_hex, hs_goal, ...) can't be written through the CRM Object
+ *     API either (campaigns aren't supported there, confirmed live). Values
+ *     that differ are logged as MANUAL_PROPERTY with the exact value to set
+ *     (see MANUAL_ONLY_PROPERTIES).
+ *   - Custom properties OMIT `hubspotDefined` entirely (it is undefined, not
+ *     false) — see isCustomProperty. Testing `=== false` once hid the dedupe
+ *     property from every read and made all migrated campaigns look new.
  *   - CRM-record associations (contacts/companies/deals/tickets) use the
  *     same /crm/v4/associations/... pattern already proven elsewhere in this
  *     project (see hubspot-associations-common.js): batch/read for existing
@@ -164,8 +162,11 @@
  *   logs/success-<run-timestamp>.json
  *   logs/errors-<run-timestamp>.json
  *
- * Re-running after fixing an error is safe and fast for already-completed
- * campaigns: they're detected via the `source_campaign_id` custom property
+ * Re-running is safe: an already-migrated campaign is found via the
+ * `source_campaign_id` custom property (list scan, then a direct CRM search
+ * right before any create), or by name with any brand-prefix spelling
+ * ("Touchmath | ", "Touchmath - ", ...); it is never created twice. Found
+ * campaigns are detected via the `source_campaign_id` custom property
  * on the destination campaign (auto-created on the destination object if it
  * doesn't already exist) and only the steps that previously failed are
  * retried — a rerun always re-checks associations/assets/properties for an
@@ -228,10 +229,21 @@ const MARKETING_API_ALLOWED_STANDARD_PROPERTIES = new Set([
   'hs_budget_items_sum_amount', 'hs_spend_items_sum_amount', 'hs_business_unit_ids',
 ]);
 
-/** Properties safe to pass to the Marketing API's `properties=` query param: the fixed allowed set plus genuinely custom properties (hubspotDefined === false). */
+/**
+ * CONFIRMED LIVE: HubSpot sets `hubspotDefined: true` on standard properties
+ * but OMITS the field entirely on custom ones (it is undefined, not false).
+ * Testing `=== false` therefore never matches a custom property — which
+ * silently dropped the dedupe property from every list call and made every
+ * already-migrated campaign look new.
+ */
+function isCustomProperty(def) {
+  return def.hubspotDefined !== true;
+}
+
+/** Properties safe to pass to the Marketing API's `properties=` query param: the fixed allowed set plus genuinely custom properties. */
 function computeMarketingApiAllowedPropertyNames(propertyDefs) {
   return propertyDefs
-    .filter((def) => MARKETING_API_ALLOWED_STANDARD_PROPERTIES.has(def.name) || def.hubspotDefined === false)
+    .filter((def) => MARKETING_API_ALLOWED_STANDARD_PROPERTIES.has(def.name) || isCustomProperty(def))
     .map((def) => def.name);
 }
 
@@ -249,9 +261,24 @@ const MARKETING_API_WRITE_ALLOWED_STANDARD_PROPERTIES = new Set([
   'hs_currency_code', 'hs_campaign_status', 'hs_name', 'hs_utm', 'hs_business_unit_ids',
 ]);
 
+// Standard properties that carry real campaign data but that NO public API
+// can write: the Marketing API rejects them
+// (PROPERTY_SET_CONTAINS_VALUES_FORBIDDEN_FOR_WRITE) and, CONFIRMED LIVE, the
+// CRM Object API returns 400 "Object type CAMPAIGN is not supported by this
+// endpoint" for PATCH. When the destination value differs from the source,
+// each one is logged as MANUAL_PROPERTY with the exact value to set in the
+// HubSpot UI (owners shown by email). AI-enriched, metadata and template
+// fields are left out on purpose — HubSpot generates them.
+const MANUAL_ONLY_PROPERTIES = new Set([
+  'hs_color_hex', 'hs_goal', 'hs_goal_intention', 'hs_projected_budget', 'hs_revenue', 'hs_budget',
+  'hs_new_contact_goal', 'hs_influenced_contact_goal', 'hs_influenced_closed_deal_goal', 'hs_session_goal',
+  'hs_owner', 'hubspot_owner_id',
+]);
+const OWNER_PROPERTIES = new Set(['hs_owner', 'hubspot_owner_id']);
+
 function isWritableViaMarketingApi(destDef) {
   if (!isWritableProperty(destDef)) return false;
-  if (destDef.hubspotDefined === false) return true; // genuinely custom — governed by readOnlyValue only, per the live error message
+  if (isCustomProperty(destDef)) return true; // genuinely custom — governed by readOnlyValue only, per the live error message
   return MARKETING_API_WRITE_ALLOWED_STANDARD_PROPERTIES.has(destDef.name);
 }
 
@@ -279,14 +306,26 @@ const CRM_ASSOCIATION_TARGETS = [
   { objectType: 'tickets', naturalKeyProperty: 'subject' },
 ];
 
-// Asset types this script knows how to look up in the destination portal by
-// name, and the endpoint/field used to do it. Any OTHER asset type found on
-// a source campaign (e.g. SOCIAL_BROADCAST, AD, LANDING_PAGE) is logged for
-// manual review rather than guessed at — see the file header for why.
-const ASSET_TYPE_LIST_PATHS = {
-  MARKETING_EMAIL: '/marketing/v3/emails',
-  FORM: '/marketing/v3/forms',
+// Asset types this script can find in the destination portal, and how.
+// `paged` = GET list endpoint with `after` paging; `lists` / `files` use
+// their own search endpoints. Matching is by name (brand-prefix and
+// case-insensitive); files also match by folder path. Workflows are matched
+// by source ID through workflow_id_mapping.json first (written by
+// migrate-hubspot-workflows.js), then by name. Any OTHER asset type (e.g.
+// SOCIAL_BROADCAST, which has no public API to recreate posts) is logged for
+// manual review rather than guessed at.
+const ASSET_TYPE_SOURCES = {
+  MARKETING_EMAIL: { kind: 'paged', path: '/marketing/v3/emails' },
+  FORM: { kind: 'paged', path: '/marketing/v3/forms' },
+  LANDING_PAGE: { kind: 'paged', path: '/cms/v3/pages/landing-pages' },
+  SITE_PAGE: { kind: 'paged', path: '/cms/v3/pages/site-pages' },
+  BLOG_POST: { kind: 'paged', path: '/cms/v3/blogs/posts' },
+  AUTOMATION_PLATFORM_FLOW: { kind: 'paged', path: '/automation/v4/flows' },
+  OBJECT_LIST: { kind: 'lists' },
+  FILE_MANAGER_FILE: { kind: 'files' },
 };
+
+const WORKFLOW_ID_MAPPING_PATH = path.join(process.cwd(), 'workflow_id_mapping.json');
 
 // ---------------------------------------------------------------------------
 // The 32 campaigns to migrate — exact (case-sensitive) name match only.
@@ -349,6 +388,20 @@ function writeJsonFileAtomic(filePath, data) {
   const tmpPath = `${filePath}.${process.pid}.${Date.now()}.tmp`;
   fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), 'utf8');
   fs.renameSync(tmpPath, filePath);
+}
+
+/**
+ * Brand-prefix-insensitive key for matching a destination campaign to its
+ * source by name. Campaigns created by earlier runs used other prefix
+ * spellings ("Touchmath - ", "TouchMath | "), and hs_name can't be changed
+ * after create, so all variants must resolve to the same key.
+ */
+function campaignNameKey(name) {
+  return String(name || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+    .replace(/^touchmath\s*[-|]\s*/, '');
 }
 
 function buildDestinationName(sourceName) {
@@ -504,6 +557,16 @@ async function getFullCampaignByObjectId(token, label, objectId, propertyNames) 
   return hubspotRequest(token, label, 'GET', `${CRM_OBJECT_PATH}/${objectId}?${query.toString()}`);
 }
 
+/** Last-line duplicate guard: CRM search for a destination campaign already stamped with this source id. */
+async function findDestinationCampaignByDedupeId(token, sourceObjectId) {
+  const resp = await hubspotRequest(token, 'destination', 'POST', `${CRM_OBJECT_PATH}/search`, {
+    filterGroups: [{ filters: [{ propertyName: CONFIG.dedupePropertyName, operator: 'EQ', value: String(sourceObjectId) }] }],
+    properties: ['hs_name', 'hs_object_id', CONFIG.dedupePropertyName],
+    limit: 10,
+  });
+  return (resp && resp.results) || [];
+}
+
 async function createCampaign(token, label, properties) {
   return hubspotRequest(token, label, 'POST', CAMPAIGNS_PATH, { properties });
 }
@@ -592,51 +655,115 @@ async function findDestinationRecordByNaturalKey(destToken, objectType, naturalK
 }
 
 // ---------------------------------------------------------------------------
-// Asset matching (marketing emails, forms — see ASSET_TYPE_LIST_PATHS).
+// Asset matching (see ASSET_TYPE_SOURCES).
 // Other asset types encountered are logged for manual review, not guessed.
 // ---------------------------------------------------------------------------
 
-const destAssetListCache = new Map();
+const destAssetIndexCache = new Map();
 
-async function fetchDestAssetListByType(destToken, assetType) {
-  if (destAssetListCache.has(assetType)) return destAssetListCache.get(assetType);
-  const listPath = ASSET_TYPE_LIST_PATHS[assetType];
-  if (!listPath) return null;
+async function listPaged(token, label, listPath) {
   const all = [];
   let after;
   do {
     const query = new URLSearchParams({ limit: '100' });
     if (after) query.set('after', after);
-    const page = await hubspotRequest(destToken, 'destination', 'GET', `${listPath}?${query.toString()}`);
-    const results = (page && Array.isArray(page.results)) ? page.results : [];
-    all.push(...results);
+    const page = await hubspotRequest(token, label, 'GET', `${listPath}?${query.toString()}`);
+    all.push(...((page && Array.isArray(page.results)) ? page.results : []));
     after = page && page.paging && page.paging.next && page.paging.next.after ? page.paging.next.after : undefined;
   } while (after);
-  const byName = new Map();
-  for (const item of all) {
-    const arr = byName.get(item.name) || [];
-    arr.push(item);
-    byName.set(item.name, arr);
-  }
-  destAssetListCache.set(assetType, byName);
-  return byName;
+  return all;
 }
 
-/** Tries "<prefix><sourceName>" first (since that's what earlier migration scripts created it as), then the raw source name. */
-async function findDestinationAssetByName(destToken, assetType, sourceName) {
-  const byName = await fetchDestAssetListByType(destToken, assetType);
-  if (!byName) return { status: 'unsupported_type' };
-
-  const prefixed = buildDestinationName(sourceName);
-  let candidates = byName.get(prefixed) || [];
-  let matchedName = prefixed;
-  if (candidates.length === 0) {
-    candidates = byName.get(sourceName) || [];
-    matchedName = sourceName;
+async function listAllLists(token, label) {
+  const all = [];
+  let offset = 0;
+  let hasMore = true;
+  while (hasMore) {
+    const page = await hubspotRequest(token, label, 'POST', '/crm/v3/lists/search', { offset, count: 500 });
+    all.push(...((page && page.lists) || []).map((l) => ({ id: String(l.listId), name: l.name })));
+    hasMore = Boolean(page && page.hasMore);
+    offset = page ? page.offset : 0;
   }
-  if (candidates.length === 1) return { status: 'found', id: String(candidates[0].id), matchedName };
-  if (candidates.length > 1) return { status: 'ambiguous', count: candidates.length, matchedName };
+  return all;
+}
+
+const filePathKey = (value) => String(value || '').trim().toLowerCase().replace(/^\/+/, '');
+
+/** Builds (once per type) a name-key -> [ids] index of destination assets. Returns null if the type isn't supported. */
+async function getDestAssetIndex(destToken, assetType) {
+  if (destAssetIndexCache.has(assetType)) return destAssetIndexCache.get(assetType);
+  const source = ASSET_TYPE_SOURCES[assetType];
+  if (!source) return null;
+
+  let items;
+  if (source.kind === 'lists') items = await listAllLists(destToken, 'destination');
+  else if (source.kind === 'files') {
+    items = (await listPaged(destToken, 'destination', '/files/v3/files/search'))
+      .map((f) => ({ id: String(f.id), name: f.path || `${f.name}${f.extension ? `.${f.extension}` : ''}` }));
+  } else items = await listPaged(destToken, 'destination', source.path);
+
+  const index = new Map();
+  for (const item of items) {
+    const key = source.kind === 'files' ? filePathKey(item.name) : campaignNameKey(item.name);
+    if (!key) continue;
+    index.set(key, [...(index.get(key) || []), String(item.id)]);
+  }
+  destAssetIndexCache.set(assetType, index);
+  return index;
+}
+
+let workflowIdMapping = null;
+function destinationWorkflowIdFor(sourceWorkflowId) {
+  if (workflowIdMapping === null) {
+    workflowIdMapping = new Map();
+    try {
+      for (const e of JSON.parse(fs.readFileSync(WORKFLOW_ID_MAPPING_PATH, 'utf8') || '[]')) {
+        workflowIdMapping.set(String(e.sourceWorkflowId), String(e.destinationWorkflowId));
+      }
+    } catch {
+      // No mapping file yet: fall back to name matching only.
+    }
+  }
+  return workflowIdMapping.get(String(sourceWorkflowId)) || null;
+}
+
+/** Finds the destination counterpart of one source campaign asset. */
+async function findDestinationAsset(destToken, assetType, asset) {
+  if (assetType === 'AUTOMATION_PLATFORM_FLOW') {
+    const mapped = destinationWorkflowIdFor(asset.id);
+    if (mapped) return { status: 'found', id: mapped, matchedName: `workflow_id_mapping.json (${asset.id} -> ${mapped})` };
+  }
+  let index;
+  try {
+    index = await getDestAssetIndex(destToken, assetType);
+  } catch (err) {
+    return { status: 'lookup_failed', reason: `Could not list destination ${assetType} assets (${err.status ? `HTTP ${err.status}` : err.message}); check the destination private app's scopes.` };
+  }
+  if (!index) return { status: 'unsupported_type' };
+  const key = assetType === 'FILE_MANAGER_FILE' ? filePathKey(asset.name) : campaignNameKey(asset.name);
+  const candidates = index.get(key) || [];
+  if (candidates.length === 1) return { status: 'found', id: candidates[0], matchedName: asset.name };
+  if (candidates.length > 1) return { status: 'ambiguous', count: candidates.length, matchedName: asset.name };
   return { status: 'not_found' };
+}
+
+/**
+ * CONFIRMED LIVE: the `assets` object embedded in GET /campaigns/{guid} holds
+ * at most 50 assets per type (with a `paging.next` link) — a source campaign
+ * with 125 marketing emails only embeds 50. Page through the per-type assets
+ * endpoint whenever there's more, so nothing is silently left behind.
+ */
+async function fetchAllCampaignAssets(token, label, guid) {
+  const campaign = await getCampaignByGuid(token, label, guid, ['hs_name']);
+  const assets = {};
+  for (const [assetType, group] of Object.entries((campaign && campaign.assets) || {})) {
+    let items = [...((group && group.results) || [])];
+    if (group && group.paging && group.paging.next) {
+      items = await listPaged(token, label, `${CAMPAIGNS_PATH}/${guid}/assets/${assetType}`);
+    }
+    assets[assetType] = items;
+  }
+  return assets;
 }
 
 // ---------------------------------------------------------------------------
@@ -659,6 +786,7 @@ async function findDestinationAssetByName(destToken, assetType, sourceName) {
  */
 function buildPropertiesPayload(sourceCampaign, sourcePropertyDefs, destPropertyDefsByName, { forCreate, needsDedupeStamp }) {
   const properties = {};
+  const crmProperties = {};
   const skippedReadOnly = [];
   const skippedUnsupported = [];
   const sourceProps = sourceCampaign.properties || {};
@@ -688,6 +816,10 @@ function buildPropertiesPayload(sourceCampaign, sourcePropertyDefs, destProperty
       continue;
     }
     if (!isWritableViaMarketingApi(destDef)) {
+      if (MANUAL_ONLY_PROPERTIES.has(srcDef.name)) {
+        if (hasValue) crmProperties[srcDef.name] = sourceProps[srcDef.name];
+        continue;
+      }
       if (hasValue) skippedReadOnly.push({ field: srcDef.name, sourceValue: sourceProps[srcDef.name], reason: 'writable per property metadata, but rejected by the Marketing API\'s create/update endpoint specifically (CampaignApiError.PROPERTY_SET_CONTAINS_VALUES_FORBIDDEN_FOR_WRITE) — confirmed live, not a guess' });
       continue;
     }
@@ -700,7 +832,103 @@ function buildPropertiesPayload(sourceCampaign, sourcePropertyDefs, destProperty
     properties[CONFIG.dedupePropertyName] = String(sourceProps.hs_object_id);
   }
 
-  return { properties, skippedReadOnly, skippedUnsupported };
+  return { properties, crmProperties, skippedReadOnly, skippedUnsupported };
+}
+
+// ---------------------------------------------------------------------------
+// Owners (portal-specific IDs, matched by email)
+// ---------------------------------------------------------------------------
+
+async function listOwners(token, label) {
+  return listPaged(token, label, '/crm/v3/owners');
+}
+
+/** Maps a source owner value (owner id or user id) to the destination owner with the same email, keeping the same id kind. */
+function mapOwnerValue(value, ctx) {
+  const v = String(value);
+  const src = ctx.sourceOwners.find((o) => String(o.id) === v || String(o.userId) === v);
+  if (!src || !src.email) return { mapped: false };
+  const dest = ctx.destOwners.find((o) => o.email && o.email.toLowerCase() === src.email.toLowerCase());
+  if (!dest) return { mapped: false, email: src.email };
+  return { mapped: true, value: String(String(src.id) === v ? dest.id : dest.userId), email: src.email };
+}
+
+/** Lists manual-only property values that differ between source and destination, as issues a human can act on. */
+function reportManualProperties(manualProperties, destProps, ctx) {
+  const issues = [];
+  for (const [name, value] of Object.entries(manualProperties)) {
+    let expected = value;
+    let display = value;
+    if (OWNER_PROPERTIES.has(name)) {
+      const owner = mapOwnerValue(value, ctx);
+      if (!owner.mapped) {
+        issues.push({ kind: 'OWNER_NOT_MAPPED', field: name, sourceValue: value, reason: owner.email
+          ? `Source owner ${owner.email} has no matching owner (same email) in the destination portal.`
+          : `Source owner ${value} could not be resolved to an email.` });
+        continue;
+      }
+      expected = owner.value;
+      display = owner.email;
+    }
+    if (Object.keys(diffAgainstDestination({ [name]: expected }, destProps)).length === 0) continue;
+    issues.push({ kind: 'MANUAL_PROPERTY', field: name, sourceValue: value, setTo: display,
+      reason: `"${name}" can't be written by HubSpot's API for campaigns; set it manually in the destination campaign to: ${display}` });
+  }
+  return issues;
+}
+
+// ---------------------------------------------------------------------------
+// Budget and spend line items
+// ---------------------------------------------------------------------------
+
+/**
+ * CONFIRMED LIVE: GET /marketing/v3/campaigns/{guid}/budget/totals returns
+ * every budget AND spend line item ({budgetItems, spendItems}), so they can
+ * be enumerated after all. Items missing in the destination (matched by
+ * name + amount) are created; existing ones are left alone.
+ */
+async function syncBudgetAndSpend(sourceGuid, destGuid, ctx) {
+  const results = { created: 0, alreadyPresent: 0, issues: [] };
+  const [src, dest] = await Promise.all([
+    hubspotRequest(ctx.sourceToken, 'source', 'GET', `${CAMPAIGNS_PATH}/${sourceGuid}/budget/totals`),
+    destGuid ? hubspotRequest(ctx.destToken, 'destination', 'GET', `${CAMPAIGNS_PATH}/${destGuid}/budget/totals`) : null,
+  ]);
+  const itemKey = (i) => `${String(i.name || '').trim().toLowerCase()}|${Number(i.amount)}`;
+
+  for (const [listKey, endpoint] of [['budgetItems', 'budget'], ['spendItems', 'spend']]) {
+    const existing = new Set(((dest && dest[listKey]) || []).map(itemKey));
+    for (const item of (src && src[listKey]) || []) {
+      if (existing.has(itemKey(item))) {
+        results.alreadyPresent += 1;
+        continue;
+      }
+      if (ctx.dryRun) {
+        results.issues.push({ kind: 'DRY_RUN', reason: `[DRY RUN] Would create ${endpoint} item "${item.name}" (${item.amount}).` });
+        continue;
+      }
+      try {
+        await hubspotRequest(ctx.destToken, 'destination', 'POST', `${CAMPAIGNS_PATH}/${destGuid}/${endpoint}`, {
+          name: item.name, amount: item.amount, order: item.order, description: item.description,
+        });
+        existing.add(itemKey(item));
+        results.created += 1;
+      } catch (err) {
+        results.issues.push({ kind: 'BUDGET_SPEND_CREATE_FAILED', item, httpStatus: err.status, apiResponse: err.body, reason: `Could not create ${endpoint} item "${item.name}": ${err.message}` });
+      }
+    }
+  }
+  return results;
+}
+
+/** Keeps only the payload fields whose value differs from the destination's current value. */
+function diffAgainstDestination(payload, destProps) {
+  const changed = {};
+  for (const [name, value] of Object.entries(payload)) {
+    const current = destProps ? destProps[name] : undefined;
+    const normalize = (v) => (v === null || v === undefined ? '' : String(DATE_ONLY_PROPERTIES.has(name) ? toDateOnly(v) : v));
+    if (normalize(value) !== normalize(current)) changed[name] = value;
+  }
+  return changed;
 }
 
 // ---------------------------------------------------------------------------
@@ -729,6 +957,12 @@ function logError(entry) {
 // Per-campaign migration
 // ---------------------------------------------------------------------------
 
+/** Numeric hs_object_id -> Marketing API GUID, using the destination campaigns already listed this run. */
+async function resolveGuidForObjectId(ctx, objectId) {
+  const hit = ctx.destinationCampaigns.find((c) => String(c.properties.hs_object_id) === String(objectId));
+  return hit ? hit.id : null;
+}
+
 /** findOrCreateDestinationCampaign — dedupe-property match, then name-match "heal", then create. Returns { campaign, action, wasHealed }. */
 async function findOrCreateDestinationCampaign(sourceCampaign, ctx) {
   const sourceObjectId = String(sourceCampaign.properties.hs_object_id);
@@ -739,7 +973,9 @@ async function findOrCreateDestinationCampaign(sourceCampaign, ctx) {
     return { campaign: byDedupe, action: 'UPDATE', wasHealed: false };
   }
 
-  const byNameCandidates = ctx.destByName.get(expectedName) || [];
+  const byNameCandidates = (ctx.destByName.get(campaignNameKey(expectedName)) || [])
+    // A campaign already stamped for a DIFFERENT source campaign is not a match.
+    .filter((c) => !c.properties[CONFIG.dedupePropertyName] || String(c.properties[CONFIG.dedupePropertyName]) === sourceObjectId);
   if (byNameCandidates.length === 1) {
     return { campaign: byNameCandidates[0], action: 'UPDATE', wasHealed: true };
   }
@@ -747,46 +983,63 @@ async function findOrCreateDestinationCampaign(sourceCampaign, ctx) {
     return { status: 'ambiguous_name', count: byNameCandidates.length };
   }
 
+  // Belt and braces: the list-based maps above could be incomplete (e.g. a
+  // campaign created moments ago, or a list call missing a property), so
+  // ask the CRM search API directly before creating anything.
+  const alreadyStamped = await findDestinationCampaignByDedupeId(ctx.destToken, sourceObjectId);
+  if (alreadyStamped.length > 1) {
+    return { status: 'ambiguous_dedupe', count: alreadyStamped.length };
+  }
+  if (alreadyStamped.length === 1) {
+    const guid = await resolveGuidForObjectId(ctx, alreadyStamped[0].id);
+    if (!guid) return { status: 'ambiguous_dedupe', count: 1 };
+    const campaign = await getCampaignByGuid(ctx.destToken, 'destination', guid, ctx.destMarketingListProps);
+    return { campaign, action: 'UPDATE', wasHealed: false };
+  }
+
   if (ctx.dryRun) {
     return { action: 'CREATE', dryRun: true };
   }
 
-  const { properties, skippedReadOnly, skippedUnsupported } = buildPropertiesPayload(sourceCampaign, ctx.sourcePropertyDefs, ctx.destPropertyDefsByName, { forCreate: true });
+  const { properties, crmProperties, skippedReadOnly, skippedUnsupported } = buildPropertiesPayload(sourceCampaign, ctx.sourcePropertyDefs, ctx.destPropertyDefsByName, { forCreate: true });
   const created = await createCampaign(ctx.destToken, 'destination', properties);
-  return { campaign: created, action: 'CREATE', wasHealed: false, skippedReadOnly, skippedUnsupported };
+  return { campaign: created, action: 'CREATE', wasHealed: false, crmProperties, skippedReadOnly, skippedUnsupported };
 }
 
-/** syncAssets — re-links marketing emails / forms already migrated to the destination; logs anything it can't confidently match. */
+/** syncAssets — links the destination counterpart of every source campaign asset; logs anything it can't confidently match. `existingDestAssets` is { type: [{id,name}] }. */
 async function syncAssets(sourceCampaign, destCampaignGuid, existingDestAssets, ctx) {
   const results = { linked: 0, alreadyLinked: 0, issues: [] };
-  const sourceAssets = sourceCampaign.assets || {};
 
-  for (const [assetType, group] of Object.entries(sourceAssets)) {
-    const items = (group && group.results) || [];
+  for (const [assetType, items] of Object.entries(sourceCampaign.assets || {})) {
+    const alreadyLinkedIds = new Set((existingDestAssets[assetType] || []).map((a) => String(a.id)));
     for (const asset of items) {
-      if (!ASSET_TYPE_LIST_PATHS[assetType]) {
-        results.issues.push({ kind: 'UNSUPPORTED_ASSET_TYPE', assetType, assetName: asset.name, assetId: asset.id, reason: `No verified HubSpot API is wired up in this script to look up a destination match for asset type "${assetType}". Link this asset to the destination campaign manually.` });
-        continue;
-      }
-
-      const alreadyLinkedIds = new Set(((existingDestAssets[assetType] && existingDestAssets[assetType].results) || []).map((a) => String(a.id)));
-
-      const match = await findDestinationAssetByName(ctx.destToken, assetType, asset.name);
+      const match = await findDestinationAsset(ctx.destToken, assetType, asset);
       if (match.status === 'found') {
         if (alreadyLinkedIds.has(match.id)) {
           results.alreadyLinked += 1;
           continue;
         }
         if (ctx.dryRun) {
-          results.issues.push({ kind: 'DRY_RUN', assetType, assetName: asset.name, reason: `[DRY RUN] Would link destination ${assetType} "${match.matchedName}" (id ${match.id}) to this campaign.` });
+          results.issues.push({ kind: 'DRY_RUN', assetType, assetName: asset.name, reason: `[DRY RUN] Would link destination ${assetType} ${match.id} (${match.matchedName}).` });
           continue;
         }
-        await addCampaignAsset(ctx.destToken, 'destination', destCampaignGuid, assetType, match.id);
-        results.linked += 1;
+        try {
+          await addCampaignAsset(ctx.destToken, 'destination', destCampaignGuid, assetType, match.id);
+          alreadyLinkedIds.add(match.id);
+          results.linked += 1;
+        } catch (err) {
+          results.issues.push({ kind: 'ASSET_LINK_FAILED', assetType, assetName: asset.name, assetId: asset.id, destinationAssetId: match.id, httpStatus: err.status, apiResponse: err.body, reason: `Could not link destination ${assetType} ${match.id}: ${err.message}` });
+        }
+      } else if (match.status === 'unsupported_type') {
+        results.issues.push({ kind: 'UNSUPPORTED_ASSET_TYPE', assetType, assetName: asset.name, assetId: asset.id, reason: assetType === 'SOCIAL_BROADCAST'
+          ? 'Social posts cannot be recreated or looked up through HubSpot\'s public API; recreate/attach them manually in the destination campaign if needed.'
+          : `No destination lookup is wired up for asset type "${assetType}". Link this asset to the destination campaign manually.` });
+      } else if (match.status === 'lookup_failed') {
+        results.issues.push({ kind: 'ASSET_LOOKUP_FAILED', assetType, assetName: asset.name, assetId: asset.id, reason: match.reason });
       } else if (match.status === 'ambiguous') {
-        results.issues.push({ kind: 'ASSET_MATCH_AMBIGUOUS', assetType, assetName: asset.name, assetId: asset.id, reason: `${match.count} destination ${assetType} records are named exactly "${match.matchedName}"; cannot confidently pick one.` });
-      } else if (match.status === 'not_found') {
-        results.issues.push({ kind: 'ASSET_MATCH_NOT_FOUND', assetType, assetName: asset.name, assetId: asset.id, reason: `No destination ${assetType} found named "${buildDestinationName(asset.name)}" or "${asset.name}". This asset likely hasn't been migrated to the destination portal yet.` });
+        results.issues.push({ kind: 'ASSET_MATCH_AMBIGUOUS', assetType, assetName: asset.name, assetId: asset.id, reason: `${match.count} destination ${assetType} records match "${match.matchedName}"; cannot confidently pick one.` });
+      } else {
+        results.issues.push({ kind: 'ASSET_MATCH_NOT_FOUND', assetType, assetName: asset.name, assetId: asset.id, reason: `No destination ${assetType} matches "${asset.name}" (with or without the brand prefix). It likely hasn't been migrated to the destination portal yet.` });
       }
     }
   }
@@ -811,7 +1064,7 @@ async function syncAssociations(sourceCampaign, destCampaignObjectId, ctx) {
     const naturalKeys = await batchReadNaturalKeys(ctx.sourceToken, 'source', target.objectType, sourceIds, target.naturalKeyProperty);
 
     let existingDestIds = new Set();
-    if (!ctx.dryRun && destCampaignObjectId) {
+    if (destCampaignObjectId) {
       try {
         existingDestIds = new Set(await fetchCampaignAssociations(ctx.destToken, 'destination', destCampaignObjectId, target.objectType));
       } catch (err) {
@@ -858,11 +1111,11 @@ async function syncAssociations(sourceCampaign, destCampaignObjectId, ctx) {
 async function fetchFullSourceCampaign(sourceSummary, ctx) {
   const guid = sourceSummary.id;
   const objectId = String(sourceSummary.properties.hs_object_id);
-  const [fullRecord, withAssets] = await Promise.all([
+  const [fullRecord, assets] = await Promise.all([
     getFullCampaignByObjectId(ctx.sourceToken, 'source', objectId, ctx.sourcePropertyNames),
-    getCampaignByGuid(ctx.sourceToken, 'source', guid, ['hs_name']),
+    fetchAllCampaignAssets(ctx.sourceToken, 'source', guid),
   ]);
-  return { id: guid, properties: fullRecord.properties, assets: withAssets.assets || {} };
+  return { id: guid, properties: fullRecord.properties, assets };
 }
 
 async function migrateOneCampaign(sourceSummary, ctx) {
@@ -886,6 +1139,11 @@ async function migrateOneCampaign(sourceSummary, ctx) {
     return { status: 'FAILED' };
   }
 
+  if (resolved.status === 'ambiguous_dedupe') {
+    logError({ campaignName: sourceName, sourceCampaignId: sourceObjectId, step: 'FIND_OR_CREATE', message: `${resolved.count} destination campaign(s) already carry ${CONFIG.dedupePropertyName}=${sourceObjectId} but could not be resolved to a single campaign; not creating another.`, whatNeedsToBeDone: 'Delete the duplicate destination campaigns (keep one), then re-run.' });
+    return { status: 'MANUAL_REVIEW_REQUIRED' };
+  }
+
   if (resolved.status === 'ambiguous_name') {
     logError({ campaignName: sourceName, sourceCampaignId: sourceObjectId, step: 'FIND_OR_CREATE', message: `${resolved.count} destination campaigns are already named exactly "${buildDestinationName(sourceName)}"; cannot confidently pick one.`, whatNeedsToBeDone: `Manually identify the correct destination campaign, then set its "${CONFIG.dedupePropertyName}" property to ${sourceObjectId} so future runs resolve it via the dedupe property instead of by name.` });
     return { status: 'MANUAL_REVIEW_REQUIRED' };
@@ -895,8 +1153,42 @@ async function migrateOneCampaign(sourceSummary, ctx) {
     const budgetNote = (sourceCampaign.properties.hs_budget_items_sum_amount || sourceCampaign.properties.hs_spend_items_sum_amount)
       ? ` Budget total: ${sourceCampaign.properties.hs_budget_items_sum_amount ?? 0}, spend total: ${sourceCampaign.properties.hs_spend_items_sum_amount ?? 0} (not auto-migrated — see file header; recreate manually if needed).`
       : '';
-    console.log(`[DRY RUN] ${resolved.action} "${sourceName}" (source ${sourceObjectId}) -> "${buildDestinationName(sourceName)}"${budgetNote}`);
-    logSuccess({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: null, action: `DRY_RUN_${resolved.action}`, note: budgetNote || undefined });
+    if (resolved.action !== 'UPDATE') {
+      console.log(`[DRY RUN] CREATE "${sourceName}" (source ${sourceObjectId}) -> "${buildDestinationName(sourceName)}"${budgetNote}`);
+      logSuccess({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: null, action: 'DRY_RUN_CREATE', note: budgetNote || undefined });
+      return { status: 'DRY_RUN' };
+    }
+
+    // Existing destination campaign: preview exactly what a real run would
+    // change (all reads, no writes).
+    const dest = resolved.campaign;
+    const destFullProps = await getFullCampaignByObjectId(ctx.destToken, 'destination', String(dest.properties.hs_object_id), ctx.destPropertyNames);
+    const built = buildPropertiesPayload(sourceCampaign, ctx.sourcePropertyDefs, ctx.destPropertyDefsByName, { forCreate: false, needsDedupeStamp: resolved.wasHealed });
+    const changed = diffAgainstDestination(built.properties, destFullProps.properties);
+    const manualIssues = reportManualProperties(built.crmProperties, destFullProps.properties, ctx);
+    const budgetPreview = await syncBudgetAndSpend(sourceCampaign.id, dest.id, ctx);
+    const destAssets = await fetchAllCampaignAssets(ctx.destToken, 'destination', dest.id);
+    const assetPreview = await syncAssets(sourceCampaign, dest.id, destAssets, ctx);
+    const assocPreview = await syncAssociations(sourceCampaign, String(dest.properties.hs_object_id), ctx);
+    const wouldLinkAssets = assetPreview.issues.filter((i) => i.kind === 'DRY_RUN').length;
+    const wouldLinkAssocs = assocPreview.issues.filter((i) => i.kind === 'DRY_RUN').length;
+    const problems = [...assetPreview.issues, ...assocPreview.issues, ...manualIssues, ...budgetPreview.issues].filter((i) => i.kind !== 'DRY_RUN');
+    const wouldCreateBudget = budgetPreview.issues.filter((i) => i.kind === 'DRY_RUN').length;
+    // Only report values a human could still set by hand; computed/read-only
+    // rollups (counts, timestamps) are recalculated by HubSpot itself.
+    const notReplicable = built.skippedReadOnly.filter((x) => x.reason.startsWith('writable per property metadata') && !/^hs_enriched_|^hs_last_interaction_timestamp$/.test(x.field));
+
+    console.log(`[DRY RUN] UPDATE "${sourceName}" -> existing "${dest.properties.hs_name}" (${dest.id})` +
+      ` | properties to change: ${Object.keys(changed).length ? Object.keys(changed).join(', ') : 'none'}` +
+      ` | assets: ${assetPreview.alreadyLinked} linked, ${wouldLinkAssets} to link` +
+      ` | CRM associations: ${assocPreview.alreadyLinked} linked, ${wouldLinkAssocs} to link` +
+      ` | budget/spend items: ${budgetPreview.alreadyPresent} present, ${wouldCreateBudget} to create` +
+      (problems.length ? ` | ${problems.length} issue(s)` : '') +
+      (notReplicable.length ? ` | not writable via API: ${notReplicable.map((x) => x.field).join(', ')}` : '') + budgetNote);
+    for (const issue of problems) {
+      logError({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: dest.id, step: issue.kind, severity: 'WARNING', message: issue.reason, details: issue });
+    }
+    logSuccess({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: dest.id, action: 'DRY_RUN_UPDATE', propertiesToChange: changed, assetsToLink: wouldLinkAssets, associationsToLink: wouldLinkAssocs, issues: problems.length, notWritableViaApi: notReplicable, note: budgetNote || undefined });
     return { status: 'DRY_RUN' };
   }
 
@@ -910,13 +1202,17 @@ async function migrateOneCampaign(sourceSummary, ctx) {
   // its full property payload inside findOrCreateDestinationCampaign, so
   // there's nothing further to build/send here for that path.
   let skippedUnsupported = resolved.skippedUnsupported || [];
+  let crmPropertiesToWrite = resolved.crmProperties || {};
   if (resolved.action === 'UPDATE') {
     try {
       const built = buildPropertiesPayload(sourceCampaign, ctx.sourcePropertyDefs, ctx.destPropertyDefsByName, { forCreate: false, needsDedupeStamp: resolved.wasHealed });
       skippedUnsupported = built.skippedUnsupported;
-      if (Object.keys(built.properties).length > 0) {
-        await updateCampaign(ctx.destToken, 'destination', destGuid, built.properties);
+      const destFullProps = await getFullCampaignByObjectId(ctx.destToken, 'destination', destObjectId, ctx.destPropertyNames);
+      const changed = diffAgainstDestination(built.properties, destFullProps.properties);
+      if (Object.keys(changed).length > 0) {
+        await updateCampaign(ctx.destToken, 'destination', destGuid, changed);
       }
+      crmPropertiesToWrite = built.crmProperties;
     } catch (err) {
       logError({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: destGuid, step: 'UPDATE_PROPERTIES', httpStatus: err.status, apiResponse: err.body, message: err.message });
       return { status: 'FAILED' };
@@ -924,6 +1220,21 @@ async function migrateOneCampaign(sourceSummary, ctx) {
   }
   if (skippedUnsupported.length > 0) {
     logError({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: destGuid, step: 'PROPERTY_UNSUPPORTED_IN_DESTINATION', severity: 'WARNING', message: `${skippedUnsupported.length} source property value(s) could not be migrated because the property doesn't exist in the destination portal's campaigns schema.`, details: skippedUnsupported });
+  }
+
+  // Values no API can write: report the ones that differ for manual entry.
+  const extraIssues = [];
+  try {
+    const destNow = await getFullCampaignByObjectId(ctx.destToken, 'destination', destObjectId, ctx.destPropertyNames);
+    extraIssues.push(...reportManualProperties(crmPropertiesToWrite, destNow.properties, ctx));
+  } catch (err) {
+    extraIssues.push({ kind: 'MANUAL_PROPERTY_CHECK_FAILED', reason: err.message });
+  }
+  try {
+    const budget = await syncBudgetAndSpend(sourceCampaign.id, destGuid, ctx);
+    extraIssues.push(...budget.issues);
+  } catch (err) {
+    extraIssues.push({ kind: 'BUDGET_SPEND_SYNC_FAILED', httpStatus: err.status, reason: err.message });
   }
 
   // Re-fetch full destination campaign (with assets) after create/update so
@@ -938,7 +1249,7 @@ async function migrateOneCampaign(sourceSummary, ctx) {
 
   let assetResults;
   try {
-    assetResults = await syncAssets(sourceCampaign, destGuid, destFull.assets || {}, ctx);
+    assetResults = await syncAssets(sourceCampaign, destGuid, await fetchAllCampaignAssets(ctx.destToken, 'destination', destGuid), ctx);
   } catch (err) {
     assetResults = { linked: 0, alreadyLinked: 0, issues: [{ kind: 'ASSET_SYNC_FAILED', reason: err.message }] };
   }
@@ -950,12 +1261,12 @@ async function migrateOneCampaign(sourceSummary, ctx) {
     associationResults = { linked: 0, alreadyLinked: 0, issues: [{ kind: 'ASSOCIATION_SYNC_FAILED', reason: err.message }] };
   }
 
-  const hardIssues = [...assetResults.issues, ...associationResults.issues].filter((i) => i.kind !== 'DRY_RUN');
+  const hardIssues = [...extraIssues, ...assetResults.issues, ...associationResults.issues].filter((i) => i.kind !== 'DRY_RUN');
   for (const issue of hardIssues) {
     logError({ campaignName: sourceName, sourceCampaignId: sourceObjectId, destinationCampaignId: destGuid, step: issue.kind, severity: 'WARNING', message: issue.reason, details: issue });
   }
 
-  const budgetSpendNote = `Budget/spend line items are NOT auto-migrated (no HubSpot list-all API exists for them — see file header). Source totals: budget=${sourceCampaign.properties.hs_budget_items_sum_amount ?? 0}, spend=${sourceCampaign.properties.hs_spend_items_sum_amount ?? 0}. Recreate individual line items manually in the destination portal if needed.`;
+  const budgetSpendNote = `Source budget/spend totals: budget=${sourceCampaign.properties.hs_budget_items_sum_amount ?? 0}, spend=${sourceCampaign.properties.hs_spend_items_sum_amount ?? 0} (line items synced via /budget/totals).`;
 
   const status = (hardIssues.length === 0 && skippedUnsupported.length === 0) ? 'FULL_SUCCESS' : 'PARTIAL';
   logSuccess({
@@ -1129,15 +1440,21 @@ async function main() {
   }
   console.log(`[info] Found ${destinationCampaigns.length} campaign(s) already in the destination portal.`);
 
+  if (destPropertyDefs.some((p) => p.name === CONFIG.dedupePropertyName) && !destMarketingListProps.includes(CONFIG.dedupePropertyName)) {
+    console.error(`[fatal] "${CONFIG.dedupePropertyName}" exists on the destination but is not being read from destination campaigns; refusing to run (duplicates would be created).`);
+    process.exitCode = 1;
+    return;
+  }
+
   const destByDedupeId = new Map();
   const destByName = new Map();
   for (const c of destinationCampaigns) {
     const dedupeVal = c.properties[CONFIG.dedupePropertyName];
     if (dedupeVal) destByDedupeId.set(String(dedupeVal), c);
-    const nameArr = destByName.get(c.properties.hs_name) || [];
-    nameArr.push(c);
-    destByName.set(c.properties.hs_name, nameArr);
+    const key = campaignNameKey(c.properties.hs_name);
+    destByName.set(key, [...(destByName.get(key) || []), c]);
   }
+  console.log(`[info] ${destByDedupeId.size} destination campaign(s) are already linked to a source campaign via "${CONFIG.dedupePropertyName}".`);
 
   const { matches, notFound, duplicates } = findMatchingCampaigns(sourceCampaigns);
 
@@ -1161,15 +1478,27 @@ async function main() {
     });
   }
 
+  let sourceOwners = [];
+  let destOwners = [];
+  try {
+    [sourceOwners, destOwners] = await Promise.all([listOwners(CONFIG.sourceToken, 'source'), listOwners(CONFIG.destToken, 'destination')]);
+  } catch (err) {
+    console.warn(`[warn] Could not list owners (${err.status ? `HTTP ${err.status}` : err.message}); campaign owner fields will not be migrated. Grant crm.objects.owners.read to both apps.`);
+  }
+
   const ctx = {
+    sourceOwners,
+    destOwners,
     sourceToken: CONFIG.sourceToken,
     destToken: CONFIG.destToken,
     sourcePropertyDefs,
     sourcePropertyNames,
     destPropertyDefsByName,
     destMarketingListProps,
+    destPropertyNames: destPropertyDefs.map((p) => p.name),
     destByDedupeId,
     destByName,
+    destinationCampaigns,
     dryRun: CONFIG.dryRun,
   };
 
