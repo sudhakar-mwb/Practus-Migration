@@ -31,11 +31,16 @@
  *     other (there's no documented conversion; GET-by-guid is the only
  *     confirmed way to resolve a numeric id back to its GUID, done once per
  *     campaign after matching).
- *   - `hs_name` has modificationMetadata.readOnlyValue = true — i.e. it can
- *     only be set at CREATE time and is immutable after. It is documented
- *     elsewhere as "updatable", which live property metadata contradicts;
- *     live metadata was trusted. This script therefore sets hs_name once on
- *     CREATE (with the prefix) and never sends it on a later PATCH.
+ *   - `hs_name` has modificationMetadata.readOnlyValue = true, but THAT
+ *     METADATA IS WRONG — CONFIRMED LIVE 2026-09-25 against sandbox 47206776:
+ *     PATCH /marketing/v3/campaigns/{guid} with properties.hs_name returned
+ *     200 and a read-back showed the new name persisted (campaign renamed
+ *     "Touchmath | TAW2026" -> "Touchmath | TAW2026"). hs_name also appears
+ *     in the write allowlist the API returns when it rejects a write. This
+ *     script therefore sends hs_name on CREATE *and* UPDATE, so changing
+ *     CONFIG.namePrefix re-normalises campaigns migrated by earlier runs.
+ *     (It previously trusted the metadata and never sent hs_name on PATCH,
+ *     which left campaigns permanently on the first run's prefix spelling.)
  *   - `hs_revenue` is writable (modificationMetadata.readOnlyValue = false)
  *     — it is NOT the read-only rollup one might assume. The actual
  *     read-only computed rollups are `hs_influenced_revenue`,
@@ -165,7 +170,7 @@
  * Re-running is safe: an already-migrated campaign is found via the
  * `source_campaign_id` custom property (list scan, then a direct CRM search
  * right before any create), or by name with any brand-prefix spelling
- * ("Touchmath | ", "Touchmath - ", ...); it is never created twice. Found
+ * ("Touchmath | ", "Touchmath | ", ...); it is never created twice. Found
  * campaigns are detected via the `source_campaign_id` custom property
  * on the destination campaign (auto-created on the destination object if it
  * doesn't already exist) and only the steps that previously failed are
@@ -175,7 +180,11 @@
 
 'use strict';
 
-require('dotenv').config();
+// dotenv is optional: `node --env-file=.env migrate-campaigns.js` already
+// supplies the variables, and node_modules is not always installed in this
+// project. A hard require here crashed the script with MODULE_NOT_FOUND even
+// though the environment was fully configured.
+try { require('dotenv').config(); } catch { /* optional — --env-file covers it */ }
 const fs = require('fs');
 const path = require('path');
 
@@ -183,7 +192,22 @@ const path = require('path');
 // Configuration
 // ---------------------------------------------------------------------------
 
-const DRY_RUN = process.argv.includes('--dry-run');
+/**
+ * Dry run is enabled by EITHER the --dry-run flag or DRY_RUN=true in the
+ * environment.
+ *
+ * The env var was added after this script's flag-only form caused a live
+ * write: every other migration script in this project is driven by
+ * `DRY_RUN=true|false`, so `DRY_RUN=true node migrate-campaigns.js` looks
+ * like a preview but was silently ignored here and performed real updates.
+ * Accepting both spellings removes that trap. DRY_RUN=false does NOT
+ * override an explicit --dry-run flag — the safer of the two always wins.
+ */
+const DRY_RUN = process.argv.includes('--dry-run')
+  || String(process.env.DRY_RUN || '').toLowerCase() === 'true';
+
+/** Copy the source campaign's hs_utm. See the note in buildPropertiesPayload. */
+const MIGRATE_UTM = String(process.env.MIGRATE_UTM || 'true').toLowerCase() !== 'false';
 
 const CONFIG = {
   sourceToken: process.env.SOURCE_HUBSPOT_TOKEN,
@@ -277,9 +301,15 @@ const MANUAL_ONLY_PROPERTIES = new Set([
 const OWNER_PROPERTIES = new Set(['hs_owner', 'hubspot_owner_id']);
 
 function isWritableViaMarketingApi(destDef) {
+  // Allowlist first: it is the API's own statement of what it accepts and it
+  // outranks modificationMetadata, which is wrong for hs_name and hs_utm
+  // (both report readOnlyValue=true yet PATCH persists them — verified live
+  // 2026-09-25). Checking metadata before the allowlist silently dropped
+  // those two from every migrated campaign.
+  if (MARKETING_API_WRITE_ALLOWED_STANDARD_PROPERTIES.has(destDef.name)) return true;
   if (!isWritableProperty(destDef)) return false;
   if (isCustomProperty(destDef)) return true; // genuinely custom — governed by readOnlyValue only, per the live error message
-  return MARKETING_API_WRITE_ALLOWED_STANDARD_PROPERTIES.has(destDef.name);
+  return false;
 }
 
 // hs_start_date/hs_end_date are `datetime`-typed in the property schema (so
@@ -393,8 +423,10 @@ function writeJsonFileAtomic(filePath, data) {
 /**
  * Brand-prefix-insensitive key for matching a destination campaign to its
  * source by name. Campaigns created by earlier runs used other prefix
- * spellings ("Touchmath - ", "TouchMath | "), and hs_name can't be changed
- * after create, so all variants must resolve to the same key.
+ * spellings ("Touchmath | ", "Touchmath | ", "TouchMath | "), so every
+ * variant must resolve to the same key. This is what makes changing
+ * CONFIG.namePrefix safe: an existing campaign is still recognised under its
+ * old prefix and gets renamed, rather than being missed and re-created.
  */
 function campaignNameKey(name) {
   return String(name || '')
@@ -795,13 +827,26 @@ function buildPropertiesPayload(sourceCampaign, sourcePropertyDefs, destProperty
     if (srcDef.name === CONFIG.dedupePropertyName) continue; // never present in the source schema; handled separately below
 
     // hs_name is a special case checked BEFORE the generic writability gate:
-    // live property metadata correctly reports it as read-only (it can only
-    // be set at CREATE, never changed after — see file header), which would
-    // otherwise make the generic branch below skip it unconditionally,
-    // including on create. Handle it explicitly instead.
+    // live property metadata reports readOnlyValue=true, which would make the
+    // generic branch below skip it unconditionally, including on create.
+    //
+    // CORRECTION (verified live 2026-09-25, sandbox 47206776): that metadata
+    // is WRONG. hs_name IS writable after create. Proven by renaming campaign
+    // b9a65952-668c-4ba4-91eb-8a750e673482 from "Touchmath | TAW2026" to
+    // "Touchmath | TAW2026" via PATCH /marketing/v3/campaigns/{guid} -> 200,
+    // with a read-back confirming the new value persisted. hs_name is also
+    // listed in the write allowlist the API itself returns on a rejected
+    // write. The previous "immutable after create" assumption left campaigns
+    // stuck on whatever prefix the first run happened to use.
+    //
+    // It is therefore sent on update too, so a change to CONFIG.namePrefix
+    // re-normalises existing campaigns instead of stranding them. This cannot
+    // create duplicates: matching happens on the dedupe property
+    // (source_campaign_id) and prefix-insensitive name keys, never on the
+    // exact current name — see campaignNameKey().
     if (srcDef.name === 'hs_name') {
-      if (forCreate) properties.hs_name = buildDestinationName(sourceProps.hs_name);
-      continue; // never sent on update — immutable after create.
+      properties.hs_name = buildDestinationName(sourceProps.hs_name);
+      continue;
     }
 
     const hasValue = srcDef.name in sourceProps && sourceProps[srcDef.name] !== null && sourceProps[srcDef.name] !== undefined && sourceProps[srcDef.name] !== '';
@@ -811,7 +856,28 @@ function buildPropertiesPayload(sourceCampaign, sourcePropertyDefs, destProperty
       if (hasValue) skippedUnsupported.push({ field: srcDef.name, sourceValue: sourceProps[srcDef.name], reason: 'property does not exist in the destination portal\'s campaigns schema' });
       continue;
     }
-    if (!isWritableProperty(destDef)) {
+    // The API's OWN write allowlist outranks modificationMetadata, which is
+    // demonstrably wrong for some standard properties. CONFIRMED LIVE
+    // 2026-09-25 in sandbox 47206776: both hs_name and hs_utm report
+    // readOnlyValue=true yet PATCH accepts them and the value persists on
+    // read-back. hs_utm carries real data on ALL 93 source campaigns, so
+    // trusting the metadata silently dropped it from every migrated campaign.
+    // If a property is on the write allowlist, it is writable — full stop.
+    // hs_utm is portal-derived: HubSpot generates it as "<campaignId>-<name>",
+    // so the source value embeds the SOURCE campaign's numeric id. Copying it
+    // makes tracking links that already carry the source UTM attribute to the
+    // migrated campaign (what "100% replica" implies), at the cost of the
+    // destination campaign no longer matching the UTM HubSpot would generate
+    // for it. Set MIGRATE_UTM=false to leave HubSpot's own value in place.
+    if (srcDef.name === 'hs_utm' && !MIGRATE_UTM) {
+      if (srcDef.name in sourceProps && sourceProps[srcDef.name]) {
+        skippedReadOnly.push({ field: 'hs_utm', sourceValue: sourceProps.hs_utm, reason: 'MIGRATE_UTM=false — left as the destination portal\'s own generated UTM value' });
+      }
+      continue;
+    }
+
+    const onWriteAllowlist = MARKETING_API_WRITE_ALLOWED_STANDARD_PROPERTIES.has(srcDef.name);
+    if (!onWriteAllowlist && !isWritableProperty(destDef)) {
       if (hasValue) skippedReadOnly.push({ field: srcDef.name, sourceValue: sourceProps[srcDef.name], reason: 'read-only per live destination property metadata (modificationMetadata.readOnlyValue=true)' });
       continue;
     }
@@ -1115,7 +1181,29 @@ async function fetchFullSourceCampaign(sourceSummary, ctx) {
     getFullCampaignByObjectId(ctx.sourceToken, 'source', objectId, ctx.sourcePropertyNames),
     fetchAllCampaignAssets(ctx.sourceToken, 'source', guid),
   ]);
-  return { id: guid, properties: fullRecord.properties, assets };
+
+  const properties = { ...fullRecord.properties };
+
+  // DATE OFF-BY-ONE FIX — CONFIRMED LIVE 2026-09-25.
+  // hs_start_date/hs_end_date are datetime-typed. The CRM Object API returns
+  // them in UTC, while the Marketing API returns the plain YYYY-MM-DD the
+  // portal actually displays (rendered in the portal's timezone). For most
+  // campaigns the stored time is portal-local midnight (04:00Z/05:00Z in
+  // America/New_York) and truncating the UTC value happens to agree. But
+  // campaigns stored at TRUE UTC midnight (00:00:00Z) render as the PREVIOUS
+  // day locally, so truncating shifted them a day later on write — e.g.
+  // FOC_Webinar_Q2026 reads 2026-05-05 from the Marketing API but
+  // 2026-05-06T00:00:00Z from the CRM API, and was migrated as 2026-05-06.
+  // The write endpoint expects a plain date, so use the Marketing API's
+  // already-localised value, which is what a human sees in the campaign.
+  for (const dateProp of DATE_ONLY_PROPERTIES) {
+    const displayed = sourceSummary.properties?.[dateProp];
+    if (typeof displayed === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(displayed)) {
+      properties[dateProp] = displayed;
+    }
+  }
+
+  return { id: guid, properties, assets };
 }
 
 async function migrateOneCampaign(sourceSummary, ctx) {
@@ -1194,7 +1282,25 @@ async function migrateOneCampaign(sourceSummary, ctx) {
 
   let destCampaign = resolved.campaign;
   const destGuid = destCampaign.id;
-  const destObjectId = String(destCampaign.properties.hs_object_id);
+
+  // CONFIRMED LIVE 2026-09-25 (production 414445): POST /marketing/v3/campaigns
+  // returns the campaign GUID but NOT hs_object_id, so on the CREATE path
+  // destCampaign.properties.hs_object_id is undefined. That produced
+  // `GET /crm/v3/objects/campaigns/undefined` on all 31 newly created
+  // campaigns — breaking the manual-property report and the CRM association
+  // sync, which both key off the numeric object id. Every sandbox run before
+  // this was an UPDATE (the campaigns already existed, so hs_object_id came
+  // back on the read), which is why it only appeared against production.
+  // Fetch the numeric id explicitly whenever it is missing.
+  let destObjectId = destCampaign.properties?.hs_object_id;
+  if (destObjectId === undefined || destObjectId === null || destObjectId === '') {
+    const reread = await getCampaignByGuid(ctx.destToken, 'destination', destGuid, ['hs_object_id', 'hs_name']);
+    destObjectId = reread?.properties?.hs_object_id;
+    if (destObjectId) {
+      destCampaign = { ...destCampaign, properties: { ...destCampaign.properties, hs_object_id: destObjectId } };
+    }
+  }
+  destObjectId = destObjectId === undefined || destObjectId === null ? null : String(destObjectId);
 
   // For an UPDATE (mapping-matched or name-healed), PATCH every writable
   // property (never hs_name) and stamp the dedupe property if this record

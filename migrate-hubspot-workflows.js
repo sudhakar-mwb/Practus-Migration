@@ -136,6 +136,45 @@ const REQUEST_DELAY_MS = Number.parseInt(process.env.REQUEST_DELAY_MS, 10) || 35
 const MAX_RETRIES = Number.parseInt(process.env.MAX_RETRIES, 10) || 5;
 const DRY_RUN = String(process.env.DRY_RUN || 'false').toLowerCase() === 'true';
 
+/**
+ * Prints the effective value of every behaviour-changing flag and where it
+ * came from, so a setting can never silently change what this run does.
+ *
+ * This exists because of a CONFIRMED bug in Node's --env-file parser on
+ * v22.0.0: `#` comments are NOT stripped, so every commented-out line in
+ * .env is loaded as a real variable. Verified with a minimal file — a line
+ * `# FOO=bar` yields process.env.FOO === 'bar'. In this project that silently
+ * set DRY_RUN=true from a commented line, turning what looked like a live
+ * migration into a dry run. The same bug would have activated a commented
+ * PRESERVE_ENABLED_STATE=true, which would create migrated workflows switched
+ * ON in the destination portal. Fix the environment (upgrade Node or delete
+ * the commented lines from .env), but print the truth regardless.
+ */
+function reportEffectiveSettings() {
+  const flags = [
+    ['DRY_RUN', DRY_RUN, 'false'],
+    ['PRESERVE_ENABLED_STATE', String(process.env.PRESERVE_ENABLED_STATE || 'false').toLowerCase() === 'true', 'false'],
+    ['REPAIR_EXISTING', REPAIR_EXISTING, 'false'],
+    ['CREATE_MISSING_PROPERTIES', CREATE_MISSING_PROPERTIES, 'true'],
+  ];
+  console.log('[settings] Effective run settings:');
+  for (const [name, value, defaultValue] of flags) {
+    const raw = process.env[name];
+    const origin = raw === undefined ? 'default' : `env="${raw}"`;
+    const nonDefault = String(value) !== String(defaultValue) ? '  <-- NOT THE DEFAULT' : '';
+    console.log(`[settings]   ${name.padEnd(26)} ${String(value).padEnd(6)} (${origin})${nonDefault}`);
+  }
+  if (process.env.NODE_ENV_FILE_COMMENT_BUG_CHECKED !== 'true') {
+    const nodeMajorMinor = process.versions.node.split('.').slice(0, 2).join('.');
+    if (nodeMajorMinor === '22.0') {
+      console.warn(
+        '[settings] WARNING: Node v22.0.x does not strip "#" comments in --env-file, so commented-out ' +
+          'settings in .env ARE applied. Check the values above against what you intended.',
+      );
+    }
+  }
+}
+
 // Every migrated workflow is created in the destination portal with this
 // prefix on its name (e.g. "Touchmath | <original name>").
 const WORKFLOW_NAME_PREFIX = 'Touchmath | ';
@@ -1326,6 +1365,8 @@ async function main() {
   } else {
     console.log('[info] Could not verify source/destination portal IDs (missing `oauth` scope or endpoint unavailable) - proceeding anyway.');
   }
+
+  reportEffectiveSettings();
 
   if (DRY_RUN) {
     console.log('[info] DRY_RUN=true - no workflows will be created in the destination portal. This run only reports what would happen.');

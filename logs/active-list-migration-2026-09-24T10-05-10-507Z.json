@@ -1,0 +1,268 @@
+{
+  "startedAt": "2026-09-24T10-05-10-507Z",
+  "dryRun": false,
+  "results": [
+    {
+      "sourceName": "TouchMath Customer List 09.08.26",
+      "sourceId": "872",
+      "destinationName": "Touchmath | TouchMath Customer List 09.08.26",
+      "destinationId": "13470",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "CON_KY_2026.07_KASA_CY26-Attendees",
+      "sourceId": "828",
+      "destinationName": "Touchmath | CON_KY_2026.07_KASA_CY26-Attendees",
+      "destinationId": "13471",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "CON_TX_2026.06_TEPSA_CY26 - Attendees - TouchMath",
+      "sourceId": "779",
+      "destinationName": "Touchmath | CON_TX_2026.06_TEPSA_CY26 - Attendees - TouchMath",
+      "destinationId": "13472",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "In US with State Information",
+      "sourceId": "532",
+      "destinationName": "Touchmath | In US with State Information",
+      "destinationId": "13473",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "FOC Webinar Registrants 5.19.26",
+      "sourceId": "751",
+      "destinationName": "Touchmath | FOC Webinar Registrants 5.19.26",
+      "destinationId": "13474",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead",
+      "sourceId": "685",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser *NET NEW Contact/Lead",
+      "destinationId": "13477",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser",
+      "sourceId": "684",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Handraiser",
+      "destinationId": "13479",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 5.7.26 - Handraisers",
+      "sourceId": "672",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Handraisers",
+      "destinationId": "13476",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead",
+      "sourceId": "683",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live *NET NEW Contact/Lead",
+      "destinationId": null,
+      "action": "skipped",
+      "status": "partial",
+      "validated": null,
+      "partialReasons": [
+        "filter.IN_LIST.listId=666: References source list 666, which has no known destination equivalent. List ids are not portable between portals — the destination portal uses that same id for an unrelated list."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live",
+      "sourceId": "682",
+      "destinationName": "Touchmath | Webinar | ToutchMath 3-5 | 95PG Database Registrants - Attended Live",
+      "destinationId": null,
+      "action": "skipped",
+      "status": "partial",
+      "validated": null,
+      "partialReasons": [
+        "filter.IN_LIST.listId=666: References source list 666, which has no known destination equivalent. List ids are not portable between portals — the destination portal uses that same id for an unrelated list."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 95PG Database Registrants",
+      "sourceId": "681",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 95PG Database Registrants",
+      "destinationId": "13478",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads",
+      "sourceId": "678",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 95PG Database Email Registrants - Net New Leads",
+      "destinationId": "13475",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees",
+      "sourceId": "666",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Live Attendees",
+      "destinationId": null,
+      "action": "failed",
+      "status": "failed",
+      "validated": null,
+      "partialReasons": [],
+      "error": "POST /crm/v3/lists responded with 400"
+    },
+    {
+      "sourceName": "Submissions | Grades 3-5 Sample",
+      "sourceId": "654",
+      "destinationName": "Touchmath | Submissions | Grades 3-5 Sample",
+      "destinationId": "13480",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "CON_OR_2026.04_ORRTII_CY26 - Attendee",
+      "sourceId": "648",
+      "destinationName": "Touchmath | CON_OR_2026.04_ORRTII_CY26 - Attendee",
+      "destinationId": "13481",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "# Downloads | Dyscalculia Toolkit",
+      "sourceId": "646",
+      "destinationName": "Touchmath | # Downloads | Dyscalculia Toolkit",
+      "destinationId": "13482",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "(Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "sourceId": "624",
+      "destinationName": "Touchmath | (Sales Version) Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "destinationId": "13483",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "sourceId": "623",
+      "destinationName": "Touchmath | Webinar | TouchMath 3-5 | 5.7.26 - Registrants",
+      "destinationId": "13484",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "Submissions | Dyscalculia Toolkit",
+      "sourceId": "566",
+      "destinationName": "Touchmath | Submissions | Dyscalculia Toolkit",
+      "destinationId": "13485",
+      "action": "created",
+      "status": "success",
+      "validated": true,
+      "partialReasons": [],
+      "error": null
+    },
+    {
+      "sourceName": "EdWeek Registrants 3.3.26 - Bridging the Math Gap",
+      "sourceId": "559",
+      "destinationName": "Touchmath | EdWeek Registrants 3.3.26 - Bridging the Math Gap",
+      "destinationId": "13486",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "TouchMath Customer List 2.24.26",
+      "sourceId": "557",
+      "destinationName": "Touchmath | TouchMath Customer List 2.24.26",
+      "destinationId": "13487",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "MANUAL list: membership not migrated (destination list is empty)."
+      ],
+      "error": null
+    },
+    {
+      "sourceName": "Active List (Contacts who have opened emails or submitted forms)",
+      "sourceId": "531",
+      "destinationName": "Touchmath | Active List (Contacts who have opened emails or submitted forms)",
+      "destinationId": "13488",
+      "action": "created",
+      "status": "partial",
+      "validated": true,
+      "partialReasons": [
+        "Timezone remapped (zoneId America/Denver -> America/New_York): the destination portal accepts only UTC or America/New_York, so date-window boundaries shift by the offset between the two zones."
+      ],
+      "error": null
+    }
+  ]
+}

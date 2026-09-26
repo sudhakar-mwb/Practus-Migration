@@ -1,0 +1,797 @@
+{
+  "startedAt": "2026-09-24T11:02:56.832Z",
+  "completedAt": "2026-09-24T11:14:49.684Z",
+  "dryRun": false,
+  "requested": 98,
+  "found": 98,
+  "notFound": 0,
+  "created": 97,
+  "updated": 0,
+  "fullyReplicated": 0,
+  "partiallyReplicated": 97,
+  "failed": 0,
+  "manualReview": 1,
+  "additionalDependencyRecords": {
+    "listsCreated": 6,
+    "listsReused": 7,
+    "filesImported": 32
+  },
+  "results": [
+    {
+      "sourceEmailId": "221905573744",
+      "sourceEmailName": "EM4: Indiana Tier-2 FY26",
+      "destinationEmailId": "222705362273",
+      "destinationEmailName": "Touchmath | EM4: Indiana Tier-2 FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "221882351519",
+      "sourceEmailName": "EM2: Tier-2 Math Survey",
+      "destinationEmailId": "222706243409",
+      "destinationEmailName": "Touchmath | EM2: Tier-2 Math Survey",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "221725071696",
+      "sourceEmailName": "EM2: Back to School 2026-2027",
+      "destinationEmailId": "222706243412",
+      "destinationEmailName": "Touchmath | EM2: Back to School 2026-2027",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "221617188101",
+      "sourceEmailName": "EM3: Indiana Tier-2 FY26",
+      "destinationEmailId": "222706243415",
+      "destinationEmailName": "Touchmath | EM3: Indiana Tier-2 FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "221130963738",
+      "sourceEmailName": "EM1: Tier-2 Math Survey",
+      "destinationEmailId": "222706243418",
+      "destinationEmailName": "Touchmath | EM1: Tier-2 Math Survey",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "221126949701",
+      "sourceEmailName": "EM2: Indiana Tier-2 FY26",
+      "destinationEmailId": "222706243421",
+      "destinationEmailName": "Touchmath | EM2: Indiana Tier-2 FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "220765652141",
+      "sourceEmailName": "EM1: Indiana Tier-2 FY26",
+      "destinationEmailId": "222705362276",
+      "destinationEmailName": "Touchmath | EM1: Indiana Tier-2 FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "220493676103",
+      "sourceEmailName": "Automated | Indiana | FY26",
+      "destinationEmailId": "222706243424",
+      "destinationEmailName": "Touchmath | Automated | Indiana | FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219414911539",
+      "sourceEmailName": "EM6: Georgia FY26 (TM Database)",
+      "destinationEmailId": "222706243427",
+      "destinationEmailName": "Touchmath | EM6: Georgia FY26 (TM Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219408522877",
+      "sourceEmailName": "EM5: Georgia FY26 (TM Database)",
+      "destinationEmailId": "222706243430",
+      "destinationEmailName": "Touchmath | EM5: Georgia FY26 (TM Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219365425165",
+      "sourceEmailName": "EM5: K-5 FY26 (TM Active List)",
+      "destinationEmailId": "222705362279",
+      "destinationEmailName": "Touchmath | EM5: K-5 FY26 (TM Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219402401574",
+      "sourceEmailName": "EM4: Georgia FY26 (TM Database)",
+      "destinationEmailId": "222705362282",
+      "destinationEmailName": "Touchmath | EM4: Georgia FY26 (TM Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219414938523",
+      "sourceEmailName": "EM3: Georgia FY26 (TM Database)",
+      "destinationEmailId": "222706243433",
+      "destinationEmailName": "Touchmath | EM3: Georgia FY26 (TM Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219408522835",
+      "sourceEmailName": "EM2: Georgia FY26 (TM Database)",
+      "destinationEmailId": "222706243436",
+      "destinationEmailName": "Touchmath | EM2: Georgia FY26 (TM Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "219414911508",
+      "sourceEmailName": "EM1: Georgia FY26 (TM Database)",
+      "destinationEmailId": "222706243439",
+      "destinationEmailName": "Touchmath | EM1: Georgia FY26 (TM Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218786186847",
+      "sourceEmailName": "EM1: Back to School 2026-2027",
+      "destinationEmailId": "222705362286",
+      "destinationEmailName": "Touchmath | EM1: Back to School 2026-2027",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218869877169",
+      "sourceEmailName": "EM4: K-5 FY26 (TM Active List)",
+      "destinationEmailId": "222706243442",
+      "destinationEmailName": "Touchmath | EM4: K-5 FY26 (TM Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218634662505",
+      "sourceEmailName": "EM3: K-5 FY26 (TM Customer List)",
+      "destinationEmailId": "222705362289",
+      "destinationEmailName": "Touchmath | EM3: K-5 FY26 (TM Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218623581773",
+      "sourceEmailName": "EM3: K-5 FY26 (TM Active List)",
+      "destinationEmailId": "222705362296",
+      "destinationEmailName": "Touchmath | EM3: K-5 FY26 (TM Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218134817845",
+      "sourceEmailName": "Automated | TM Georgia Tier 2 | FY26",
+      "destinationEmailId": "222705362299",
+      "destinationEmailName": "Touchmath | Automated | TM Georgia Tier 2 | FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218190612006",
+      "sourceEmailName": "EM2: K-5 FY26 (TM Active List)",
+      "destinationEmailId": "222706600203",
+      "destinationEmailName": "Touchmath | EM2: K-5 FY26 (TM Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "218200040986",
+      "sourceEmailName": "EM2: K-5 FY26 (TM Customer List)",
+      "destinationEmailId": "222706243449",
+      "destinationEmailName": "Touchmath | EM2: K-5 FY26 (TM Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "217657242033",
+      "sourceEmailName": "EM1: K-5 FY26 (TM Active List)",
+      "destinationEmailId": "222706600206",
+      "destinationEmailName": "Touchmath | EM1: K-5 FY26 (TM Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "217729998122",
+      "sourceEmailName": "EM1: K-5 FY26 (TM Customers)",
+      "destinationEmailId": "222706243452",
+      "destinationEmailName": "Touchmath | EM1: K-5 FY26 (TM Customers)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "217898709027",
+      "sourceEmailName": "Monday Must Know - 072726",
+      "destinationEmailId": "222706243456",
+      "destinationEmailName": "Touchmath | Monday Must Know - 072726",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211673878109",
+      "sourceEmailName": "Automated | TouchMath Program Sampler",
+      "destinationEmailId": "222706600212",
+      "destinationEmailName": "Touchmath | Automated | TouchMath Program Sampler",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "217760152350",
+      "sourceEmailName": "EM2: TM Funding Guide FY26",
+      "destinationEmailId": "222706600215",
+      "destinationEmailName": "Touchmath | EM2: TM Funding Guide FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "217374680452",
+      "sourceEmailName": "Monday Must Know - 072026",
+      "destinationEmailId": "222706243459",
+      "destinationEmailName": "Touchmath | Monday Must Know - 072026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "216742855515",
+      "sourceEmailName": "EM1: TM Funding Guide FY26",
+      "destinationEmailId": "222706600218",
+      "destinationEmailName": "Touchmath | EM1: TM Funding Guide FY26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "216747939428",
+      "sourceEmailName": "EM2: Dyscalculia (Phase 2)",
+      "destinationEmailId": "222706600221",
+      "destinationEmailName": "Touchmath | EM2: Dyscalculia (Phase 2)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "216900368780",
+      "sourceEmailName": "Monday Must Know - 071326",
+      "destinationEmailId": "222706600224",
+      "destinationEmailName": "Touchmath | Monday Must Know - 071326",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "216090238131",
+      "sourceEmailName": "EM1: Dyscalculia (Phase 2)",
+      "destinationEmailId": "222706243462",
+      "destinationEmailName": "Touchmath | EM1: Dyscalculia (Phase 2)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "216372793464",
+      "sourceEmailName": "Monday Must Know - 070626",
+      "destinationEmailId": "222706600227",
+      "destinationEmailName": "Touchmath | Monday Must Know - 070626",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "215828858500",
+      "sourceEmailName": "Monday Must Know - 062926",
+      "destinationEmailId": "222706243465",
+      "destinationEmailName": "Touchmath | Monday Must Know - 062926",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "215357973155",
+      "sourceEmailName": "Monday Must Know - 062226",
+      "destinationEmailId": "222706243472",
+      "destinationEmailName": "Touchmath | Monday Must Know - 062226",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "214890470785",
+      "sourceEmailName": "Monday Must Know - 061526",
+      "destinationEmailId": "222706243478",
+      "destinationEmailName": "Touchmath | Monday Must Know - 061526",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "214351086470",
+      "sourceEmailName": "Monday Must Know - 060826",
+      "destinationEmailId": "222706243481",
+      "destinationEmailName": "Touchmath | Monday Must Know - 060826",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "213411051865",
+      "sourceEmailName": "Monday Must Know - 060126",
+      "destinationEmailId": "222706600230",
+      "destinationEmailName": "Touchmath | Monday Must Know - 060126",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212911072142",
+      "sourceEmailName": "EM1: TouchMath Grades 3-5 OD Webinar (Active Database)",
+      "destinationEmailId": "222706600233",
+      "destinationEmailName": "Touchmath | EM1: TouchMath Grades 3-5 OD Webinar (Active Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212911021204",
+      "sourceEmailName": "EM1: TouchMath Grades 3-5 OD Webinar (Non Live Attendees)",
+      "destinationEmailId": "222706600236",
+      "destinationEmailName": "Touchmath | EM1: TouchMath Grades 3-5 OD Webinar (Non Live Attendees)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212906503297",
+      "sourceEmailName": "EM1: TouchMath Grades 3-5 OD Webinar (Live Attendees)",
+      "destinationEmailId": "222706600239",
+      "destinationEmailName": "Touchmath | EM1: TouchMath Grades 3-5 OD Webinar (Live Attendees)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212952799129",
+      "sourceEmailName": "Monday Must Know - 051826",
+      "destinationEmailId": "222706243484",
+      "destinationEmailName": "Touchmath | Monday Must Know - 051826",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212401409335",
+      "sourceEmailName": "EM3: CASE Webinar",
+      "destinationEmailId": "222706600242",
+      "destinationEmailName": "Touchmath | EM3: CASE Webinar",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210461739698",
+      "sourceEmailName": "EM6: TouchMath Grades 3-5 Sample Page (Customer List)",
+      "destinationEmailId": "222706243487",
+      "destinationEmailName": "Touchmath | EM6: TouchMath Grades 3-5 Sample Page (Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211880971943",
+      "sourceEmailName": "EM6: TouchMath Grades 3-5 Sample Page (Active Database)",
+      "destinationEmailId": "222706243490",
+      "destinationEmailName": "Touchmath | EM6: TouchMath Grades 3-5 Sample Page (Active Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212243860507",
+      "sourceEmailName": "EM2: CASE Webinar",
+      "destinationEmailId": "222706600250",
+      "destinationEmailName": "Touchmath | EM2: CASE Webinar",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212526392080",
+      "sourceEmailName": "Monday Must Know - 051126",
+      "destinationEmailId": "222706243585",
+      "destinationEmailName": "Touchmath | Monday Must Know - 051126",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211590830682",
+      "sourceEmailName": "EM5: TouchMath Grades 3-5 Webinar (Active Database) - LAST CHANCE",
+      "destinationEmailId": "222706243588",
+      "destinationEmailName": "Touchmath | EM5: TouchMath Grades 3-5 Webinar (Active Database) - LAST CHANCE",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210461853194",
+      "sourceEmailName": "EM5: TouchMath Grades 3-5 Webinar (Customer List) - LAST CHANCE",
+      "destinationEmailId": "222706243591",
+      "destinationEmailName": "Touchmath | EM5: TouchMath Grades 3-5 Webinar (Customer List) - LAST CHANCE",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211590870554",
+      "sourceEmailName": "EM1: CASE Webinar",
+      "destinationEmailId": "222706243594",
+      "destinationEmailName": "Touchmath | EM1: CASE Webinar",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "212080759053",
+      "sourceEmailName": "Monday Must Know - 050426",
+      "destinationEmailId": "222706243597",
+      "destinationEmailName": "Touchmath | Monday Must Know - 050426",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211646930762",
+      "sourceEmailName": "Monday Must Know - 042726",
+      "destinationEmailId": "222706600254",
+      "destinationEmailName": "Touchmath | Monday Must Know - 042726",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210461739055",
+      "sourceEmailName": "EM4: TouchMath Grades 3-5 Sample Page (Customer List)",
+      "destinationEmailId": "222706243600",
+      "destinationEmailName": "Touchmath | EM4: TouchMath Grades 3-5 Sample Page (Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211194161450",
+      "sourceEmailName": "EM4: TouchMath Grades 3-5 Sample Page (Active Database)",
+      "destinationEmailId": "222706600257",
+      "destinationEmailName": "Touchmath | EM4: TouchMath Grades 3-5 Sample Page (Active Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211382616161",
+      "sourceEmailName": "Newsletter - April 2026 - External",
+      "destinationEmailId": "222706243603",
+      "destinationEmailName": "Touchmath | Newsletter - April 2026 - External",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211185004629",
+      "sourceEmailName": "EM3: TouchMath Grades 3-5 Webinar (Active Database)",
+      "destinationEmailId": "222706243613",
+      "destinationEmailName": "Touchmath | EM3: TouchMath Grades 3-5 Webinar (Active Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210461739664",
+      "sourceEmailName": "EM3: TouchMath Grades 3-5 Webinar (Customer List)",
+      "destinationEmailId": "222706243616",
+      "destinationEmailName": "Touchmath | EM3: TouchMath Grades 3-5 Webinar (Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211247802437",
+      "sourceEmailName": "Monday Must Know - 042026",
+      "destinationEmailId": "222706600267",
+      "destinationEmailName": "Touchmath | Monday Must Know - 042026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211120338101",
+      "sourceEmailName": "Automated | TouchMath Grades 3-5 Sample Page",
+      "destinationEmailId": "222706243619",
+      "destinationEmailName": "Touchmath | Automated | TouchMath Grades 3-5 Sample Page",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "211120460435",
+      "sourceEmailName": "EM1: Urban Collaborative Invite 2026",
+      "destinationEmailId": "222706243622",
+      "destinationEmailName": "Touchmath | EM1: Urban Collaborative Invite 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210998963841",
+      "sourceEmailName": "EM2: TouchMath Grades 3-5 Sample Page (Customer List)",
+      "destinationEmailId": "222706243625",
+      "destinationEmailName": "Touchmath | EM2: TouchMath Grades 3-5 Sample Page (Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210998679476",
+      "sourceEmailName": "EM2: TouchMath Grades 3-5 Sample Page (Active Database)",
+      "destinationEmailId": "222706600270",
+      "destinationEmailName": "Touchmath | EM2: TouchMath Grades 3-5 Sample Page (Active Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210280446367",
+      "sourceEmailName": "EM1: TouchMath Grades 3-5 Webinar (Active Database)",
+      "destinationEmailId": "222706600273",
+      "destinationEmailName": "Touchmath | EM1: TouchMath Grades 3-5 Webinar (Active Database)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210276406415",
+      "sourceEmailName": "EM1: TouchMath Grades 3-5 Webinar (Customer List)",
+      "destinationEmailId": "222706947725",
+      "destinationEmailName": "Touchmath | EM1: TouchMath Grades 3-5 Webinar (Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210836704355",
+      "sourceEmailName": "Monday Must Know - 041326",
+      "destinationEmailId": "222706947728",
+      "destinationEmailName": "Touchmath | Monday Must Know - 041326",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210397618574",
+      "sourceEmailName": "Monday Must Know - 04.06.26",
+      "destinationEmailId": "222706600276",
+      "destinationEmailName": "Touchmath | Monday Must Know - 04.06.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210468109718",
+      "sourceEmailName": "TouchMath Announcement 4.3.26",
+      "destinationEmailId": "222706600279",
+      "destinationEmailName": "Touchmath | TouchMath Announcement 4.3.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "210067901803",
+      "sourceEmailName": "Monday Must Know - 03.30.26",
+      "destinationEmailId": "222706947731",
+      "destinationEmailName": "Touchmath | Monday Must Know - 03.30.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208327000096",
+      "sourceEmailName": "EM6: Extend 2026",
+      "destinationEmailId": "222706600282",
+      "destinationEmailName": "Touchmath | EM6: Extend 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209662922872",
+      "sourceEmailName": "EM5: Dyscalculia",
+      "destinationEmailId": "222706600285",
+      "destinationEmailName": "Touchmath | EM5: Dyscalculia",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209663069754",
+      "sourceEmailName": "Monday Must Know - 03.23.26",
+      "destinationEmailId": "222706947734",
+      "destinationEmailName": "Touchmath | Monday Must Know - 03.23.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209526574617",
+      "sourceEmailName": "EM5: Extend 2026 (test)",
+      "destinationEmailId": "222706600288",
+      "destinationEmailName": "Touchmath | EM5: Extend 2026 (test)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208327443545",
+      "sourceEmailName": "EM5: Extend 2026",
+      "destinationEmailId": "222706947738",
+      "destinationEmailName": "Touchmath | EM5: Extend 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209462809477",
+      "sourceEmailName": "EM2: TM Announcement (Active List)",
+      "destinationEmailId": "222706947741",
+      "destinationEmailName": "Touchmath | EM2: TM Announcement (Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209480810063",
+      "sourceEmailName": "EM2: TM Announcement (Customers)",
+      "destinationEmailId": "222706600292",
+      "destinationEmailName": "Touchmath | EM2: TM Announcement (Customers)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209190634549",
+      "sourceEmailName": "Monday Must Know - 03.16.26",
+      "destinationEmailId": "222706947744",
+      "destinationEmailName": "Touchmath | Monday Must Know - 03.16.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208841625979",
+      "sourceEmailName": "EM4: Dyscalculia",
+      "destinationEmailId": "222706947747",
+      "destinationEmailName": "Touchmath | EM4: Dyscalculia",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208716781649",
+      "sourceEmailName": "EM1: TM Announcement (Active List)",
+      "destinationEmailId": "222706600295",
+      "destinationEmailName": "Touchmath | EM1: TM Announcement (Active List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "209101450929",
+      "sourceEmailName": "EM1: TM Announcement (Customer List)",
+      "destinationEmailId": "222706947750",
+      "destinationEmailName": "Touchmath | EM1: TM Announcement (Customer List)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208327423496",
+      "sourceEmailName": "EM4: Extend 2026",
+      "destinationEmailId": "222706600298",
+      "destinationEmailName": "Touchmath | EM4: Extend 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208716381809",
+      "sourceEmailName": "Monday Must Know - 03.09.26",
+      "destinationEmailId": "222706947753",
+      "destinationEmailName": "Touchmath | Monday Must Know - 03.09.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208583698770",
+      "sourceEmailName": "EM3: Dyscalculia",
+      "destinationEmailId": "222706947762",
+      "destinationEmailName": "Touchmath | EM3: Dyscalculia",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208580144196",
+      "sourceEmailName": "EM1A: Dyscalculia (Webinar follow-up)",
+      "destinationEmailId": "222706600303",
+      "destinationEmailName": "Touchmath | EM1A: Dyscalculia (Webinar follow-up)",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208326869908",
+      "sourceEmailName": "EM3: Extend 2026",
+      "destinationEmailId": "222706600308",
+      "destinationEmailName": "Touchmath | EM3: Extend 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208184740464",
+      "sourceEmailName": "Monday Must Know - 03.02.26",
+      "destinationEmailId": "222706947765",
+      "destinationEmailName": "Touchmath | Monday Must Know - 03.02.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208327378330",
+      "sourceEmailName": "EM2: Dyscalculia",
+      "destinationEmailId": "222706947768",
+      "destinationEmailName": "Touchmath | EM2: Dyscalculia",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208327327009",
+      "sourceEmailName": "EM1: Dyscalculia",
+      "destinationEmailId": "222706600315",
+      "destinationEmailName": "Touchmath | EM1: Dyscalculia",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "206649578625",
+      "sourceEmailName": "EM2: Extend 2026",
+      "destinationEmailId": "222706947843",
+      "destinationEmailName": "Touchmath | EM2: Extend 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "208049669966",
+      "sourceEmailName": "Monday Must Know - 2.23.26",
+      "destinationEmailId": "222706947846",
+      "destinationEmailName": "Touchmath | Monday Must Know - 2.23.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "206402267805",
+      "sourceEmailName": "EM1: Extend 2026",
+      "destinationEmailId": "222706600318",
+      "destinationEmailName": "Touchmath | EM1: Extend 2026",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "207540025873",
+      "sourceEmailName": "Monday Must Know - 2.16.26",
+      "destinationEmailId": "222706600321",
+      "destinationEmailName": "Touchmath | Monday Must Know - 2.16.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "207043111012",
+      "sourceEmailName": "Monday Must Know - 2.9.26",
+      "destinationEmailId": "222706600324",
+      "destinationEmailName": "Touchmath | Monday Must Know - 2.9.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "206408459082",
+      "sourceEmailName": "Monday Must Know - 2.2.26",
+      "destinationEmailId": "222706600329",
+      "destinationEmailName": "Touchmath | Monday Must Know - 2.2.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "204391548525",
+      "sourceEmailName": "Texas - TCASE 2026 - Email 3",
+      "destinationEmailId": "222706947849",
+      "destinationEmailName": "Touchmath | Texas - TCASE 2026 - Email 3",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "205683641146",
+      "sourceEmailName": "Monday Must Know - 1.26.26",
+      "destinationEmailId": "222706947852",
+      "destinationEmailName": "Touchmath | Monday Must Know - 1.26.26",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "204391548453",
+      "sourceEmailName": "Texas - TCASE 2026 - Email 2",
+      "destinationEmailId": "222706947855",
+      "destinationEmailName": "Touchmath | Texas - TCASE 2026 - Email 2",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    },
+    {
+      "sourceEmailId": "204391547153",
+      "sourceEmailName": "Texas - TCASE 2026 - Email 1",
+      "destinationEmailId": "222706947858",
+      "destinationEmailName": "Touchmath | Texas - TCASE 2026 - Email 1",
+      "action": "CREATED",
+      "status": "PARTIAL"
+    }
+  ]
+}

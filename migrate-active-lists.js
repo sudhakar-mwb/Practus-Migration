@@ -144,9 +144,14 @@
  *    POST /crm/v3/lists/search leaves it out. Anything resolving a list by id
  *    must check `deletedAt` or it will treat a deleted list as live.
  *
- * 8. A UNIFIED_EVENTS branch filters on a custom behavioural event. The event
- *    type itself resolves in the destination portal, but a custom property on
- *    that event may not be filterable there. HubSpot rejects this loudly —
+ * 8. A UNIFIED_EVENTS branch filters on a custom behavioural event. Its
+ *    eventTypeId is PORTAL-SPECIFIC and is passed through unchanged, so it may
+ *    resolve in the destination to a DIFFERENT event entirely — CONFIRMED LIVE
+ *    against production 414445, where source eventTypeId 5-3412839 resolved to
+ *    ae178192_integrators-timeline-event-type-id-391778. Every such branch is
+ *    therefore called out in the run notes for manual verification. A custom
+ *    property on that event may also not be filterable there. HubSpot rejects
+ *    that case loudly —
  *    400 ListError.UNIFIED_EVENT_PROPERTIES_NOT_FILTERABLE, naming the
  *    property — so no pre-check is attempted and the failure is reported with
  *    HubSpot's own message. Event-scoped property names are deliberately NOT
@@ -658,6 +663,22 @@ function resolveFilterDependencies(filterBranch, ctx) {
     // loudly: a 400 UNIFIED_EVENT_PROPERTIES_NOT_FILTERABLE naming the exact
     // property. That is a safe failure, so the write is attempted.
     const insideEvents = inEventBranch || branch.filterBranchType === 'UNIFIED_EVENTS';
+    // eventTypeId is a PORTAL-SPECIFIC id and is deliberately passed through
+    // unchanged (there is no cross-portal event-type mapping API available to
+    // this script). CONFIRMED LIVE against production portal 414445: source
+    // eventTypeId 5-3412839 resolved there to a DIFFERENT event
+    // (ae178192_integrators-timeline-event-type-id-391778). That mismatch was
+    // caught only because the event-scoped property happened not to be
+    // filterable there (400 UNIFIED_EVENT_PROPERTIES_NOT_FILTERABLE). Had the
+    // colliding event exposed a same-named property, the list would have been
+    // built against the wrong event with no error at all — so surface the
+    // pass-through in the report rather than leaving it implicit.
+    if (branch.filterBranchType === 'UNIFIED_EVENTS' && branch.eventTypeId) {
+      notes.push(
+        `UNIFIED_EVENTS eventTypeId ${branch.eventTypeId} passed through UNCHANGED — verify in the destination portal that this id is the same event; ` +
+          'event type ids are not portable between portals and a collision can silently build the list against the wrong event.',
+      );
+    }
     if (Array.isArray(branch.filterBranches)) out.filterBranches = branch.filterBranches.map((b) => walk(b, insideEvents));
     if (Array.isArray(branch.filters)) {
       out.filters = branch.filters.map((filter) => {

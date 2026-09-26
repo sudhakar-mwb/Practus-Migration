@@ -311,7 +311,7 @@ const REQUESTED_EMAIL_NAMES = [
  */
 const DUPLICATE_NAME_OVERRIDES = {
   'EM2: Back to School 2026-2027': '221725071696', // PUBLISHED; skips stale draft 218791042136
-  'Newsletter - April 2026 - Internal': '211060039810', // PUBLISHED; skips stale draft 209921507438
+  // 'Newsletter - April 2026 - Internal': '211060039810', // PUBLISHED; skips stale draft 209921507438
 };
 
 // Fields HubSpot sets/returns itself; never sent on create/update.
@@ -612,17 +612,43 @@ async function hubspotRequest(token, label, method, urlPath, jsonBody, meta = {}
 // Marketing Email API
 // ---------------------------------------------------------------------------
 
-async function listAllMarketingEmails(token, label) {
+/**
+ * @param {boolean} includeArchived Also page the `archived=true` view and
+ *   merge it in, de-duplicated by id. REQUIRED for the destination portal:
+ *   CONFIRMED LIVE that emails created by this script are NOT returned by the
+ *   default (archived=false) listing even though each one reports
+ *   `archived: false` — e.g. "Touchmath | EM4: Indiana Tier-2 FY26"
+ *   (222579132290) was absent from all 431 default-view results while
+ *   GET /marketing/v3/emails/222579132290?archived=true returned it. Without
+ *   this, the exact-name duplicate check silently sees zero matches and the
+ *   script creates a second copy of every email.
+ */
+async function listAllMarketingEmails(token, label, includeArchived = false) {
   const all = [];
-  let after;
-  do {
-    const query = new URLSearchParams({ limit: '100' });
-    if (after) query.set('after', after);
-    const page = await hubspotRequest(token, label, 'GET', `${MARKETING_EMAILS_PATH}?${query.toString()}`);
-    const results = (page && Array.isArray(page.results)) ? page.results : [];
-    all.push(...results);
-    after = page && page.paging && page.paging.next && page.paging.next.after ? page.paging.next.after : undefined;
-  } while (after);
+  const seenIds = new Set();
+  const views = includeArchived ? ['false', 'true'] : ['false'];
+
+  for (const archived of views) {
+    let after;
+    do {
+      const query = new URLSearchParams({ limit: '100', archived });
+      if (after) query.set('after', after);
+      const page = await hubspotRequest(token, label, 'GET', `${MARKETING_EMAILS_PATH}?${query.toString()}`);
+      const results = (page && Array.isArray(page.results)) ? page.results : [];
+      for (const email of results) {
+        // Never let a genuinely archived (deleted) email into the name index:
+        // matching one would PATCH a deleted record instead of the live one.
+        // The archived view is paged only to surface records that are live
+        // (archived === false) yet missing from the default view.
+        if (archived === 'true' && email.archived === true) continue;
+        const id = String(email.id);
+        if (seenIds.has(id)) continue;
+        seenIds.add(id);
+        all.push(email);
+      }
+      after = page && page.paging && page.paging.next && page.paging.next.after ? page.paging.next.after : undefined;
+    } while (after);
+  }
   return all;
 }
 
@@ -630,13 +656,33 @@ async function getMarketingEmailById(token, label, id, meta = {}) {
   return hubspotRequest(token, label, 'GET', `${MARKETING_EMAILS_PATH}/${id}`, undefined, meta);
 }
 
+/**
+ * Resolves an email by id, retrying with `archived=true` before concluding it
+ * is gone. CONFIRMED LIVE: a plain GET of an existing migrated email returns
+ * 404 in this portal while the same GET with archived=true returns it. A bare
+ * 404 here is therefore NOT proof of deletion — treating it as such discards a
+ * valid mapping entry and makes the next run CREATE a duplicate instead of
+ * UPDATING. Only a 404 from BOTH views means the email is really gone.
+ */
 async function getMarketingEmailByIdSafe(token, label, id, meta = {}) {
-  try {
-    return await getMarketingEmailById(token, label, id, meta);
-  } catch (err) {
-    if (err instanceof HubSpotApiError && err.status === 404) return null;
-    throw err;
+  let lastNotFound = null;
+  for (const archived of [false, true]) {
+    const suffix = archived ? '?archived=true' : '';
+    try {
+      const email = await hubspotRequest(token, label, 'GET', `${MARKETING_EMAILS_PATH}/${id}${suffix}`, undefined, meta);
+      // A genuinely archived (deleted) email counts as gone: fall through so
+      // the caller creates a fresh one rather than resurrecting a deleted record.
+      if (email && email.id && email.archived !== true) return email;
+    } catch (err) {
+      if (err instanceof HubSpotApiError && err.status === 404) {
+        lastNotFound = err;
+        continue;
+      }
+      throw err;
+    }
   }
+  if (lastNotFound) return null;
+  return null;
 }
 
 async function createMarketingEmail(token, label, body, meta = {}) {
@@ -1444,7 +1490,9 @@ async function main() {
   console.log('[info] Fetching marketing emails from the destination portal (for duplicate detection)...');
   let destinationEmails;
   try {
-    destinationEmails = await listAllMarketingEmails(CONFIG.destinationToken, 'destination');
+    // includeArchived: the duplicate check MUST see emails this script created
+    // on earlier runs, which the default view omits — see listAllMarketingEmails.
+    destinationEmails = await listAllMarketingEmails(CONFIG.destinationToken, 'destination', true);
   } catch (err) {
     if (isAuthError(err)) {
       console.error(`[fatal] Authentication/permission failure listing destination marketing emails (status ${err.status}). Verify DESTINATION_HUBSPOT_TOKEN has the "content"/"marketing-email" scopes and create/update permission. Stopping before any changes.`);

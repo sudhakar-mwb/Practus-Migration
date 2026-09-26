@@ -1,0 +1,22 @@
+[2026-09-25T04:53:29.727Z] [INFO] Starting Social Post migration (DRY_RUN=true)
+[2026-09-25T04:53:31.902Z] [INFO] Portals
+    source: 46378923
+    destination: 414445
+[2026-09-25T04:53:32.804Z] [ERROR] Cannot read destination social channels — the destination token is missing the `social-access` scope. No Social Post can be created or verified until that is granted.
+    httpStatus: 403
+    errorMessage: GET /broadcast/v1/channels/setting/publish/current failed with 403
+[2026-09-25T04:53:32.805Z] [WARN] No channel map at /home/sudhakarpanday_1536/Desktop/Migration/Practus/Practus-Migration/social-channel-map.json. Every post will report SOCIAL_ACCOUNT_NOT_MAPPED. Map source channelKey -> destination accountGuid, e.g. {"FacebookPage:155919314866":"<destination accountGuid>"}.
+[2026-09-25T04:53:40.476Z] [WARN] Destination campaign not found; posts will be migrated without a campaign association
+    campaign: Touchmath | Survey-Tier-2-Math-FY26
+[2026-09-25T04:53:41.693Z] [INFO] Campaign: Survey-Tier-2-Math-FY26
+    sourceCampaignId: 1a470fde-a530-4079-b7f2-833445dc87ed
+    destinationCampaignId: null
+    socialBroadcastAssets: 0
+[2026-09-25T04:53:50.039Z] [WARN] Destination campaign not found; posts will be migrated without a campaign association
+    campaign: Touchmath | State-Indiana-FY26
+[2026-09-25T04:53:51.113Z] [INFO] Campaign: State-Indiana-FY26
+    sourceCampaignId: ef5449af-1591-48e0-89f6-51eb00ed4647
+    destinationCampaignId: null
+    socialBroadcastAssets: 0
+[2026-09-25T04:53:59.042Z] [WARN] Destination campaign not found; posts will be migrated without a campaign association
+    campaign: Touchmath | Conference | CON_KS_2026.07_KASA_CY26
