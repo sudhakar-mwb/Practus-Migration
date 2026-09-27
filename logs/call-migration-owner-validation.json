@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-09-26T18:32:42.571Z",
+  "destinationPortalId": "414445",
+  "destinationActiveOwners": 257,
+  "destinationArchivedOwners": 291,
+  "defaultOwner": {
+    "id": null,
+    "validationResult": "NOT_CONFIGURED"
+  },
+  "mappings": [
+    {
+      "sourceOwnerId": "3763203",
+      "destinationOwnerId": "18525422",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "8723786",
+      "destinationOwnerId": "8723786",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "9173446",
+      "destinationOwnerId": "9173446",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "27694956",
+      "destinationOwnerId": "27694956",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "45451065",
+      "destinationOwnerId": "181577832",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "46408374",
+      "destinationOwnerId": "211744580",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "47151327",
+      "destinationOwnerId": "230064129",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "50253463",
+      "destinationOwnerId": "352206340",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "60730063",
+      "destinationOwnerId": "550455864",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "60935026",
+      "destinationOwnerId": "560319513",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "61676858",
+      "destinationOwnerId": "601290148",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "63179672",
+      "destinationOwnerId": "672850242",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "64491847",
+      "destinationOwnerId": "751955723",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "67008404",
+      "destinationOwnerId": "1936566360",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "67855975",
+      "destinationOwnerId": "1404151225",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "69123696",
+      "destinationOwnerId": "1117200836",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "69259141",
+      "destinationOwnerId": "69259141",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "71024339",
+      "destinationOwnerId": "71024339",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "72068007",
+      "destinationOwnerId": "72068007",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "79411216",
+      "destinationOwnerId": "79411216",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "84059163",
+      "destinationOwnerId": "2029241262",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "86254828",
+      "destinationOwnerId": "86254828",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "88490010",
+      "destinationOwnerId": "88490010",
+      "validationResult": "ARCHIVED"
+    },
+    {
+      "sourceOwnerId": "88495508",
+      "destinationOwnerId": "88495508",
+      "validationResult": "ARCHIVED"
+    },
+    {
+      "sourceOwnerId": "89103420",
+      "destinationOwnerId": "89103420",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "90007237",
+      "destinationOwnerId": "90007237",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "90242737",
+      "destinationOwnerId": "90242737",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "90889758",
+      "destinationOwnerId": "1168039153",
+      "validationResult": "ARCHIVED"
+    },
+    {
+      "sourceOwnerId": "91525249",
+      "destinationOwnerId": "1021226174",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "279435637",
+      "destinationOwnerId": "88104500",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "337849529",
+      "destinationOwnerId": "76181927",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "340707348",
+      "destinationOwnerId": "402013449",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "387987833",
+      "destinationOwnerId": "70401043",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "400765253",
+      "destinationOwnerId": "214905858",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "429491177",
+      "destinationOwnerId": "39887254",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "527530834",
+      "destinationOwnerId": "77766607",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "640129291",
+      "destinationOwnerId": "164227621",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "793589287",
+      "destinationOwnerId": "468788581",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "837124165",
+      "destinationOwnerId": "468788581",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1003211342",
+      "destinationOwnerId": "468788581",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1113666268",
+      "destinationOwnerId": "179031424",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1120336442",
+      "destinationOwnerId": "1411093930",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1173555779",
+      "destinationOwnerId": "134876914",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1214949576",
+      "destinationOwnerId": "95116677",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1310999875",
+      "destinationOwnerId": "398423594",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1567814466",
+      "destinationOwnerId": "1732582595",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1756593623",
+      "destinationOwnerId": "445394756",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "1773655144",
+      "destinationOwnerId": "453548113",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "2074721972",
+      "destinationOwnerId": "417500287",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "2098187823",
+      "destinationOwnerId": "592363878",
+      "validationResult": "ACTIVE"
+    },
+    {
+      "sourceOwnerId": "2114582877",
+      "destinationOwnerId": "672850241",
+      "validationResult": "ACTIVE"
+    }
+  ]
+}

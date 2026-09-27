@@ -1,0 +1,793 @@
+{
+  "generatedAt": "2026-09-26T18:32:49.543Z",
+  "sourcePortalId": "46378923",
+  "destinationPortalId": "414445",
+  "trackingProperty": {
+    "name": "source_call_record_id",
+    "exists": true,
+    "unique": true,
+    "created": false,
+    "simulated": false
+  },
+  "sourcePropertyCount": 123,
+  "destinationPropertyCount": 124,
+  "writable": [
+    {
+      "name": "hs_activity_type",
+      "type": "enumeration",
+      "fieldType": "select",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_all_assigned_business_unit_ids",
+      "type": "enumeration",
+      "fieldType": "checkbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_at_mentioned_team_ids",
+      "type": "enumeration",
+      "fieldType": "checkbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_app_id",
+      "type": "number",
+      "fieldType": "number",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_body",
+      "type": "string",
+      "fieldType": "html",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_callee_object_id",
+      "type": "number",
+      "fieldType": "number",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_callee_object_type",
+      "type": "enumeration",
+      "fieldType": "select",
+      "ownerMapped": false,
+      "optionValidated": true
+    },
+    {
+      "name": "hs_call_direction",
+      "type": "enumeration",
+      "fieldType": "select",
+      "ownerMapped": false,
+      "optionValidated": true
+    },
+    {
+      "name": "hs_call_disposition",
+      "type": "enumeration",
+      "fieldType": "select",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_duration",
+      "type": "number",
+      "fieldType": "number",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_external_account_id",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_external_id",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_from_number",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_recording_url",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_status",
+      "type": "enumeration",
+      "fieldType": "select",
+      "ownerMapped": false,
+      "optionValidated": true
+    },
+    {
+      "name": "hs_call_summary_execution_id",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_title",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_to_number",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_transcription_id",
+      "type": "number",
+      "fieldType": "number",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_video_recording_url",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_call_zoom_meeting_uuid",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_calls_follow_ups_dismissed",
+      "type": "bool",
+      "fieldType": "booleancheckbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_engagement_source",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_engagement_source_id",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_follow_up_action",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_origin_object_coordinates",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_owning_teams",
+      "type": "enumeration",
+      "fieldType": "checkbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_pinned_engagement_id",
+      "type": "number",
+      "fieldType": "number",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_product_name",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_queue_membership_ids",
+      "type": "enumeration",
+      "fieldType": "checkbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_shared_team_ids",
+      "type": "enumeration",
+      "fieldType": "checkbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_shared_user_ids",
+      "type": "enumeration",
+      "fieldType": "checkbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_timestamp",
+      "type": "datetime",
+      "fieldType": "date",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_unique_id",
+      "type": "string",
+      "fieldType": "text",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hs_unknown_visitor_conversation",
+      "type": "bool",
+      "fieldType": "booleancheckbox",
+      "ownerMapped": false,
+      "optionValidated": false
+    },
+    {
+      "name": "hubspot_owner_id",
+      "type": "enumeration",
+      "fieldType": "select",
+      "ownerMapped": true,
+      "optionValidated": false
+    }
+  ],
+  "skipped": [
+    {
+      "name": "hs_ai_detected_language",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_ai_detected_language_confidence",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_ai_is_noise",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_ai_summary",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_all_accessible_team_ids",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "team IDs are portal-specific",
+      "expected": true
+    },
+    {
+      "name": "hs_all_owner_ids",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "derived from hubspot_owner_id by HubSpot",
+      "expected": true
+    },
+    {
+      "name": "hs_all_team_ids",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "team IDs are portal-specific",
+      "expected": true
+    },
+    {
+      "name": "hs_at_mentioned_owner_ids",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "owner IDs embedded in @mentions are not remapped",
+      "expected": true
+    },
+    {
+      "name": "hs_attachment_ids",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "file IDs are portal-specific; files are not migrated by this script",
+      "expected": true
+    },
+    {
+      "name": "hs_body_preview",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_body_preview_html",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_body_preview_is_truncated",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_authed_url_provider",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_deal_stage_during_call",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_from_number_nickname",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_has_transcript",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_has_voicemail",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_interactivity",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_location",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_longest_customer_story",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_meeting_event_id",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_meeting_id",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_ms_teams_payload",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_owner_longest_monologue",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_owner_talk_speed",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_owner_talk_time",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_owner_talk_time_percentage",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_patience",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_phone_number_source",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_primary_deal",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_recording_duration",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_routing_strategy_type",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_source",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "docs: if set it must be INTEGRATIONS_PLATFORM, which enrols the call in a calling-app recording pipeline",
+      "expected": true
+    },
+    {
+      "name": "hs_call_suggested_next_actions",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_summary",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_to_number_nickname",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_transcript_audio_num_channels",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_transcript_tracked_terms",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_unified_phone_number_id",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_unique_external_id",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_video_meeting_type",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_call_voice_agent_total_ms",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_callback_request",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "calculated property",
+      "expected": true
+    },
+    {
+      "name": "hs_callback_requested_at",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_calls_follow_ups",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_calls_service_call_id",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_campaign_guid",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_campaign_guids",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_connected_count",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "calculated property",
+      "expected": true
+    },
+    {
+      "name": "hs_conversation_thread_id",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_created_by",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user ID",
+      "expected": true
+    },
+    {
+      "name": "hs_created_by_user_id",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user ID",
+      "expected": true
+    },
+    {
+      "name": "hs_createdate",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed creation timestamp",
+      "expected": true
+    },
+    {
+      "name": "hs_engagements_last_contacted",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "calculated property",
+      "expected": true
+    },
+    {
+      "name": "hs_gdpr_deleted",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_has_call_notes",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "calculated property",
+      "expected": true
+    },
+    {
+      "name": "hs_hosted_video_conference_url",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_inbound_call_answer_disposition",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_inbound_call_answer_status",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "calculated property",
+      "expected": true
+    },
+    {
+      "name": "hs_is_voice_agent_call",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_lastmodifieddate",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed modification timestamp",
+      "expected": true
+    },
+    {
+      "name": "hs_merged_object_ids",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal record IDs",
+      "expected": true
+    },
+    {
+      "name": "hs_modified_by",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user ID",
+      "expected": true
+    },
+    {
+      "name": "hs_obj_coords",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_object_id",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "HubSpot internal record ID; the destination assigns its own",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed record source",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source_detail_1",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed record source",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source_detail_2",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed record source",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source_detail_3",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed record source",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source_id",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed record source",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source_label",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "system-managed record source",
+      "expected": true
+    },
+    {
+      "name": "hs_object_source_user_id",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user ID",
+      "expected": true
+    },
+    {
+      "name": "hs_read_only",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_unique_creation_key",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "HubSpot uniqueness key; copying it could collide",
+      "expected": true
+    },
+    {
+      "name": "hs_updated_by_user_id",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user ID",
+      "expected": true
+    },
+    {
+      "name": "hs_user_ids_of_all_notification_followers",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user IDs",
+      "expected": true
+    },
+    {
+      "name": "hs_user_ids_of_all_notification_unfollowers",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user IDs",
+      "expected": true
+    },
+    {
+      "name": "hs_user_ids_of_all_owners",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "source-portal user IDs",
+      "expected": true
+    },
+    {
+      "name": "hs_voice_agent_caller_requested_live_agent",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_voice_agent_did_customer_engage",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_voice_agent_escalated_to_live_agent",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_voice_agent_is_most_recent_customer_feedback_positive",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_voice_agent_resolved",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hs_voicemail_count",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "calculated property",
+      "expected": true
+    },
+    {
+      "name": "hs_was_imported",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hubspot_owner_assigneddate",
+      "code": "PROPERTY_NOT_WRITABLE",
+      "reason": "destination API marks this property read-only",
+      "expected": true
+    },
+    {
+      "name": "hubspot_team_id",
+      "code": "PROPERTY_EXCLUDED",
+      "reason": "team IDs are portal-specific and not mapped",
+      "expected": true
+    }
+  ],
+  "note": "expected=true skips are system/bookkeeping properties and are not counted as issues in the summary."
+}

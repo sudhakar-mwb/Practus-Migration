@@ -1,0 +1,226 @@
+2026-09-26T18:30:41.868Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88490010
+  destinationOwnerId=88490010
+  validationResult=ARCHIVED
+2026-09-26T18:30:41.876Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88495508
+  destinationOwnerId=88495508
+  validationResult=ARCHIVED
+2026-09-26T18:30:41.877Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=90889758
+  destinationOwnerId=1168039153
+  validationResult=ARCHIVED
+2026-09-26T18:30:48.625Z [WARN] code=UNTRACKED_DESTINATION_CALLS
+  message=Destination portal already has 4289 call(s) WITHOUT source_call_record_id. They cannot be matched to source calls; if any were migrated earlier by another tool, this run would duplicate them. Verify, then set ALLOW_UNTRACKED_DESTINATION_CALLS=true to proceed (those calls are never modified).
+  count=4289
+  allowed=true
+2026-09-26T18:30:55.977Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55355744160
+  destinationCallId=117469607498
+  associatedSourceRecordId=22413410817
+2026-09-26T18:31:22.403Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88490010
+  destinationOwnerId=88490010
+  validationResult=ARCHIVED
+2026-09-26T18:31:22.404Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88495508
+  destinationOwnerId=88495508
+  validationResult=ARCHIVED
+2026-09-26T18:31:22.404Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=90889758
+  destinationOwnerId=1168039153
+  validationResult=ARCHIVED
+2026-09-26T18:31:28.747Z [WARN] code=UNTRACKED_DESTINATION_CALLS
+  message=Destination portal already has 4289 call(s) WITHOUT source_call_record_id. They cannot be matched to source calls; if any were migrated earlier by another tool, this run would duplicate them. Verify, then set ALLOW_UNTRACKED_DESTINATION_CALLS=true to proceed (those calls are never modified).
+  count=4289
+  allowed=true
+2026-09-26T18:31:33.917Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55355744160
+  destinationCallId=117469607498
+  associatedSourceRecordId=22413410817
+2026-09-26T18:31:44.307Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88490010
+  destinationOwnerId=88490010
+  validationResult=ARCHIVED
+2026-09-26T18:31:44.308Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88495508
+  destinationOwnerId=88495508
+  validationResult=ARCHIVED
+2026-09-26T18:31:44.308Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=90889758
+  destinationOwnerId=1168039153
+  validationResult=ARCHIVED
+2026-09-26T18:31:50.992Z [WARN] code=UNTRACKED_DESTINATION_CALLS
+  message=Destination portal already has 4289 call(s) WITHOUT source_call_record_id. They cannot be matched to source calls; if any were migrated earlier by another tool, this run would duplicate them. Verify, then set ALLOW_UNTRACKED_DESTINATION_CALLS=true to proceed (those calls are never modified).
+  count=4289
+  allowed=true
+2026-09-26T18:32:01.117Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55355744160
+  destinationCallId=117469607498
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55357424687
+  destinationCallId=117469660439
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506130258
+  sourceCallId=55357424687
+  destinationCallId=117469660439
+  associatedSourceRecordId=22506130258
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55357534092
+  destinationCallId=117469660442
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506026905
+  sourceCallId=55357534092
+  destinationCallId=117469660442
+  associatedSourceRecordId=22506026905
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55358554459
+  destinationCallId=117469660440
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506013004
+  sourceCallId=71955122857
+  destinationCallId=117469660443
+  associatedSourceRecordId=22506013004
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506159711
+  sourceCallId=71955122857
+  destinationCallId=117469660443
+  associatedSourceRecordId=22506159711
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506013004
+  sourceCallId=75219005238
+  destinationCallId=117469660445
+  associatedSourceRecordId=22506013004
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413101997
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22413101997
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413418049
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22413418049
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22505723417
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22505723417
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22505785695
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22505785695
+2026-09-26T18:32:01.118Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22412950649
+  sourceCallId=89454335639
+  destinationCallId=117469660438
+  associatedSourceRecordId=22412950649
+2026-09-26T18:32:42.570Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88490010
+  destinationOwnerId=88490010
+  validationResult=ARCHIVED
+2026-09-26T18:32:42.571Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=88495508
+  destinationOwnerId=88495508
+  validationResult=ARCHIVED
+2026-09-26T18:32:42.571Z [WARN] code=OWNER_MAPPING_ERROR
+  message=Mapped destination owner is not an active owner
+  sourceOwnerId=90889758
+  destinationOwnerId=1168039153
+  validationResult=ARCHIVED
+2026-09-26T18:32:49.541Z [WARN] code=UNTRACKED_DESTINATION_CALLS
+  message=Destination portal already has 4289 call(s) WITHOUT source_call_record_id. They cannot be matched to source calls; if any were migrated earlier by another tool, this run would duplicate them. Verify, then set ALLOW_UNTRACKED_DESTINATION_CALLS=true to proceed (those calls are never modified).
+  count=4289
+  allowed=true
+2026-09-26T18:32:58.863Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55355744160
+  destinationCallId=117469607498
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:58.863Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55357424687
+  destinationCallId=117469660439
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:58.863Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506130258
+  sourceCallId=55357424687
+  destinationCallId=117469660439
+  associatedSourceRecordId=22506130258
+2026-09-26T18:32:58.863Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55357534092
+  destinationCallId=117469660442
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506026905
+  sourceCallId=55357534092
+  destinationCallId=117469660442
+  associatedSourceRecordId=22506026905
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413410817
+  sourceCallId=55358554459
+  destinationCallId=117469660440
+  associatedSourceRecordId=22413410817
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506013004
+  sourceCallId=71955122857
+  destinationCallId=117469660443
+  associatedSourceRecordId=22506013004
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506159711
+  sourceCallId=71955122857
+  destinationCallId=117469660443
+  associatedSourceRecordId=22506159711
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22506013004
+  sourceCallId=75219005238
+  destinationCallId=117469660445
+  associatedSourceRecordId=22506013004
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413101997
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22413101997
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22413418049
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22413418049
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22505723417
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22505723417
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22505785695
+  sourceCallId=77634518148
+  destinationCallId=117469660444
+  associatedSourceRecordId=22505785695
+2026-09-26T18:32:58.864Z [WARN] code=COMPANY_MAPPING_NOT_FOUND
+  message=No unique destination companies with tm_company_record_id=22412950649
+  sourceCallId=89454335639
+  destinationCallId=117469660438
+  associatedSourceRecordId=22412950649
