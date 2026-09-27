@@ -1,0 +1,89 @@
+========================================
+HUBSPOT CALL MIGRATION
+========================================
+Source Portal ID:      46378923
+Destination Portal ID: 414445
+DRY_RUN:               false
+Migration start time:  2026-09-26T18:31:40.616Z
+========================================
+SOURCE PORTAL:      46378923 (app.hubspot.com STANDARD)
+DESTINATION PORTAL: 414445 (app.hubspot.com STANDARD)
+DRY RUN:            false
+========================================
+2026-09-26T18:31:44.307Z [OWNER_MAPPING_ERROR] Mapped destination owner is not an active owner sourceOwnerId=88490010 destinationOwnerId=88490010 validationResult=ARCHIVED
+2026-09-26T18:31:44.308Z [OWNER_MAPPING_ERROR] Mapped destination owner is not an active owner sourceOwnerId=88495508 destinationOwnerId=88495508 validationResult=ARCHIVED
+2026-09-26T18:31:44.308Z [OWNER_MAPPING_ERROR] Mapped destination owner is not an active owner sourceOwnerId=90889758 destinationOwnerId=1168039153 validationResult=ARCHIVED
+2026-09-26T18:31:44.308Z [DEFAULT_OWNER_NOT_CONFIGURED] DEFAULT_DESTINATION_OWNER_ID is not set. Safe fallback: calls whose source owner is unmapped/invalid are migrated WITHOUT an owner (hubspot_owner_id left empty) and logged.
+2026-09-26T18:31:44.309Z [OWNER_VALIDATION] 48/51 owner mappings valid invalid=3 defaultOwner=none report=/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-owner-validation.json
+2026-09-26T18:31:44.815Z [CALL_OUTCOMES] 7/7 source call outcomes resolved in destination unmatched=none
+2026-09-26T18:31:45.337Z [ASSOCIATION_DEFINITIONS] call->contacts: default typeId 194 customLabels=none
+2026-09-26T18:31:45.843Z [ASSOCIATION_DEFINITIONS] call->companies: default typeId 182 customLabels=none
+2026-09-26T18:31:46.354Z [ASSOCIATION_DEFINITIONS] call->deals: default typeId 206 customLabels=none
+2026-09-26T18:31:46.882Z [RECORD_MAPPING] Resolving destination records by on-demand search strategy=auto sourceCalls=16
+2026-09-26T18:31:47.999Z [RECORD_MAPPING] contacts: tm_contact_record_id populated on 519922 destination records mode=ON_DEMAND cached=0 ambiguous=0
+2026-09-26T18:31:49.125Z [RECORD_MAPPING] companies: tm_company_record_id populated on 95653 destination records mode=ON_DEMAND cached=0 ambiguous=0
+2026-09-26T18:31:50.354Z [RECORD_MAPPING] deals: tm_deal_record_id populated on 16927 destination records mode=ON_DEMAND cached=0 ambiguous=0
+2026-09-26T18:31:50.993Z [UNTRACKED_DESTINATION_CALLS] Destination portal already has 4289 call(s) WITHOUT source_call_record_id. They cannot be matched to source calls; if any were migrated earlier by another tool, this run would duplicate them. Verify, then set ALLOW_UNTRACKED_DESTINATION_CALLS=true to proceed (those calls are never modified). count=4289 allowed=true
+2026-09-26T18:31:50.994Z [TRACKING_PROPERTY] Destination call property "source_call_record_id" exists type=string hasUniqueValue=true
+2026-09-26T18:31:50.996Z [PROPERTY_PLAN] 36 writable call properties, 87 skipped PROPERTY_NOT_WRITABLE=61 PROPERTY_EXCLUDED=26 report=/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-property-report.json
+2026-09-26T18:32:02.866Z [UNCHANGED] sourceCall=55355744160 destinationCall=117469607498 owner=1319846492→- contacts=0 companies=0 deals=0
+2026-09-26T18:32:02.867Z [CREATED] sourceCall=55357424687 destinationCall=117469660439 owner=1319846492→- contacts=3 companies=1 deals=0
+2026-09-26T18:32:02.867Z [CREATED] sourceCall=55357534092 destinationCall=117469660442 owner=1319846492→- contacts=4 companies=0 deals=0
+2026-09-26T18:32:02.867Z [CREATED] sourceCall=55358554459 destinationCall=117469660440 owner=1319846492→- contacts=2 companies=0 deals=0
+2026-09-26T18:32:02.868Z [CREATED] sourceCall=61945630630 destinationCall=117469660449 owner=1319846492→- contacts=34 companies=4 deals=0
+2026-09-26T18:32:02.868Z [CREATED] sourceCall=62128312208 destinationCall=117469660441 owner=1319846492→- contacts=0 companies=0 deals=0
+2026-09-26T18:32:02.868Z [CREATED] sourceCall=62130540927 destinationCall=117469660450 owner=1319846492→- contacts=0 companies=0 deals=0
+2026-09-26T18:32:02.868Z [CREATED] sourceCall=62176531600 destinationCall=117469660448 owner=1319846492→- contacts=0 companies=0 deals=0
+2026-09-26T18:32:02.869Z [CREATED] sourceCall=63002874713 destinationCall=117469660447 owner=1319846492→- contacts=14 companies=2 deals=0
+2026-09-26T18:32:02.869Z [CREATED] sourceCall=63939374394 destinationCall=117469660451 owner=1319846492→- contacts=10 companies=0 deals=0
+2026-09-26T18:32:02.869Z [CREATED] sourceCall=71955122857 destinationCall=117469660443 owner=1319846492→- contacts=49 companies=2 deals=0
+2026-09-26T18:32:02.870Z [CREATED] sourceCall=75219005238 destinationCall=117469660445 owner=1319846492→- contacts=27 companies=2 deals=0
+2026-09-26T18:32:02.870Z [CREATED] sourceCall=77634518148 destinationCall=117469660444 owner=1319846492→- contacts=40 companies=2 deals=0
+2026-09-26T18:32:02.870Z [CREATED] sourceCall=88691867916 destinationCall=117469660437 owner=1319846492→- contacts=15 companies=1 deals=0
+2026-09-26T18:32:02.870Z [CREATED] sourceCall=89454335639 destinationCall=117469660438 owner=1319846492→- contacts=74 companies=0 deals=0
+2026-09-26T18:32:02.870Z [CREATED] sourceCall=90746256263 destinationCall=117469660446 owner=1319846492→- contacts=1 companies=0 deals=0
+2026-09-26T18:32:02.871Z [PROGRESS] Fetched: 16 / 16 created=15 updated=0 unchanged=1 failed=0
+
+========================================
+CALL MIGRATION SUMMARY
+========================================
+
+Source Portal:      46378923
+Destination Portal: 414445
+
+Source Calls Found: 16 (portal total ≈ 16)
+Created: 15
+Updated: 0
+Already Current: 1
+Failed: 0
+Calls With Association Errors: 0
+
+Contact Associations Created: 273 (already present 3, failed 0)
+Company Associations Created: 14 (already present 1, failed 0)
+Deal Associations Created: 0 (already present 0, failed 0)
+
+Contact Mapping Missing: 0
+Company Mapping Missing: 14
+Deal Mapping Missing: 0
+
+Properties Skipped: 16
+Owner Mapping Missing: 16
+Owner Mapping Invalid: 0
+Owner Left Unassigned: 16
+
+Rate Limit Retries: 0
+Other Retries: 0
+
+Duration: 0h 0m 22s
+========================================
+
+Top Errors / Issues:
+
+1. OWNER_MAPPING_NOT_FOUND: 16
+2. OWNER_UNASSIGNED: 16
+3. COMPANY_MAPPING_NOT_FOUND: 14
+4. OWNER_MAPPING_ERROR: 3
+5. UNTRACKED_DESTINATION_CALLS: 1
+
+Logs: /home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs
+

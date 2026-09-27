@@ -1,0 +1,9 @@
+{
+  "sourcePortalId": "46378923",
+  "destinationPortalId": "414445",
+  "trackingProperty": "source_call_record_id",
+  "updatedAt": "2026-09-26T18:32:59.400Z",
+  "after": null,
+  "callsProcessed": 16,
+  "completed": true
+}

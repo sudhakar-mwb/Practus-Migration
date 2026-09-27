@@ -1,0 +1,233 @@
+{
+  "sourcePortalId": "46378923",
+  "destinationPortalId": "414445",
+  "dryRun": false,
+  "startedAt": "2026-09-26T18:32:39.165Z",
+  "finishedAt": "2026-09-26T18:32:59.404Z",
+  "durationSeconds": 20,
+  "trackingProperty": "source_call_record_id",
+  "trackingPropertyState": {
+    "exists": true,
+    "unique": true,
+    "created": false,
+    "simulated": false
+  },
+  "recordMappings": {
+    "contacts": {
+      "property": "tm_contact_record_id",
+      "status": "ON_DEMAND",
+      "populatedInDestination": 519922,
+      "resolved": 249,
+      "ambiguous": 0
+    },
+    "companies": {
+      "property": "tm_company_record_id",
+      "status": "ON_DEMAND",
+      "populatedInDestination": 95653,
+      "resolved": 12,
+      "ambiguous": 0
+    },
+    "deals": {
+      "property": "tm_deal_record_id",
+      "status": "ON_DEMAND",
+      "populatedInDestination": 16927,
+      "resolved": 0,
+      "ambiguous": 0
+    }
+  },
+  "sourceCallsEstimated": 16,
+  "sourceCallsFound": 16,
+  "created": 0,
+  "updated": 0,
+  "alreadyCurrent": 16,
+  "failed": 0,
+  "callsWithAssociationErrors": 0,
+  "associationsCreated": {
+    "contacts": 0,
+    "companies": 0,
+    "deals": 0
+  },
+  "associationsAlreadyPresent": {
+    "contacts": 276,
+    "companies": 15,
+    "deals": 0
+  },
+  "associationsFailed": {
+    "contacts": 0,
+    "companies": 0,
+    "deals": 0
+  },
+  "mappingMissing": {
+    "contacts": 0,
+    "companies": 14,
+    "deals": 0
+  },
+  "mappingPropertyMissing": {
+    "contacts": 0,
+    "companies": 0,
+    "deals": 0
+  },
+  "propertiesSkipped": 16,
+  "ownerMappingMissing": 16,
+  "ownerMappingInvalid": 0,
+  "ownerUnassigned": 16,
+  "rateLimitRetries": 0,
+  "otherRetries": 0,
+  "stoppedEarly": false,
+  "fatalError": null,
+  "topErrors": [
+    {
+      "code": "OWNER_MAPPING_NOT_FOUND",
+      "count": 16
+    },
+    {
+      "code": "OWNER_UNASSIGNED",
+      "count": 16
+    },
+    {
+      "code": "COMPANY_MAPPING_NOT_FOUND",
+      "count": 14
+    },
+    {
+      "code": "OWNER_MAPPING_ERROR",
+      "count": 3
+    },
+    {
+      "code": "UNTRACKED_DESTINATION_CALLS",
+      "count": 1
+    }
+  ],
+  "errorSamples": {
+    "OWNER_MAPPING_ERROR": [
+      {
+        "message": "Mapped destination owner is not an active owner",
+        "sourceOwnerId": "88490010",
+        "destinationOwnerId": "88490010",
+        "validationResult": "ARCHIVED"
+      },
+      {
+        "message": "Mapped destination owner is not an active owner",
+        "sourceOwnerId": "88495508",
+        "destinationOwnerId": "88495508",
+        "validationResult": "ARCHIVED"
+      },
+      {
+        "message": "Mapped destination owner is not an active owner",
+        "sourceOwnerId": "90889758",
+        "destinationOwnerId": "1168039153",
+        "validationResult": "ARCHIVED"
+      }
+    ],
+    "UNTRACKED_DESTINATION_CALLS": [
+      {
+        "message": "Destination portal already has 4289 call(s) WITHOUT source_call_record_id. They cannot be matched to source calls; if any were migrated earlier by another tool, this run would duplicate them. Verify, then set ALLOW_UNTRACKED_DESTINATION_CALLS=true to proceed (those calls are never modified).",
+        "count": 4289,
+        "allowed": true
+      }
+    ],
+    "OWNER_MAPPING_NOT_FOUND": [
+      {
+        "message": "Source owner is not in the owner mapping",
+        "sourceCallId": "55355744160",
+        "sourceOwnerId": "1319846492",
+        "fallback": "UNASSIGNED"
+      },
+      {
+        "message": "Source owner is not in the owner mapping",
+        "sourceCallId": "55357424687",
+        "sourceOwnerId": "1319846492",
+        "fallback": "UNASSIGNED"
+      },
+      {
+        "message": "Source owner is not in the owner mapping",
+        "sourceCallId": "55357534092",
+        "sourceOwnerId": "1319846492",
+        "fallback": "UNASSIGNED"
+      },
+      {
+        "message": "Source owner is not in the owner mapping",
+        "sourceCallId": "55358554459",
+        "sourceOwnerId": "1319846492",
+        "fallback": "UNASSIGNED"
+      },
+      {
+        "message": "Source owner is not in the owner mapping",
+        "sourceCallId": "61945630630",
+        "sourceOwnerId": "1319846492",
+        "fallback": "UNASSIGNED"
+      }
+    ],
+    "COMPANY_MAPPING_NOT_FOUND": [
+      {
+        "message": "No unique destination companies with tm_company_record_id=22413410817",
+        "sourceCallId": "55355744160",
+        "destinationCallId": "117469607498",
+        "associatedSourceRecordId": "22413410817"
+      },
+      {
+        "message": "No unique destination companies with tm_company_record_id=22413410817",
+        "sourceCallId": "55357424687",
+        "destinationCallId": "117469660439",
+        "associatedSourceRecordId": "22413410817"
+      },
+      {
+        "message": "No unique destination companies with tm_company_record_id=22506130258",
+        "sourceCallId": "55357424687",
+        "destinationCallId": "117469660439",
+        "associatedSourceRecordId": "22506130258"
+      },
+      {
+        "message": "No unique destination companies with tm_company_record_id=22413410817",
+        "sourceCallId": "55357534092",
+        "destinationCallId": "117469660442",
+        "associatedSourceRecordId": "22413410817"
+      },
+      {
+        "message": "No unique destination companies with tm_company_record_id=22506026905",
+        "sourceCallId": "55357534092",
+        "destinationCallId": "117469660442",
+        "associatedSourceRecordId": "22506026905"
+      }
+    ],
+    "OWNER_UNASSIGNED": [
+      {
+        "sourceCallId": "55355744160",
+        "property": "hubspot_owner_id",
+        "value": "1319846492",
+        "reason": "owner UNASSIGNED; no valid DEFAULT_DESTINATION_OWNER_ID"
+      },
+      {
+        "sourceCallId": "55357424687",
+        "property": "hubspot_owner_id",
+        "value": "1319846492",
+        "reason": "owner UNASSIGNED; no valid DEFAULT_DESTINATION_OWNER_ID"
+      },
+      {
+        "sourceCallId": "55357534092",
+        "property": "hubspot_owner_id",
+        "value": "1319846492",
+        "reason": "owner UNASSIGNED; no valid DEFAULT_DESTINATION_OWNER_ID"
+      },
+      {
+        "sourceCallId": "55358554459",
+        "property": "hubspot_owner_id",
+        "value": "1319846492",
+        "reason": "owner UNASSIGNED; no valid DEFAULT_DESTINATION_OWNER_ID"
+      },
+      {
+        "sourceCallId": "61945630630",
+        "property": "hubspot_owner_id",
+        "value": "1319846492",
+        "reason": "owner UNASSIGNED; no valid DEFAULT_DESTINATION_OWNER_ID"
+      }
+    ]
+  },
+  "logFiles": {
+    "main": "/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration.log",
+    "success": "/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-success.log",
+    "errors": "/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-errors.log",
+    "summary": "/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-summary.json",
+    "propertyReport": "/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-property-report.json",
+    "ownerReport": "/home/cedcoss/Desktop/Practus-Migration HS To HS -All/logs/call-migration-owner-validation.json"
+  }
+}
